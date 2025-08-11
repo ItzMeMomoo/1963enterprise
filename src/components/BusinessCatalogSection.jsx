@@ -57,7 +57,7 @@ const BusinessCatalogSection = ({ onBusinessSelect }) => {
       name: "Think Fresh",
       category: "AGRIBISNIS & TEACHING FACTORY",
       description: "Produk segar hasil pertanian modern yang langsung dari kebun ke organik non-organik",
-      image: "/thinkfresh.jpg",
+      image: "/Thinkfresh.png",
       tags: ["Organik", "Segar", "Pertanian"],
       buttonColor: "green",
       location: "Teaching Factory",

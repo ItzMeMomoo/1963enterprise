@@ -192,7 +192,7 @@ const BusinessDetailPage = ({ onBusinessSelect }) => {
       category: "Agribisnis & Teaching Factory",
       description:
         "Unit agribisnis yang menyediakan dan memasarkan sayuran organik dan non-organik ke pasar-pasar serta konsumen akhir",
-      image: "/thinkfresh.jpg",
+      image: "/Thinkfresh.png",
       tags: ["Organik", "Sayuran", "Fresh"],
       buttonColor: "green",
       location: "Teaching Factory",

@@ -1,6 +1,23 @@
 "use client"
 
-import { ArrowRight, Star, Clock, MapPin, Phone, Mail, Instagram, ExternalLink, MessageCircle, Camera, ChevronLeft, ChevronRight, Navigation, Award, Zap, ArrowLeft, X } from 'lucide-react'
+import {
+  ArrowRight,
+  Star,
+  Clock,
+  MapPin,
+  Phone,
+  Mail,
+  Instagram,
+  ExternalLink,
+  MessageCircle,
+  Camera,
+  ChevronLeft,
+  ChevronRight,
+  Navigation,
+  Award,
+  Zap,
+  X,
+} from "lucide-react"
 import { useState, useEffect } from "react"
 
 const BusinessUnit = ({ selectedBusinessId, onBack }) => {
@@ -12,11 +29,18 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
       id: 1,
       name: "Daily Us",
       category: "Retail & Produk",
-      description: "Convenience store modern yang menyediakan berbagai kebutuhan sehari-hari mahasiswa dengan harga terjangkau. Dari makanan ringan, minuman, alat tulis, hingga kebutuhan darurat, semua tersedia 24/7 untuk mendukung aktivitas kampus Anda.",
-      detailedDescription: "Daily Us hadir sebagai solusi lengkap kebutuhan mahasiswa dengan konsep one-stop shopping. Kami menyediakan lebih dari 500 jenis produk mulai dari makanan, minuman, alat tulis, produk kesehatan, hingga merchandise IPB. Dengan sistem kasir modern dan pembayaran digital, berbelanja menjadi lebih mudah dan cepat.",
+      description:
+        "Convenience store modern yang menyediakan berbagai kebutuhan sehari-hari mahasiswa dengan harga terjangkau. Dari makanan ringan, minuman, alat tulis, hingga kebutuhan darurat, semua tersedia 24/7 untuk mendukung aktivitas kampus Anda.",
+      detailedDescription:
+        "Daily Us hadir sebagai solusi lengkap kebutuhan mahasiswa dengan konsep one-stop shopping. Kami menyediakan lebih dari 500 jenis produk mulai dari makanan, minuman, alat tulis, produk kesehatan, hingga merchandise IPB. Dengan sistem kasir modern dan pembayaran digital, berbelanja menjadi lebih mudah dan cepat.",
       image: "/dailyus.jpeg",
       logo: "/dailyus-logo.png",
-      gallery: ["/dailyus.jpeg", "/placeholder.svg?height=400&width=600", "/placeholder.svg?height=400&width=600", "/placeholder.svg?height=400&width=600"],
+      gallery: [
+        "/dailyus.jpeg",
+        "/placeholder.svg?height=400&width=600",
+        "/placeholder.svg?height=400&width=600",
+        "/placeholder.svg?height=400&width=600",
+      ],
       tags: ["Retail", "Produk", "Kopi", "24/7", "Mahasiswa"],
       buttonColor: "purple",
       location: "IPB Dramaga (Samping Pintu Masuk Bara)",
@@ -28,19 +52,79 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
       rating: 4.8,
       reviewCount: 1247,
       priceRange: "Rp 5.000 - Rp 50.000",
+      products: [
+        {
+          name: "Kopi Arabica Premium",
+          price: "Rp 25.000",
+          image: "/placeholder.svg?height=200&width=200&text=Kopi+Arabica",
+          description: "Kopi arabica pilihan dengan cita rasa yang khas",
+          shopLink: "https://shopee.co.id/dailyus-kopi-arabica",
+          category: "Minuman",
+        },
+        {
+          name: "Roti Tawar Gandum",
+          price: "Rp 12.000",
+          image: "/placeholder.svg?height=200&width=200&text=Roti+Gandum",
+          description: "Roti tawar gandum segar tanpa pengawet",
+          shopLink: "https://tokopedia.com/dailyus/roti-gandum",
+          category: "Makanan",
+        },
+        {
+          name: "Alat Tulis Set",
+          price: "Rp 35.000",
+          image: "/placeholder.svg?height=200&width=200&text=Alat+Tulis",
+          description: "Set lengkap alat tulis untuk mahasiswa",
+          shopLink: "https://shopee.co.id/dailyus-alat-tulis",
+          category: "Alat Tulis",
+        },
+        {
+          name: "Masker KF94",
+          price: "Rp 8.000",
+          image: "/placeholder.svg?height=200&width=200&text=Masker+KF94",
+          description: "Masker kesehatan standar KF94",
+          shopLink: "https://tokopedia.com/dailyus/masker-kf94",
+          category: "Kesehatan",
+        },
+        {
+          name: "Merchandise IPB",
+          price: "Rp 45.000",
+          image: "/placeholder.svg?height=200&width=200&text=Merchandise",
+          description: "Kaos dan merchandise resmi IPB",
+          shopLink: "https://shopee.co.id/dailyus-merchandise",
+          category: "Merchandise",
+        },
+        {
+          name: "Snack Sehat",
+          price: "Rp 15.000",
+          image: "/placeholder.svg?height=200&width=200&text=Snack+Sehat",
+          description: "Berbagai pilihan snack sehat dan bergizi",
+          shopLink: "https://tokopedia.com/dailyus/snack-sehat",
+          category: "Makanan",
+        },
+      ],
       facilities: ["Parkir Motor", "WiFi Gratis", "AC", "CCTV", "Pembayaran Digital"],
-      products: ["Makanan & Minuman", "Alat Tulis", "Produk Kesehatan", "Merchandise IPB", "Kebutuhan Darurat"],
-      specialOffers: ["Diskon 10% untuk mahasiswa IPB", "Buy 2 Get 1 untuk produk tertentu", "Cashback 5% pembayaran digital"]
+      specialOffers: [
+        "Diskon 10% untuk mahasiswa IPB",
+        "Buy 2 Get 1 untuk produk tertentu",
+        "Cashback 5% pembayaran digital",
+      ],
     },
     {
       id: 2,
       name: "Botani Mart",
       category: "Retail & Produk",
-      description: "Toko pertanian modern yang menjual bibit, alat berkebun, pupuk, dan berbagai kebutuhan pertanian lainnya dengan harga terjangkau untuk mendukung kegiatan pertanian dan berkebun di lingkungan kampus IPB.",
-      detailedDescription: "Botani Mart adalah toko pertanian terlengkap di kawasan kampus yang menyediakan segala kebutuhan pertanian modern. Dari bibit unggul, alat berkebun profesional, pupuk organik, hingga sistem irigasi modern, semua tersedia untuk mendukung praktik pertanian berkelanjutan dan penelitian agrikultur.",
+      description:
+        "Toko pertanian modern yang menjual bibit, alat berkebun, pupuk, dan berbagai kebutuhan pertanian lainnya dengan harga terjangkau untuk mendukung kegiatan pertanian dan berkebun di lingkungan kampus IPB.",
+      detailedDescription:
+        "Botani Mart adalah toko pertanian terlengkap di kawasan kampus yang menyediakan segala kebutuhan pertanian modern. Dari bibit unggul, alat berkebun profesional, pupuk organik, hingga sistem irigasi modern, semua tersedia untuk mendukung praktik pertanian berkelanjutan dan penelitian agrikultur.",
       image: "/placeholder-moj9a.png",
       logo: "/botanimart-logo.png",
-      gallery: ["/agricultural-store-interior.png", "/placeholder-c6o26.png", "/placeholder-u8xhf.png", "/organic-fertilizer-area.png"],
+      gallery: [
+        "/agricultural-store-interior.png",
+        "/placeholder-c6o26.png",
+        "/placeholder-u8xhf.png",
+        "/organic-fertilizer-area.png",
+      ],
       tags: ["Pertanian", "Alat", "Modern", "Bibit", "Pupuk"],
       buttonColor: "purple",
       location: "Jl. Raya Dramaga",
@@ -54,14 +138,20 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
       priceRange: "Rp 5.000 - Rp 500.000",
       facilities: ["Konsultasi Gratis", "Delivery Service", "Parkir Luas", "Demo Area", "After Sales Service"],
       products: ["Bibit Tanaman", "Alat Berkebun", "Pupuk Organik", "Sistem Irigasi", "Pestisida Alami"],
-      specialOffers: ["Konsultasi gratis untuk mahasiswa", "Paket starter berkebun", "Diskon pembelian dalam jumlah besar"]
+      specialOffers: [
+        "Konsultasi gratis untuk mahasiswa",
+        "Paket starter berkebun",
+        "Diskon pembelian dalam jumlah besar",
+      ],
     },
     {
       id: 3,
       name: "IPB Merchandise Store",
       category: "Retail & Produk",
-      description: "Toko resmi penjualan merchandise IPB seperti jaket, topi, kaos, dan berbagai souvenir dengan desain eksklusif dan kualitas premium untuk membanggakan almamater.",
-      detailedDescription: "IPB Merchandise Store adalah toko resmi yang menyediakan berbagai produk merchandise berkualitas tinggi dengan desain eksklusif IPB. Dari apparel casual hingga formal, aksesoris, hingga souvenir unik, semua dibuat dengan standar kualitas tinggi untuk menunjukkan kebanggaan sebagai bagian dari keluarga besar IPB.",
+      description:
+        "Toko resmi penjualan merchandise IPB seperti jaket, topi, kaos, dan berbagai souvenir dengan desain eksklusif dan kualitas premium untuk membanggakan almamater.",
+      detailedDescription:
+        "IPB Merchandise Store adalah toko resmi yang menyediakan berbagai produk merchandise berkualitas tinggi dengan desain eksklusif IPB. Dari apparel casual hingga formal, aksesoris, hingga souvenir unik, semua dibuat dengan standar kualitas tinggi untuk menunjukkan kebanggaan sebagai bagian dari keluarga besar IPB.",
       image: "/generic-merchandise-store.png",
       logo: "/ipb-merch-logo.png",
       gallery: ["/ipb-merchandise-display.png", "/ipb-apparel.png", "/ipb-accessories.png", "/ipb-souvenirs.png"],
@@ -78,17 +168,24 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
       priceRange: "Rp 25.000 - Rp 350.000",
       facilities: ["Custom Design", "Bulk Order", "Gift Wrapping", "Size Exchange", "Quality Guarantee"],
       products: ["T-Shirts & Polo", "Jaket & Hoodie", "Topi & Aksesoris", "Tas & Ransel", "Souvenir Unik"],
-      specialOffers: ["Alumni discount 15%", "Graduation package", "Custom order untuk organisasi"]
+      specialOffers: ["Alumni discount 15%", "Graduation package", "Custom order untuk organisasi"],
     },
     {
       id: 4,
       name: "BreadCast",
       category: "Kuliner & Kafe",
-      description: "Bakery artisan yang menyediakan roti segar setiap harinya tanpa pengawet, dibuat dari bahan-bahan lokal berkualitas tinggi. Kombinasi sempurna antara tradisi dan inovasi dalam setiap gigitan.",
-      detailedDescription: "BreadCast adalah bakery artisan yang berkomitmen menghadirkan roti dan kue berkualitas tinggi tanpa pengawet buatan. Setiap produk dibuat fresh daily menggunakan bahan-bahan lokal pilihan seperti tepung organik, gula aren, dan rempah nusantara untuk menciptakan cita rasa autentik Indonesia.",
+      description:
+        "Bakery artisan yang menyediakan roti segar setiap harinya tanpa pengawet, dibuat dari bahan-bahan lokal berkualitas tinggi. Kombinasi sempurna antara tradisi dan inovasi dalam setiap gigitan.",
+      detailedDescription:
+        "BreadCast adalah bakery artisan yang berkomitmen menghadirkan roti dan kue berkualitas tinggi tanpa pengawet buatan. Setiap produk dibuat fresh daily menggunakan bahan-bahan lokal pilihan seperti tepung organik, gula aren, dan rempah nusantara untuk menciptakan cita rasa autentik Indonesia.",
       image: "/breadcast.jpg",
       logo: "/breadcast-logo.png",
-      gallery: ["/breadcast.jpg", "/placeholder.svg?height=400&width=600", "/placeholder.svg?height=400&width=600", "/placeholder.svg?height=400&width=600"],
+      gallery: [
+        "/breadcast.jpg",
+        "/placeholder.svg?height=400&width=600",
+        "/placeholder.svg?height=400&width=600",
+        "/placeholder.svg?height=400&width=600",
+      ],
       tags: ["Bakery", "Roti", "Sehat", "Lokal", "Tanpa Pengawet"],
       buttonColor: "orange",
       location: "IPB Dramaga (Depan LSI IPB dan Perpus IPB)",
@@ -102,17 +199,24 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
       priceRange: "Rp 8.000 - Rp 45.000",
       facilities: ["Takeaway", "Pre-order", "Custom Cake", "Catering", "Delivery"],
       products: ["Artisan Bread", "Local Pastries", "Custom Cakes", "Healthy Snacks", "Traditional Cookies"],
-      specialOffers: ["Pre-order discount 10%", "Bulk order special price", "Birthday cake package"]
+      specialOffers: ["Pre-order discount 10%", "Bulk order special price", "Birthday cake package"],
     },
     {
       id: 5,
       name: "The 63 Coffee House",
       category: "Kuliner & Kafe",
-      description: "Contemporary coffee house dengan suasana premium yang menyajikan menu lengkap dari makanan berat hingga specialty coffee. Tempat ideal untuk belajar, meeting, atau sekedar bersantai dengan atmosfer yang nyaman dan modern.",
-      detailedDescription: "The 63 Coffee House menghadirkan pengalaman kafe premium di lingkungan kampus dengan interior modern dan suasana yang cozy. Kami menyajikan specialty coffee dari biji kopi pilihan nusantara, menu makanan western dan asian fusion, serta berbagai dessert house-made yang lezat.",
+      description:
+        "Contemporary coffee house dengan suasana premium yang menyajikan menu lengkap dari makanan berat hingga specialty coffee. Tempat ideal untuk belajar, meeting, atau sekedar bersantai dengan atmosfer yang nyaman dan modern.",
+      detailedDescription:
+        "The 63 Coffee House menghadirkan pengalaman kafe premium di lingkungan kampus dengan interior modern dan suasana yang cozy. Kami menyajikan specialty coffee dari biji kopi pilihan nusantara, menu makanan western dan asian fusion, serta berbagai dessert house-made yang lezat.",
       image: "/namtiga.jpg",
       logo: "/63coffee-logo.png",
-      gallery: ["/namtiga.jpg", "/placeholder.svg?height=400&width=600", "/placeholder.svg?height=400&width=600", "/placeholder.svg?height=400&width=600"],
+      gallery: [
+        "/namtiga.jpg",
+        "/placeholder.svg?height=400&width=600",
+        "/placeholder.svg?height=400&width=600",
+        "/placeholder.svg?height=400&width=600",
+      ],
       tags: ["Kafe", "Premium", "Coffee", "Meeting", "Study Space"],
       buttonColor: "orange",
       location: "IPB Dramaga (Jalan Baru)",
@@ -126,16 +230,23 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
       priceRange: "Rp 15.000 - Rp 85.000",
       facilities: ["WiFi Gratis", "AC", "Outdoor Seating", "Private Room", "Live Music"],
       products: ["Specialty Coffee", "Western Food", "Asian Fusion", "Desserts", "Healthy Drinks"],
-      specialOffers: ["Happy Hour 14:00-17:00", "Student Discount 15%", "Free WiFi unlimited"]
+      specialOffers: ["Happy Hour 14:00-17:00", "Student Discount 15%", "Free WiFi unlimited"],
     },
     {
       id: 6,
       name: "Resto Taman Koleksi",
       category: "Kuliner & Kafe",
-      description: "Kafe dan restoran yang juga menyediakan layanan meeting room, VIP room, serta pemesanan catering untuk berbagai acara dengan suasana taman yang asri dan nyaman.",
-      detailedDescription: "Resto Taman Koleksi menghadirkan pengalaman dining yang unik dengan konsep garden restaurant. Berlokasi di area taman yang asri, kami menyajikan menu fusion Indonesia-Western dengan bahan-bahan segar dan berkualitas. Dilengkapi dengan fasilitas meeting room dan layanan catering untuk berbagai acara.",
+      description:
+        "Kafe dan restoran yang juga menyediakan layanan meeting room, VIP room, serta pemesanan catering untuk berbagai acara dengan suasana taman yang asri dan nyaman.",
+      detailedDescription:
+        "Resto Taman Koleksi menghadirkan pengalaman dining yang unik dengan konsep garden restaurant. Berlokasi di area taman yang asri, kami menyajikan menu fusion Indonesia-Western dengan bahan-bahan segar dan berkualitas. Dilengkapi dengan fasilitas meeting room dan layanan catering untuk berbagai acara.",
       image: "/placeholder.svg?height=300&width=400",
-      gallery: ["/placeholder.svg?height=400&width=600", "/placeholder.svg?height=400&width=600", "/placeholder.svg?height=400&width=600", "/placeholder.svg?height=400&width=600"],
+      gallery: [
+        "/placeholder.svg?height=400&width=600",
+        "/placeholder.svg?height=400&width=600",
+        "/placeholder.svg?height=400&width=600",
+        "/placeholder.svg?height=400&width=600",
+      ],
       tags: ["Resto", "Meeting", "Catering", "Garden", "Fusion"],
       buttonColor: "orange",
       location: "Jln. Padjajaran (IPB Baranangsiang)",
@@ -150,16 +261,23 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
       priceRange: "Rp 25.000 - Rp 150.000",
       facilities: ["Meeting Room", "VIP Room", "Catering Service", "Garden Setting", "Private Parking"],
       products: ["Indonesian Cuisine", "Western Food", "Meeting Packages", "Catering Service", "Event Hosting"],
-      specialOffers: ["Meeting package discount", "Catering bulk order", "Weekend family package"]
+      specialOffers: ["Meeting package discount", "Catering bulk order", "Weekend family package"],
     },
     {
       id: 7,
       name: "Botani Kopi Nusantara",
       category: "Kuliner & Kafe",
-      description: "Kafe yang menyajikan kopi di tempat Student Service Center dengan berbagai menu kopi, minuman non kopi, dan berbagai pastry dengan cita rasa nusantara yang autentik.",
-      detailedDescription: "Botani Kopi Nusantara menghadirkan cita rasa kopi nusantara yang autentik di jantung kampus IPB. Kami bangga menyajikan kopi dari berbagai daerah di Indonesia dengan teknik brewing yang tepat, dilengkapi dengan pastry dan snack lokal yang menggugah selera.",
+      description:
+        "Kafe yang menyajikan kopi di tempat Student Service Center dengan berbagai menu kopi, minuman non kopi, dan berbagai pastry dengan cita rasa nusantara yang autentik.",
+      detailedDescription:
+        "Botani Kopi Nusantara menghadirkan cita rasa kopi nusantara yang autentik di jantung kampus IPB. Kami bangga menyajikan kopi dari berbagai daerah di Indonesia dengan teknik brewing yang tepat, dilengkapi dengan pastry dan snack lokal yang menggugah selera.",
       image: "/placeholder.svg?height=300&width=400",
-      gallery: ["/placeholder.svg?height=400&width=600", "/placeholder.svg?height=400&width=600", "/placeholder.svg?height=400&width=600", "/placeholder.svg?height=400&width=600"],
+      gallery: [
+        "/placeholder.svg?height=400&width=600",
+        "/placeholder.svg?height=400&width=600",
+        "/placeholder.svg?height=400&width=600",
+        "/placeholder.svg?height=400&width=600",
+      ],
       tags: ["Kopi", "Nusantara", "Pastry", "Student Center", "Autentik"],
       buttonColor: "orange",
       location: "IPB Dramaga (Gedung Andi Hakim Nasution)",
@@ -174,16 +292,23 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
       priceRange: "Rp 12.000 - Rp 45.000",
       facilities: ["Study Area", "WiFi", "AC", "Takeaway", "Student Discount"],
       products: ["Nusantara Coffee", "Local Pastries", "Traditional Snacks", "Non-Coffee Drinks", "Coffee Beans"],
-      specialOffers: ["Student discount 20%", "Coffee loyalty card", "Traditional snack combo"]
+      specialOffers: ["Student discount 20%", "Coffee loyalty card", "Traditional snack combo"],
     },
     {
       id: 8,
       name: "Chef 63",
       category: "Kuliner & Kafe",
-      description: "Kantin area yang menyajikan berbagai pilihan makanan berat dengan harga terjangkau dan cita rasa yang berkesan di kawasan IPB dengan menu yang beragam dan bergizi.",
-      detailedDescription: "Chef 63 adalah kantin modern yang mengutamakan kualitas makanan dengan harga terjangkau untuk komunitas kampus. Kami menyajikan menu Indonesia dan internasional yang diolah dengan higienis dan bergizi, cocok untuk mahasiswa, dosen, dan staff kampus.",
+      description:
+        "Kantin area yang menyajikan berbagai pilihan makanan berat dengan harga terjangkau dan cita rasa yang berkesan di kawasan IPB dengan menu yang beragam dan bergizi.",
+      detailedDescription:
+        "Chef 63 adalah kantin modern yang mengutamakan kualitas makanan dengan harga terjangkau untuk komunitas kampus. Kami menyajikan menu Indonesia dan internasional yang diolah dengan higienis dan bergizi, cocok untuk mahasiswa, dosen, dan staff kampus.",
       image: "/placeholder.svg?height=300&width=400",
-      gallery: ["/placeholder.svg?height=400&width=600", "/placeholder.svg?height=400&width=600", "/placeholder.svg?height=400&width=600", "/placeholder.svg?height=400&width=600"],
+      gallery: [
+        "/placeholder.svg?height=400&width=600",
+        "/placeholder.svg?height=400&width=600",
+        "/placeholder.svg?height=400&width=600",
+        "/placeholder.svg?height=400&width=600",
+      ],
       tags: ["Kantin", "Terjangkau", "Makanan", "Bergizi", "Mahasiswa"],
       buttonColor: "orange",
       location: "IPB Dramaga (Sekitar Asrama Pusat IPB)",
@@ -198,16 +323,23 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
       priceRange: "Rp 8.000 - Rp 25.000",
       facilities: ["Dine-in", "Takeaway", "Student Discount", "Clean Kitchen", "Halal Certified"],
       products: ["Nasi Campur", "Mie Ayam", "Gado-gado", "Soto", "Juice & Minuman"],
-      specialOffers: ["Paket hemat mahasiswa", "Diskon pembelian di atas 50rb", "Menu spesial hari Jumat"]
+      specialOffers: ["Paket hemat mahasiswa", "Diskon pembelian di atas 50rb", "Menu spesial hari Jumat"],
     },
     {
       id: 9,
       name: "Wisma Landhuis",
       category: "Akomodasi Penginapan & Sewa Gedung",
-      description: "Wisma tempat tinggal sementara dengan fasilitas lengkap dan berbagai fasilitas penunjang serta ruang rapat untuk tamu kampus dan acara resmi.",
-      detailedDescription: "Wisma Landhuis adalah akomodasi premium untuk tamu kampus, dosen tamu, dan peserta acara resmi IPB. Dengan arsitektur klasik dan fasilitas modern, wisma ini menyediakan kenyamanan tingkat hotel dengan suasana akademis yang khas.",
+      description:
+        "Wisma tempat tinggal sementara dengan fasilitas lengkap dan berbagai fasilitas penunjang serta ruang rapat untuk tamu kampus dan acara resmi.",
+      detailedDescription:
+        "Wisma Landhuis adalah akomodasi premium untuk tamu kampus, dosen tamu, dan peserta acara resmi IPB. Dengan arsitektur klasik dan fasilitas modern, wisma ini menyediakan kenyamanan tingkat hotel dengan suasana akademis yang khas.",
       image: "/placeholder.svg?height=300&width=400",
-      gallery: ["/placeholder.svg?height=400&width=600", "/placeholder.svg?height=400&width=600", "/placeholder.svg?height=400&width=600", "/placeholder.svg?height=400&width=600"],
+      gallery: [
+        "/placeholder.svg?height=400&width=600",
+        "/placeholder.svg?height=400&width=600",
+        "/placeholder.svg?height=400&width=600",
+        "/placeholder.svg?height=400&width=600",
+      ],
       tags: ["Wisma", "Penginapan", "Meeting", "Premium", "Tamu Kampus"],
       buttonColor: "blue",
       location: "IPB Dramaga (Jalan Tanjung)",
@@ -222,16 +354,23 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
       priceRange: "Rp 200.000 - Rp 500.000/malam",
       facilities: ["Meeting Room", "WiFi", "AC", "Restaurant", "Parking", "24/7 Service"],
       products: ["Standard Room", "Deluxe Room", "Meeting Package", "Event Hosting", "Catering Service"],
-      specialOffers: ["Academic rate discount", "Long stay package", "Conference package deal"]
+      specialOffers: ["Academic rate discount", "Long stay package", "Conference package deal"],
     },
     {
       id: 10,
       name: "Asrama Internasional",
       category: "Akomodasi Penginapan & Sewa Gedung",
-      description: "Fasilitas penginapan modern untuk mahasiswa internasional dan tamu kampus dengan standar internasional. Dilengkapi dengan berbagai fasilitas pendukung untuk kenyamanan tinggal jangka pendek maupun panjang.",
-      detailedDescription: "Asrama Internasional IPB menyediakan akomodasi berkualitas tinggi dengan standar internasional untuk mahasiswa asing, peneliti, dan tamu kampus. Fasilitas lengkap meliputi kamar ber-AC, WiFi kencang, dapur bersama, ruang belajar, dan area rekreasi untuk mendukung kehidupan akademik yang produktif.",
+      description:
+        "Fasilitas penginapan modern untuk mahasiswa internasional dan tamu kampus dengan standar internasional. Dilengkapi dengan berbagai fasilitas pendukung untuk kenyamanan tinggal jangka pendek maupun panjang.",
+      detailedDescription:
+        "Asrama Internasional IPB menyediakan akomodasi berkualitas tinggi dengan standar internasional untuk mahasiswa asing, peneliti, dan tamu kampus. Fasilitas lengkap meliputi kamar ber-AC, WiFi kencang, dapur bersama, ruang belajar, dan area rekreasi untuk mendukung kehidupan akademik yang produktif.",
       image: "/AI.jpg",
-      gallery: ["/AI.jpg", "/placeholder.svg?height=400&width=600", "/placeholder.svg?height=400&width=600", "/placeholder.svg?height=400&width=600"],
+      gallery: [
+        "/AI.jpg",
+        "/placeholder.svg?height=400&width=600",
+        "/placeholder.svg?height=400&width=600",
+        "/placeholder.svg?height=400&width=600",
+      ],
       tags: ["Asrama", "Internasional", "Penginapan", "Modern", "Fasilitas Lengkap"],
       buttonColor: "blue",
       location: "IPB Dramaga (Jalan Tanjung)",
@@ -246,16 +385,23 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
       priceRange: "Rp 150.000 - Rp 400.000/malam",
       facilities: ["AC", "WiFi", "Laundry", "Security 24/7", "Common Kitchen", "Study Room"],
       products: ["Single Room", "Twin Room", "Family Room", "Long-term Stay", "Short-term Stay"],
-      specialOffers: ["Monthly rate discount", "Student special price", "Group booking discount"]
+      specialOffers: ["Monthly rate discount", "Student special price", "Group booking discount"],
     },
     {
       id: 11,
       name: "Gedung Alumni IPB",
       category: "Akomodasi Penginapan & Sewa Gedung",
-      description: "Gedung serbaguna untuk gathering, seminar, dan berbagai acara besar lainnya dengan fasilitas lengkap dan kapasitas besar untuk event kampus.",
-      detailedDescription: "Gedung Alumni IPB adalah venue premium untuk berbagai acara besar seperti seminar internasional, konferensi, wisuda, dan gathering alumni. Dengan fasilitas audio visual terkini dan kapasitas hingga 1000 orang, gedung ini menjadi pilihan utama untuk event berkelas di IPB.",
+      description:
+        "Gedung serbaguna untuk gathering, seminar, dan berbagai acara besar lainnya dengan fasilitas lengkap dan kapasitas besar untuk event kampus.",
+      detailedDescription:
+        "Gedung Alumni IPB adalah venue premium untuk berbagai acara besar seperti seminar internasional, konferensi, wisuda, dan gathering alumni. Dengan fasilitas audio visual terkini dan kapasitas hingga 1000 orang, gedung ini menjadi pilihan utama untuk event berkelas di IPB.",
       image: "/placeholder.svg?height=300&width=400",
-      gallery: ["/placeholder.svg?height=400&width=600", "/placeholder.svg?height=400&width=600", "/placeholder.svg?height=400&width=600", "/placeholder.svg?height=400&width=600"],
+      gallery: [
+        "/placeholder.svg?height=400&width=600",
+        "/placeholder.svg?height=400&width=600",
+        "/placeholder.svg?height=400&width=600",
+        "/placeholder.svg?height=400&width=600",
+      ],
       tags: ["Gedung", "Seminar", "Gathering", "Event", "Alumni"],
       buttonColor: "blue",
       location: "Jl. Raya Padjajaran",
@@ -270,16 +416,23 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
       priceRange: "Rp 5.000.000 - Rp 25.000.000/event",
       facilities: ["Auditorium 1000 pax", "Audio Visual", "AC", "Parking", "Catering", "Security"],
       products: ["Main Auditorium", "Meeting Rooms", "Exhibition Hall", "Catering Service", "Event Management"],
-      specialOffers: ["Alumni discount 20%", "Academic event package", "Multi-day event discount"]
+      specialOffers: ["Alumni discount 20%", "Academic event package", "Multi-day event discount"],
     },
     {
       id: 12,
       name: "Daily Wash 63",
       category: "Layanan Harian & Kebersihan",
-      description: "Laundry harian yang menyajikan kebutuhan cuci pakaian mahasiswa dengan tarif sesuai dengan kemampuan mahasiswa dan layanan yang cepat dan bersih.",
-      detailedDescription: "Daily Wash 63 adalah layanan laundry yang dirancang khusus untuk kebutuhan mahasiswa dengan tarif terjangkau dan kualitas pencucian yang baik. Kami menggunakan deterjen berkualitas dan mesin cuci modern untuk hasil yang bersih dan wangi.",
+      description:
+        "Laundry harian yang menyajikan kebutuhan cuci pakaian mahasiswa dengan tarif sesuai dengan kemampuan mahasiswa dan layanan yang cepat dan bersih.",
+      detailedDescription:
+        "Daily Wash 63 adalah layanan laundry yang dirancang khusus untuk kebutuhan mahasiswa dengan tarif terjangkau dan kualitas pencucian yang baik. Kami menggunakan deterjen berkualitas dan mesin cuci modern untuk hasil yang bersih dan wangi.",
       image: "/placeholder.svg?height=300&width=400",
-      gallery: ["/placeholder.svg?height=400&width=600", "/placeholder.svg?height=400&width=600", "/placeholder.svg?height=400&width=600", "/placeholder.svg?height=400&width=600"],
+      gallery: [
+        "/placeholder.svg?height=400&width=600",
+        "/placeholder.svg?height=400&width=600",
+        "/placeholder.svg?height=400&width=600",
+        "/placeholder.svg?height=400&width=600",
+      ],
       tags: ["Laundry", "Harian", "Terjangkau", "Mahasiswa", "Cepat"],
       buttonColor: "red",
       location: "IPB Dramaga",
@@ -292,18 +445,31 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
       rating: 4.2,
       reviewCount: 234,
       priceRange: "Rp 3.000 - Rp 15.000/kg",
-      facilities: ["Express Service", "Pickup & Delivery", "Student Discount", "Quality Guarantee", "Fragrance Options"],
+      facilities: [
+        "Express Service",
+        "Pickup & Delivery",
+        "Student Discount",
+        "Quality Guarantee",
+        "Fragrance Options",
+      ],
       products: ["Cuci Kering", "Cuci Setrika", "Dry Cleaning", "Sepatu & Tas", "Express 3 Jam"],
-      specialOffers: ["Paket bulanan mahasiswa", "Diskon member 15%", "Gratis pickup untuk order di atas 10kg"]
+      specialOffers: ["Paket bulanan mahasiswa", "Diskon member 15%", "Gratis pickup untuk order di atas 10kg"],
     },
     {
       id: 13,
       name: "CARe Wash",
       category: "Layanan Harian & Kebersihan",
-      description: "Layanan cuci kendaraan profesional dengan teknologi modern dan ramah lingkungan. Melayani cuci motor dan mobil dengan hasil maksimal dan harga terjangkau untuk komunitas kampus.",
-      detailedDescription: "CARe Wash 63 menghadirkan layanan cuci kendaraan berkualitas tinggi dengan teknologi modern dan produk ramah lingkungan. Kami melayani cuci motor, mobil, dan layanan detailing dengan tenaga ahli berpengalaman untuk menjaga kendaraan Anda tetap bersih dan terawat.",
+      description:
+        "Layanan cuci kendaraan profesional dengan teknologi modern dan ramah lingkungan. Melayani cuci motor dan mobil dengan hasil maksimal dan harga terjangkau untuk komunitas kampus.",
+      detailedDescription:
+        "CARe Wash 63 menghadirkan layanan cuci kendaraan berkualitas tinggi dengan teknologi modern dan produk ramah lingkungan. Kami melayani cuci motor, mobil, dan layanan detailing dengan tenaga ahli berpengalaman untuk menjaga kendaraan Anda tetap bersih dan terawat.",
       image: "/carewash.jpeg",
-      gallery: ["/carewash.jpeg", "/placeholder.svg?height=400&width=600", "/placeholder.svg?height=400&width=600", "/placeholder.svg?height=400&width=600"],
+      gallery: [
+        "/carewash.jpeg",
+        "/placeholder.svg?height=400&width=600",
+        "/placeholder.svg?height=400&width=600",
+        "/placeholder.svg?height=400&width=600",
+      ],
       tags: ["Cuci Mobil", "Layanan", "Kendaraan", "Ramah Lingkungan", "Profesional"],
       buttonColor: "red",
       location: "IPB Dramaga",
@@ -318,16 +484,23 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
       priceRange: "Rp 10.000 - Rp 75.000",
       facilities: ["High Pressure Wash", "Vacuum Cleaner", "Wax Service", "Interior Cleaning", "Waiting Area"],
       products: ["Motor Wash", "Car Wash", "Detailing", "Wax & Polish", "Interior Cleaning"],
-      specialOffers: ["Student discount 20%", "Package deals", "Membership program"]
+      specialOffers: ["Student discount 20%", "Package deals", "Membership program"],
     },
     {
       id: 14,
       name: "Think Fresh",
       category: "Agribisnis & Teaching Factory",
-      description: "Unit agribisnis yang menghasilkan dan memasarkan sayuran organik dan non-organik segar langsung dari kebun ke konsumen. Menerapkan teknologi pertanian modern untuk hasil berkualitas tinggi.",
-      detailedDescription: "Think Fresh adalah unit agribisnis modern yang menggabungkan teknologi pertanian terdepan dengan praktik berkelanjutan. Kami memproduksi sayuran organik dan non-organik berkualitas tinggi menggunakan sistem hidroponik, greenhouse technology, dan smart farming untuk memastikan kesegaran dan nutrisi optimal.",
-      image: "/thinkfresh.jpg",
-      gallery: ["/thinkfresh.jpg", "/placeholder.svg?height=400&width=600", "/placeholder.svg?height=400&width=600", "/placeholder.svg?height=400&width=600"],
+      description:
+        "Unit agribisnis yang menghasilkan dan memasarkan sayuran organik dan non-organik segar langsung dari kebun ke konsumen. Menerapkan teknologi pertanian modern untuk hasil berkualitas tinggi.",
+      detailedDescription:
+        "Think Fresh adalah unit agribisnis modern yang menggabungkan teknologi pertanian terdepan dengan praktik berkelanjutan. Kami memproduksi sayuran organik dan non-organik berkualitas tinggi menggunakan sistem hidroponik, greenhouse technology, dan smart farming untuk memastikan kesegaran dan nutrisi optimal.",
+      image: "/Thinkfresh.png",
+      gallery: [
+        "/thinkfresh.jpg",
+        "/Thinkfresh.png",
+        "/placeholder.svg?height=400&width=600",
+        "/placeholder.svg?height=400&width=600",
+      ],
       tags: ["Organik", "Sayuran", "Fresh", "Hidroponik", "Smart Farming"],
       buttonColor: "green",
       location: "Agribusiness and Technology Park IPB",
@@ -342,16 +515,22 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
       priceRange: "Rp 10.000 - Rp 75.000/kg",
       facilities: ["Greenhouse", "Cold Storage", "Packaging Center", "Quality Control", "Delivery Service"],
       products: ["Organic Vegetables", "Leafy Greens", "Herbs", "Microgreens", "Seasonal Produce"],
-      specialOffers: ["Subscription box discount", "Bulk order special price", "Seasonal promotions"]
+      specialOffers: ["Subscription box discount", "Bulk order special price", "Seasonal promotions"],
     },
     {
       id: 15,
       name: "Closed House System IPB",
       category: "Agribisnis & Teaching Factory",
-      description: "Pemeliharaan ayam modern dengan teknologi terdepan berbasis teknologi otomatis. Juga berbagai teknologi sebagai pembelajaran dan penelitian peternakan modern.",
-      detailedDescription: "Closed House System IPB adalah fasilitas peternakan ayam modern yang menggunakan teknologi otomatis terdepan. Sistem ini tidak hanya untuk produksi tetapi juga sebagai laboratorium pembelajaran dan penelitian untuk mahasiswa Fakultas Peternakan IPB dalam mempelajari teknologi peternakan masa depan.",
+      description:
+        "Pemeliharaan ayam modern dengan teknologi terdepan berbasis teknologi otomatis. Juga berbagai teknologi sebagai pembelajaran dan penelitian peternakan modern.",
+      detailedDescription:
+        "Closed House System IPB adalah fasilitas peternakan ayam modern yang menggunakan teknologi otomatis terdepan. Sistem ini tidak hanya untuk produksi tetapi juga sebagai laboratorium pembelajaran dan penelitian untuk mahasiswa Fakultas Peternakan IPB dalam mempelajari teknologi peternakan masa depan.",
       image: "/placeholder.svg?height=300&width=400",
-      gallery: ["/placeholder.svg?height=400&width=600", "/placeholder.svg?height=400&width=600", "/placeholder.svg?height=400&width=600", "/placeholder.svg?height=400&width=600"],
+      gallery: [
+        "/placeholder.svg?height=400&width=600",
+        "/placeholder.svg?height=400&width=600",
+        "/placeholder.svg?height=400&width=600",
+      ],
       tags: ["Ayam", "Modern", "Teknologi", "Otomatis", "Penelitian"],
       buttonColor: "green",
       location: "IPB Dramaga",
@@ -366,16 +545,23 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
       priceRange: "Rp 25.000 - Rp 45.000/kg",
       facilities: ["Climate Control", "Automatic Feeding", "Health Monitoring", "Research Lab", "Student Training"],
       products: ["Fresh Chicken", "Organic Eggs", "Research Data", "Training Programs", "Consultation Service"],
-      specialOffers: ["Bulk order discount", "Research collaboration", "Student internship program"]
+      specialOffers: ["Bulk order discount", "Research collaboration", "Student internship program"],
     },
     {
       id: 16,
       name: "Kantin Area Kampus",
       category: "Kantin Area Kampus",
-      description: "Pusat layanan mahasiswa dengan berbagai pilihan makanan dan minuman yang terjangkau dan sehat dengan cita rasa yang lezat dari berbagai pedagang lokal.",
-      detailedDescription: "Kantin Area Kampus adalah food court terbesar di IPB yang menampung puluhan pedagang lokal dengan menu beragam. Dari makanan tradisional Indonesia hingga snack modern, semua tersedia dengan harga mahasiswa dan cita rasa yang autentik.",
+      description:
+        "Pusat layanan mahasiswa dengan berbagai pilihan makanan dan minuman yang terjangkau dan sehat dengan cita rasa yang lezat dari berbagai pedagang lokal.",
+      detailedDescription:
+        "Kantin Area Kampus adalah food court terbesar di IPB yang menampung puluhan pedagang lokal dengan menu beragam. Dari makanan tradisional Indonesia hingga snack modern, semua tersedia dengan harga mahasiswa dan cita rasa yang autentik.",
       image: "/placeholder.svg?height=300&width=400",
-      gallery: ["/placeholder.svg?height=400&width=600", "/placeholder.svg?height=400&width=600", "/placeholder.svg?height=400&width=600", "/placeholder.svg?height=400&width=600"],
+      gallery: [
+        "/placeholder.svg?height=400&width=600",
+        "/placeholder.svg?height=400&width=600",
+        "/placeholder.svg?height=400&width=600",
+        "/placeholder.svg?height=400&width=600",
+      ],
       tags: ["Kantin", "Terjangkau", "Mahasiswa", "Beragam", "Lokal"],
       buttonColor: "pink",
       location: "Area Kampus",
@@ -390,26 +576,22 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
       priceRange: "Rp 5.000 - Rp 20.000",
       facilities: ["Multiple Stalls", "Seating Area", "Clean Water", "Waste Management", "Student Friendly"],
       products: ["Nasi Gudeg", "Bakso", "Gado-gado", "Es Campur", "Jajanan Tradisional"],
-      specialOffers: ["Paket hemat siang", "Diskon akhir hari", "Menu spesial Ramadan"]
-    }
+      specialOffers: ["Paket hemat siang", "Diskon akhir hari", "Menu spesial Ramadan"],
+    },
   ]
 
   // Find the selected business
-  const selectedBusiness = businessUnits.find(business => business.id === selectedBusinessId)
+  const selectedBusiness = businessUnits.find((business) => business.id === selectedBusinessId)
 
   const nextImage = () => {
     if (selectedBusiness) {
-      setCurrentImageIndex((prev) =>
-        prev === selectedBusiness.gallery.length - 1 ? 0 : prev + 1
-      )
+      setCurrentImageIndex((prev) => (prev === selectedBusiness.gallery.length - 1 ? 0 : prev + 1))
     }
   }
 
   const prevImage = () => {
     if (selectedBusiness) {
-      setCurrentImageIndex((prev) =>
-        prev === 0 ? selectedBusiness.gallery.length - 1 : prev - 1
-      )
+      setCurrentImageIndex((prev) => (prev === 0 ? selectedBusiness.gallery.length - 1 : prev - 1))
     }
   }
 
@@ -464,11 +646,10 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
         </div>
 
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
-
           {/* Business Header with Logo */}
           <div className="text-center text-white mb-8">
             <div className="inline-flex items-center justify-center w-16 h-1.5 bg-gradient-to-r from-yellow-300 to-orange-300 rounded-full mb-6 shadow-lg"></div>
-            
+
             {/* Logo and Title Section */}
             <div className="flex flex-col items-center mb-6">
               {/* Business Logo */}
@@ -479,12 +660,12 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
                   className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
                 />
               </div>
-              
+
               <h1 className="text-5xl lg:text-6xl font-black mb-4 leading-tight tracking-tight">
                 {selectedBusiness.name}
               </h1>
             </div>
-            
+
             <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed font-medium">
               {selectedBusiness.description}
             </p>
@@ -572,7 +753,7 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
                 </div>
               </div>
 
-              {/* Products & Services */}
+              {/* Products & Services - New Layout */}
               <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl p-8 border border-white/50">
                 <h2 className="text-2xl font-black text-gray-800 mb-6 flex items-center space-x-3">
                   <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center">
@@ -580,13 +761,68 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
                   </div>
                   <span>Produk & Layanan</span>
                 </h2>
-                <div className="grid md:grid-cols-2 gap-4">
+
+                {/* Product Grid */}
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {selectedBusiness.products.map((product, index) => (
-                    <div key={index} className="flex items-center space-x-3 p-4 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-colors duration-300 group">
-                      <div className="w-3 h-3 bg-gradient-to-r from-orange-400 to-orange-500 rounded-full group-hover:scale-125 transition-transform duration-300"></div>
-                      <span className="font-semibold text-gray-700">{product}</span>
+                    <div
+                      key={index}
+                      className="group bg-gradient-to-br from-gray-50 to-white rounded-2xl p-4 border border-gray-200 hover:border-orange-300 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+                    >
+                      {/* Product Image */}
+                      <div className="relative mb-4 rounded-xl overflow-hidden bg-gray-100">
+                        <img
+                          src={product.image || "/placeholder.svg?height=150&width=150&text=Product"}
+                          alt={product.name}
+                          className="w-full h-32 object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                        {/* Category Badge */}
+                        <div className="absolute top-2 left-2">
+                          <span className="bg-white/90 backdrop-blur-sm text-gray-700 px-2 py-1 rounded-lg text-xs font-semibold shadow-sm">
+                            {product.category}
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Product Info */}
+                      <div className="space-y-3">
+                        <div>
+                          <h4 className="font-bold text-gray-800 text-sm group-hover:text-orange-600 transition-colors duration-300">
+                            {product.name}
+                          </h4>
+                          <p className="text-gray-600 text-xs leading-relaxed mt-1">{product.description}</p>
+                        </div>
+
+                        {/* Price */}
+                        <div className="flex items-center justify-between">
+                          <span className="text-lg font-black text-orange-600">{product.price}</span>
+                          <div className="flex items-center space-x-1 text-yellow-500">
+                            <Star className="w-3 h-3 fill-current" />
+                            <span className="text-xs font-semibold text-gray-600">4.8</span>
+                          </div>
+                        </div>
+
+                        {/* Shop Button */}
+                        <a
+                          href={product.shopLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-bold py-2.5 px-4 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg flex items-center justify-center space-x-2 group/btn text-xs"
+                        >
+                          <span>Beli Sekarang</span>
+                          <ExternalLink className="w-3 h-3 group-hover/btn:scale-110 transition-transform duration-300" />
+                        </a>
+                      </div>
                     </div>
                   ))}
+                </div>
+
+                {/* View All Products Button */}
+                <div className="mt-8 text-center">
+                  <button className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold py-3 px-8 rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center space-x-3 mx-auto group">
+                    <span>Lihat Semua Produk</span>
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                  </button>
                 </div>
               </div>
 
@@ -600,7 +836,10 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
                 </h2>
                 <div className="grid md:grid-cols-2 gap-4">
                   {selectedBusiness.facilities.map((facility, index) => (
-                    <div key={index} className="flex items-center space-x-3 p-4 bg-green-50 rounded-2xl border border-green-100 hover:border-green-200 transition-colors duration-300 group">
+                    <div
+                      key={index}
+                      className="flex items-center space-x-3 p-4 bg-green-50 rounded-2xl border border-green-100 hover:border-green-200 transition-colors duration-300 group"
+                    >
                       <div className="w-6 h-6 bg-green-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                         <span className="text-white text-xs font-bold">✓</span>
                       </div>
@@ -620,7 +859,10 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
                 </h2>
                 <div className="space-y-4">
                   {selectedBusiness.specialOffers.map((offer, index) => (
-                    <div key={index} className="flex items-center space-x-3 p-4 bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300 group">
+                    <div
+                      key={index}
+                      className="flex items-center space-x-3 p-4 bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300 group"
+                    >
                       <div className="w-8 h-8 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                         <span className="text-white text-sm font-bold">%</span>
                       </div>
@@ -684,9 +926,13 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
                         alt={`${selectedBusiness.name} - Thumbnail ${index + 1}`}
                         className="w-full h-20 object-cover"
                       />
-                      <div className={`absolute inset-0 transition-opacity duration-300 ${
-                        currentImageIndex === index ? "bg-orange-400/20" : "bg-black/20 opacity-0 group-hover:opacity-100"
-                      }`}></div>
+                      <div
+                        className={`absolute inset-0 transition-opacity duration-300 ${
+                          currentImageIndex === index
+                            ? "bg-orange-400/20"
+                            : "bg-black/20 opacity-0 group-hover:opacity-100"
+                        }`}
+                      ></div>
                     </button>
                   ))}
                 </div>
@@ -745,7 +991,7 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
                     <div className="flex-1 min-w-0">
                       <p className="text-xs font-bold text-pink-700 mb-1">Instagram</p>
                       <a
-                        href={`https://instagram.com/${selectedBusiness.instagram.replace('@', '')}`}
+                        href={`https://instagram.com/${selectedBusiness.instagram.replace("@", "")}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="font-bold text-gray-800 hover:text-pink-600 transition-colors duration-300 flex items-center space-x-1 group/link text-xs"
@@ -760,7 +1006,7 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
                 {/* Compact Action Buttons */}
                 <div className="space-y-2 mt-4">
                   <a
-                    href={`https://wa.me/${selectedBusiness.phone.replace(/[^0-9]/g, '')}`}
+                    href={`https://wa.me/${selectedBusiness.phone.replace(/[^0-9]/g, "")}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white font-bold py-3 px-4 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2 group text-sm"
