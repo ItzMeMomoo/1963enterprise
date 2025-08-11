@@ -120,7 +120,7 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
       image: "/placeholder-moj9a.png",
       logo: "/botanimart-logo.png",
       gallery: [
-        "/agricultural-store-interior.png",
+        "/botanimart.png",
         "/placeholder-c6o26.png",
         "/placeholder-u8xhf.png",
         "/organic-fertilizer-area.png",
@@ -154,7 +154,7 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
         "IPB Merchandise Store adalah toko resmi yang menyediakan berbagai produk merchandise berkualitas tinggi dengan desain eksklusif IPB. Dari apparel casual hingga formal, aksesoris, hingga souvenir unik, semua dibuat dengan standar kualitas tinggi untuk menunjukkan kebanggaan sebagai bagian dari keluarga besar IPB.",
       image: "/generic-merchandise-store.png",
       logo: "/ipb-merch-logo.png",
-      gallery: ["/ipb-merchandise-display.png", "/ipb-apparel.png", "/ipb-accessories.png", "/ipb-souvenirs.png"],
+      gallery: ["/ipbmerch.jpg", "/ipb-apparel.png", "/ipb-accessories.png", "/ipb-souvenirs.png"],
       tags: ["Merchandise", "IPB", "Resmi", "Apparel", "Souvenir"],
       buttonColor: "purple",
       location: "IPB Dramaga (Belakang GWW)",
@@ -242,7 +242,7 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
         "Resto Taman Koleksi menghadirkan pengalaman dining yang unik dengan konsep garden restaurant. Berlokasi di area taman yang asri, kami menyajikan menu fusion Indonesia-Western dengan bahan-bahan segar dan berkualitas. Dilengkapi dengan fasilitas meeting room dan layanan catering untuk berbagai acara.",
       image: "/placeholder.svg?height=300&width=400",
       gallery: [
-        "/placeholder.svg?height=400&width=600",
+        "/takol.jpg",
         "/placeholder.svg?height=400&width=600",
         "/placeholder.svg?height=400&width=600",
         "/placeholder.svg?height=400&width=600",
@@ -273,7 +273,7 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
         "Botani Kopi Nusantara menghadirkan cita rasa kopi nusantara yang autentik di jantung kampus IPB. Kami bangga menyajikan kopi dari berbagai daerah di Indonesia dengan teknik brewing yang tepat, dilengkapi dengan pastry dan snack lokal yang menggugah selera.",
       image: "/placeholder.svg?height=300&width=400",
       gallery: [
-        "/placeholder.svg?height=400&width=600",
+        "/63lite.jpg",
         "/placeholder.svg?height=400&width=600",
         "/placeholder.svg?height=400&width=600",
         "/placeholder.svg?height=400&width=600",
@@ -296,7 +296,7 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
     },
     {
       id: 8,
-      name: "Chef 63",
+      name: "Kantong",
       category: "Kuliner & Kafe",
       description:
         "Kantin area yang menyajikan berbagai pilihan makanan berat dengan harga terjangkau dan cita rasa yang berkesan di kawasan IPB dengan menu yang beragam dan bergizi.",
@@ -304,7 +304,7 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
         "Chef 63 adalah kantin modern yang mengutamakan kualitas makanan dengan harga terjangkau untuk komunitas kampus. Kami menyajikan menu Indonesia dan internasional yang diolah dengan higienis dan bergizi, cocok untuk mahasiswa, dosen, dan staff kampus.",
       image: "/placeholder.svg?height=300&width=400",
       gallery: [
-        "/placeholder.svg?height=400&width=600",
+        "/kantong.jpg",
         "/placeholder.svg?height=400&width=600",
         "/placeholder.svg?height=400&width=600",
         "/placeholder.svg?height=400&width=600",
@@ -335,7 +335,7 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
         "Wisma Landhuis adalah akomodasi premium untuk tamu kampus, dosen tamu, dan peserta acara resmi IPB. Dengan arsitektur klasik dan fasilitas modern, wisma ini menyediakan kenyamanan tingkat hotel dengan suasana akademis yang khas.",
       image: "/placeholder.svg?height=300&width=400",
       gallery: [
-        "/placeholder.svg?height=400&width=600",
+        "/landhuis.png",
         "/placeholder.svg?height=400&width=600",
         "/placeholder.svg?height=400&width=600",
         "/placeholder.svg?height=400&width=600",
@@ -397,7 +397,7 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
         "Gedung Alumni IPB adalah venue premium untuk berbagai acara besar seperti seminar internasional, konferensi, wisuda, dan gathering alumni. Dengan fasilitas audio visual terkini dan kapasitas hingga 1000 orang, gedung ini menjadi pilihan utama untuk event berkelas di IPB.",
       image: "/placeholder.svg?height=300&width=400",
       gallery: [
-        "/placeholder.svg?height=400&width=600",
+        "/gedungalumni.jpg",
         "/placeholder.svg?height=400&width=600",
         "/placeholder.svg?height=400&width=600",
         "/placeholder.svg?height=400&width=600",
@@ -428,7 +428,7 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
         "Daily Wash 63 adalah layanan laundry yang dirancang khusus untuk kebutuhan mahasiswa dengan tarif terjangkau dan kualitas pencucian yang baik. Kami menggunakan deterjen berkualitas dan mesin cuci modern untuk hasil yang bersih dan wangi.",
       image: "/placeholder.svg?height=300&width=400",
       gallery: [
-        "/placeholder.svg?height=400&width=600",
+        "/dailywash.jpg",
         "/placeholder.svg?height=400&width=600",
         "/placeholder.svg?height=400&width=600",
         "/placeholder.svg?height=400&width=600",
@@ -557,7 +557,7 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
         "Kantin Area Kampus adalah food court terbesar di IPB yang menampung puluhan pedagang lokal dengan menu beragam. Dari makanan tradisional Indonesia hingga snack modern, semua tersedia dengan harga mahasiswa dan cita rasa yang autentik.",
       image: "/placeholder.svg?height=300&width=400",
       gallery: [
-        "/placeholder.svg?height=400&width=600",
+        "/kantin.png",
         "/placeholder.svg?height=400&width=600",
         "/placeholder.svg?height=400&width=600",
         "/placeholder.svg?height=400&width=600",

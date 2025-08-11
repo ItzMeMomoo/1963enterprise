@@ -34,7 +34,7 @@ const BusinessCatalogSection = ({ onBusinessSelect }) => {
       category: "Retail & Produk",
       description:
         "Toko resmi penjualan merchandise IPB seperti jaket, topi, dan kaos dengan berbagai desain menarik dan berkualitas tinggi",
-      image: "/merchandise.jpg",
+      image: "/ipbmerch.jpg",
       tags: ["Merchandise", "IPB", "Resmi"],
       buttonColor: "purple",
       location: "Kampus IPB",
@@ -73,7 +73,7 @@ const BusinessCatalogSection = ({ onBusinessSelect }) => {
       category: "Kuliner & Kafe",
       description:
         "Kafe dan restoran yang juga menyediakan layanan meeting room, VIP room, serta pemesanan catering untuk berbagai acara",
-      image: "/restotaman.jpg",
+      image: "/takol.jpg",
       tags: ["Resto", "Meeting", "Catering"],
       buttonColor: "orange",
       location: "Taman Koleksi",

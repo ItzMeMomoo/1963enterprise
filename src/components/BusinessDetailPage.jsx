@@ -52,7 +52,7 @@ const BusinessDetailPage = ({ onBusinessSelect }) => {
       category: "Retail & Produk",
       description:
         "Toko resmi penjualan merchandise IPB seperti jaket, topi, dan kaos dengan berbagai desain menarik dan berkualitas tinggi",
-      image: "/merchandise.jpg",
+      image: "/ipbmerch.jpg",
       tags: ["Merchandise", "IPB", "Resmi"],
       buttonColor: "purple",
       location: "Kampus IPB",
@@ -91,7 +91,7 @@ const BusinessDetailPage = ({ onBusinessSelect }) => {
       category: "Kuliner & Kafe",
       description:
         "Kafe dan restoran yang juga menyediakan layanan meeting room, VIP room, serta pemesanan catering untuk berbagai acara",
-      image: "/restotaman.jpg",
+      image: "/takol.jpg",
       tags: ["Resto", "Meeting", "Catering"],
       buttonColor: "orange",
       location: "Taman Koleksi",
@@ -100,12 +100,12 @@ const BusinessDetailPage = ({ onBusinessSelect }) => {
     },
     {
       id: 7,
-      name: "Botani Kopi Nusantara",
+      name: "63 Coffee Lite",
       category: "Kuliner & Kafe",
       description:
         "Kafe yang menyajikan kopi di tempat Student Service Center dengan berbagai menu kopi, minuman non kopi, dan berbagai pastry",
-      image: "/botanikopi.jpg",
-      tags: ["Kopi", "Nusantara", "Pastry"],
+      image: "/63lite.jpg",
+      tags: ["Kopi", "Pastry", "Makanan"],
       buttonColor: "orange",
       location: "Student Service Center",
       hours: "07:00-21:00",
@@ -113,11 +113,11 @@ const BusinessDetailPage = ({ onBusinessSelect }) => {
     },
     {
       id: 8,
-      name: "Chef 63",
+      name: "Kantong",
       category: "Kuliner & Kafe",
       description:
         "Kantin area yang menyajikan berbagai pilihan makanan berat dengan harga terjangkau dan cita rasa yang berkesan di kawasan IPB",
-      image: "/chef63.jpg",
+      image: "/kantong.jpg",
       tags: ["Kantin", "Terjangkau", "Makanan"],
       buttonColor: "orange",
       location: "Kawasan IPB",
@@ -129,7 +129,7 @@ const BusinessDetailPage = ({ onBusinessSelect }) => {
       name: "Wisma Landhuis",
       category: "Akomodasi Penginapan & Sewa Gedung",
       description: "Wisma tempat tinggal sementara akuntansi dan berbagai fasilitas penunjang dan ruang rapat",
-      image: "/wismalandhuis.jpg",
+      image: "/landhuis.png",
       tags: ["Wisma", "Penginapan", "Meeting"],
       buttonColor: "blue",
       location: "Kampus IPB",
@@ -218,7 +218,7 @@ const BusinessDetailPage = ({ onBusinessSelect }) => {
       category: "Kantin Area Kampus",
       description:
         "Pusat layanan mahasiswa dengan berbagai pilihan makanan dan minuman yang terjangkau dan sehat dengan cita rasa yang lezat",
-      image: "/kantin.jpg",
+      image: "/kantin.png",
       tags: ["Kantin", "Terjangkau", "Mahasiswa"],
       buttonColor: "pink",
       location: "Area Kampus",
