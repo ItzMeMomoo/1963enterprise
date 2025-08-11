@@ -519,36 +519,6 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
     },
     {
       id: 15,
-      name: "Closed House System IPB",
-      category: "Agribisnis & Teaching Factory",
-      description:
-        "Pemeliharaan ayam modern dengan teknologi terdepan berbasis teknologi otomatis. Juga berbagai teknologi sebagai pembelajaran dan penelitian peternakan modern.",
-      detailedDescription:
-        "Closed House System IPB adalah fasilitas peternakan ayam modern yang menggunakan teknologi otomatis terdepan. Sistem ini tidak hanya untuk produksi tetapi juga sebagai laboratorium pembelajaran dan penelitian untuk mahasiswa Fakultas Peternakan IPB dalam mempelajari teknologi peternakan masa depan.",
-      image: "/placeholder.svg?height=300&width=400",
-      gallery: [
-        "/placeholder.svg?height=400&width=600",
-        "/placeholder.svg?height=400&width=600",
-        "/placeholder.svg?height=400&width=600",
-      ],
-      tags: ["Ayam", "Modern", "Teknologi", "Otomatis", "Penelitian"],
-      buttonColor: "green",
-      location: "IPB Dramaga",
-      detailedLocation: "Teaching Factory, Kampus IPB Dramaga, Bogor 16680",
-      hours: "24 Jam",
-      phone: "+6281234567894",
-      email: "closedhouse@ipb.ac.id",
-      instagram: "@closedhouse_ipb",
-      website: "https://closedhouse.ipb.ac.id",
-      rating: 4.4,
-      reviewCount: 156,
-      priceRange: "Rp 25.000 - Rp 45.000/kg",
-      facilities: ["Climate Control", "Automatic Feeding", "Health Monitoring", "Research Lab", "Student Training"],
-      products: ["Fresh Chicken", "Organic Eggs", "Research Data", "Training Programs", "Consultation Service"],
-      specialOffers: ["Bulk order discount", "Research collaboration", "Student internship program"],
-    },
-    {
-      id: 16,
       name: "Kantin Area Kampus",
       category: "Kantin Area Kampus",
       description:

@@ -201,19 +201,6 @@ const BusinessDetailPage = ({ onBusinessSelect }) => {
     },
     {
       id: 15,
-      name: "Closed House System",
-      category: "Agribisnis & Teaching Factory",
-      description:
-        "Pemeliharaan ayam modern dengan teknologi terdepan berbasis teknologi otomatis. Juga berbagai teknologi sebagai pembelajaran",
-      image: "/closedhouse.jpg",
-      tags: ["Ayam", "Modern", "Teknologi"],
-      buttonColor: "green",
-      location: "Teaching Factory",
-      hours: "24 Jam",
-      rating: 4.4,
-    },
-    {
-      id: 16,
       name: "Kantin",
       category: "Kantin Area Kampus",
       description:
