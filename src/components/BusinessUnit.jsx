@@ -15,15 +15,17 @@ import {
   ChevronRight,
   Navigation,
   Award,
-  Zap,
   X,
   ArrowLeft,
+  Package,
+  Zap,
 } from "lucide-react"
 import { useState, useEffect } from "react"
 
 const BusinessUnit = ({ selectedBusinessId, onBack }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [showImageModal, setShowImageModal] = useState(false)
+  const [showAllProductsModal, setShowAllProductsModal] = useState(false)
 
   const businessUnits = [
     {
@@ -35,13 +37,8 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
       detailedDescription:
         "Daily Us hadir sebagai solusi lengkap kebutuhan mahasiswa dengan konsep one-stop shopping. Kami menyediakan lebih dari 500 jenis produk mulai dari makanan, minuman, alat tulis, produk kesehatan, hingga merchandise IPB. Dengan sistem kasir modern dan pembayaran digital, berbelanja menjadi lebih mudah dan cepat.",
       image: "/dailyus.jpeg",
-      logo: "/dailyus-logo.png",
-      gallery: [
-        "/dailyus.jpeg",
-        "/placeholder.svg?height=400&width=600",
-        "/placeholder.svg?height=400&width=600",
-        "/placeholder.svg?height=400&width=600",
-      ],
+      logo: "/logo/Daily Us.png",
+      gallery: ["/dailyus.jpeg"],
       tags: ["Retail", "Produk", "Kopi", "24/7", "Mahasiswa"],
       buttonColor: "purple",
       location: "IPB Dramaga (Samping Pintu Masuk Bara)",
@@ -61,6 +58,7 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
           description: "Kopi arabica pilihan dengan cita rasa yang khas",
           shopLink: "https://shopee.co.id/dailyus-kopi-arabica",
           category: "Minuman",
+          rating: 4.8,
         },
         {
           name: "Roti Tawar Gandum",
@@ -69,6 +67,7 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
           description: "Roti tawar gandum segar tanpa pengawet",
           shopLink: "https://tokopedia.com/dailyus/roti-gandum",
           category: "Makanan",
+          rating: 4.6,
         },
         {
           name: "Alat Tulis Set",
@@ -77,6 +76,7 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
           description: "Set lengkap alat tulis untuk mahasiswa",
           shopLink: "https://shopee.co.id/dailyus-alat-tulis",
           category: "Alat Tulis",
+          rating: 4.7,
         },
         {
           name: "Masker KF94",
@@ -85,6 +85,7 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
           description: "Masker kesehatan standar KF94",
           shopLink: "https://tokopedia.com/dailyus/masker-kf94",
           category: "Kesehatan",
+          rating: 4.9,
         },
         {
           name: "Merchandise IPB",
@@ -93,6 +94,7 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
           description: "Kaos dan merchandise resmi IPB",
           shopLink: "https://shopee.co.id/dailyus-merchandise",
           category: "Merchandise",
+          rating: 4.5,
         },
         {
           name: "Snack Sehat",
@@ -101,6 +103,25 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
           description: "Berbagai pilihan snack sehat dan bergizi",
           shopLink: "https://tokopedia.com/dailyus/snack-sehat",
           category: "Makanan",
+          rating: 4.4,
+        },
+        {
+          name: "Minuman Energi",
+          price: "Rp 18.000",
+          image: "/placeholder.svg?height=200&width=200&text=Minuman+Energi",
+          description: "Minuman energi untuk aktivitas belajar",
+          shopLink: "https://shopee.co.id/dailyus-energi",
+          category: "Minuman",
+          rating: 4.3,
+        },
+        {
+          name: "Tissue & Sanitizer",
+          price: "Rp 22.000",
+          image: "/placeholder.svg?height=200&width=200&text=Tissue+Sanitizer",
+          description: "Paket tissue dan hand sanitizer",
+          shopLink: "https://tokopedia.com/dailyus/tissue-sanitizer",
+          category: "Kesehatan",
+          rating: 4.6,
         },
       ],
       facilities: ["Parkir Motor", "WiFi Gratis", "AC", "CCTV", "Pembayaran Digital"],
@@ -119,7 +140,7 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
       detailedDescription:
         "Botani Mart adalah toko pertanian terlengkap di kawasan kampus yang menyediakan segala kebutuhan pertanian modern. Dari bibit unggul, alat berkebun profesional, pupuk organik, hingga sistem irigasi modern, semua tersedia untuk mendukung praktik pertanian berkelanjutan dan penelitian agrikultur.",
       image: "/placeholder-moj9a.png",
-      logo: "/botanimart-logo.png",
+      logo: "/logo/botani mart.png",
       gallery: ["/botanimart.png", "/placeholder-c6o26.png", "/placeholder-u8xhf.png", "/organic-fertilizer-area.png"],
       tags: ["Pertanian", "Alat", "Modern", "Bibit", "Pupuk"],
       buttonColor: "purple",
@@ -132,8 +153,57 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
       rating: 4.6,
       reviewCount: 1041,
       priceRange: "Rp 5.000 - Rp 500.000",
+      products: [
+        {
+          name: "Bibit Tomat Unggul",
+          price: "Rp 15.000",
+          image: "/placeholder.svg?height=200&width=200&text=Bibit+Tomat",
+          description: "Bibit tomat varietas unggul tahan penyakit",
+          category: "Bibit",
+          rating: 4.8,
+        },
+        {
+          name: "Pupuk Organik Kompos",
+          price: "Rp 25.000",
+          image: "/placeholder.svg?height=200&width=200&text=Pupuk+Kompos",
+          description: "Pupuk organik kompos berkualitas tinggi",
+          category: "Pupuk",
+          rating: 4.7,
+        },
+        {
+          name: "Alat Semprot Tanaman",
+          price: "Rp 85.000",
+          image: "/placeholder.svg?height=200&width=200&text=Alat+Semprot",
+          description: "Sprayer manual untuk perawatan tanaman",
+          category: "Alat",
+          rating: 4.5,
+        },
+        {
+          name: "Benih Sayuran Organik",
+          price: "Rp 12.000",
+          image: "/placeholder.svg?height=200&width=200&text=Benih+Sayuran",
+          description: "Paket benih sayuran organik bersertifikat",
+          category: "Bibit",
+          rating: 4.9,
+        },
+        {
+          name: "Pot Tanaman Plastik",
+          price: "Rp 8.000",
+          image: "/placeholder.svg?height=200&width=200&text=Pot+Plastik",
+          description: "Pot tanaman plastik berbagai ukuran",
+          category: "Alat",
+          rating: 4.3,
+        },
+        {
+          name: "Sistem Irigasi Tetes",
+          price: "Rp 150.000",
+          image: "/placeholder.svg?height=200&width=200&text=Irigasi+Tetes",
+          description: "Sistem irigasi tetes otomatis untuk greenhouse",
+          category: "Sistem",
+          rating: 4.6,
+        },
+      ],
       facilities: ["Konsultasi Gratis", "Delivery Service", "Parkir Luas", "Demo Area", "After Sales Service"],
-      products: ["Bibit Tanaman", "Alat Berkebun", "Pupuk Organik", "Sistem Irigasi", "Pestisida Alami"],
       specialOffers: [
         "Konsultasi gratis untuk mahasiswa",
         "Paket starter berkebun",
@@ -149,7 +219,7 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
       detailedDescription:
         "IPB Merchandise Store adalah toko resmi yang menyediakan berbagai produk merchandise berkualitas tinggi dengan desain eksklusif IPB. Dari apparel casual hingga formal, aksesoris, hingga souvenir unik, semua dibuat dengan standar kualitas tinggi untuk menunjukkan kebanggaan sebagai bagian dari keluarga besar IPB.",
       image: "/generic-merchandise-store.png",
-      logo: "/ipb-merch-logo.png",
+      logo: "/logo/IMS.png",
       gallery: ["/ipbmerch.jpg", "/ipb-apparel.png", "/ipb-accessories.png", "/ipb-souvenirs.png"],
       tags: ["Merchandise", "IPB", "Resmi", "Apparel", "Souvenir"],
       buttonColor: "purple",
@@ -162,8 +232,81 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
       rating: 4.7,
       reviewCount: 567,
       priceRange: "Rp 25.000 - Rp 350.000",
+      products: [
+        {
+          name: "Kaos IPB Official",
+          price: "Rp 85.000",
+          image: "/placeholder.svg?height=200&width=200&text=Kaos+IPB",
+          description: "Kaos resmi IPB dengan logo dan desain eksklusif",
+          shopLink: "https://shopee.co.id/ipbmerch-kaos",
+          category: "Apparel",
+          rating: 4.8,
+        },
+        {
+          name: "Jaket Hoodie IPB",
+          price: "Rp 185.000",
+          image: "/placeholder.svg?height=200&width=200&text=Jaket+Hoodie",
+          description: "Jaket hoodie premium dengan bordir logo IPB",
+          shopLink: "https://shopee.co.id/ipbmerch-hoodie",
+          category: "Apparel",
+          rating: 4.9,
+        },
+        {
+          name: "Topi Baseball IPB",
+          price: "Rp 65.000",
+          image: "/placeholder.svg?height=200&width=200&text=Topi+Baseball",
+          description: "Topi baseball dengan logo IPB yang stylish",
+          shopLink: "https://shopee.co.id/ipbmerch-topi",
+          category: "Aksesoris",
+          rating: 4.6,
+        },
+        {
+          name: "Tas Ransel IPB",
+          price: "Rp 225.000",
+          image: "/placeholder.svg?height=200&width=200&text=Tas+Ransel",
+          description: "Tas ransel berkualitas tinggi dengan logo IPB",
+          shopLink: "https://shopee.co.id/ipbmerch-tas",
+          category: "Tas",
+          rating: 4.7,
+        },
+        {
+          name: "Mug Keramik IPB",
+          price: "Rp 45.000",
+          image: "/placeholder.svg?height=200&width=200&text=Mug+Keramik",
+          description: "Mug keramik dengan desain logo IPB yang elegan",
+          shopLink: "https://shopee.co.id/ipbmerch-mug",
+          category: "Souvenir",
+          rating: 4.5,
+        },
+        {
+          name: "Pin & Badge Set",
+          price: "Rp 35.000",
+          image: "/placeholder.svg?height=200&width=200&text=Pin+Badge",
+          description: "Set pin dan badge koleksi dengan berbagai desain",
+          shopLink: "https://shopee.co.id/ipbmerch-pin",
+          category: "Aksesoris",
+          rating: 4.4,
+        },
+        {
+          name: "Tumbler Stainless IPB",
+          price: "Rp 95.000",
+          image: "/placeholder.svg?height=200&width=200&text=Tumbler+Steel",
+          description: "Tumbler stainless steel dengan logo IPB yang tahan lama",
+          shopLink: "https://shopee.co.id/ipbmerch-tumbler",
+          category: "Souvenir",
+          rating: 4.8,
+        },
+        {
+          name: "Polo Shirt IPB",
+          price: "Rp 125.000",
+          image: "/placeholder.svg?height=200&width=200&text=Polo+Shirt",
+          description: "Polo shirt formal dengan bordir logo IPB",
+          shopLink: "https://shopee.co.id/ipbmerch-polo",
+          category: "Apparel",
+          rating: 4.7,
+        },
+      ],
       facilities: ["Custom Design", "Bulk Order", "Gift Wrapping", "Size Exchange", "Quality Guarantee"],
-      products: ["T-Shirts & Polo", "Jaket & Hoodie", "Topi & Aksesoris", "Tas & Ransel", "Souvenir Unik"],
       specialOffers: ["Alumni discount 15%", "Graduation package", "Custom order untuk organisasi"],
     },
     {
@@ -175,7 +318,7 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
       detailedDescription:
         "BreadCast adalah bakery artisan yang berkomitmen menghadirkan roti dan kue berkualitas tinggi tanpa pengawet buatan. Setiap produk dibuat fresh daily menggunakan bahan-bahan lokal pilihan seperti tepung organik, gula aren, dan rempah nusantara untuk menciptakan cita rasa autentik Indonesia.",
       image: "/breadcast.jpg",
-      logo: "/breadcast-logo.png",
+      logo: "/logo/Breadcast.png",
       gallery: [
         "/breadcast.jpg",
         "/placeholder.svg?height=400&width=600",
@@ -193,8 +336,73 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
       rating: 4.7,
       reviewCount: 634,
       priceRange: "Rp 8.000 - Rp 45.000",
+      products: [
+        {
+          name: "Roti Sourdough",
+          price: "Rp 35.000",
+          image: "/placeholder.svg?height=200&width=200&text=Roti+Sourdough",
+          description: "Roti sourdough artisan dengan fermentasi alami",
+          category: "Roti",
+          rating: 4.9,
+        },
+        {
+          name: "Croissant Butter",
+          price: "Rp 18.000",
+          image: "/placeholder.svg?height=200&width=200&text=Croissant+Butter",
+          description: "Croissant berlapis dengan butter premium",
+          category: "Pastry",
+          rating: 4.8,
+        },
+        {
+          name: "Kue Lapis Legit",
+          price: "Rp 45.000",
+          image: "/placeholder.svg?height=200&width=200&text=Lapis+Legit",
+          description: "Kue lapis legit tradisional dengan rempah pilihan",
+          category: "Kue",
+          rating: 4.7,
+        },
+        {
+          name: "Roti Gandum Sehat",
+          price: "Rp 25.000",
+          image: "/placeholder.svg?height=200&width=200&text=Roti+Gandum",
+          description: "Roti gandum utuh tanpa pengawet buatan",
+          category: "Roti",
+          rating: 4.6,
+        },
+        {
+          name: "Danish Pastry",
+          price: "Rp 22.000",
+          image: "/placeholder.svg?height=200&width=200&text=Danish+Pastry",
+          description: "Danish pastry dengan berbagai topping buah",
+          category: "Pastry",
+          rating: 4.5,
+        },
+        {
+          name: "Cookies Oatmeal",
+          price: "Rp 15.000",
+          image: "/placeholder.svg?height=200&width=200&text=Cookies+Oatmeal",
+          description: "Cookies oatmeal sehat dengan kismis",
+          category: "Cookies",
+          rating: 4.4,
+        },
+        {
+          name: "Baguette Prancis",
+          price: "Rp 28.000",
+          image: "/placeholder.svg?height=200&width=200&text=Baguette+Prancis",
+          description: "Baguette autentik dengan tekstur renyah",
+          category: "Roti",
+          rating: 4.8,
+        },
+        {
+          name: "Muffin Blueberry",
+          price: "Rp 20.000",
+          image: "/placeholder.svg?height=200&width=200&text=Muffin+Blueberry",
+          description: "Muffin lembut dengan blueberry segar",
+          category: "Muffin",
+          rating: 4.6,
+        },
+      ],
       facilities: ["Takeaway", "Pre-order", "Custom Cake", "Catering", "Delivery"],
-      products: ["Artisan Bread", "Local Pastries", "Custom Cakes", "Healthy Snacks", "Traditional Cookies"],
       specialOffers: ["Pre-order discount 10%", "Bulk order special price", "Birthday cake package"],
     },
     {
@@ -205,8 +413,8 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
         "Contemporary coffee house dengan suasana premium yang menyajikan menu lengkap dari makanan berat hingga specialty coffee. Tempat ideal untuk belajar, meeting, atau sekedar bersantai dengan atmosfer yang nyaman dan modern.",
       detailedDescription:
         "Namtiga Coffee House menghadirkan pengalaman kafe premium di lingkungan kampus dengan interior modern dan suasana yang cozy. Kami menyajikan specialty coffee dari biji kopi pilihan nusantara, menu makanan western dan asian fusion, serta berbagai dessert house-made yang lezat.",
-      image: "/namtiga.jpg",
-      logo: "/63coffee-logo.png",
+      image: "/namtiga.png",
+      logo: "/logo/namtiga.png",
       gallery: [
         "/namtiga.jpg",
         "/placeholder.svg?height=400&width=600",
@@ -224,8 +432,73 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
       rating: 4.9,
       reviewCount: 892,
       priceRange: "Rp 15.000 - Rp 85.000",
+      products: [
+        {
+          name: "Espresso Signature",
+          price: "Rp 25.000",
+          image: "/placeholder.svg?height=200&width=200&text=Espresso+Signature",
+          description: "Espresso signature dengan biji kopi pilihan Aceh",
+          category: "Coffee",
+          rating: 4.9,
+        },
+        {
+          name: "Cappuccino Premium",
+          price: "Rp 32.000",
+          image: "/placeholder.svg?height=200&width=200&text=Cappuccino+Premium",
+          description: "Cappuccino dengan foam art dan rasa yang rich",
+          category: "Coffee",
+          rating: 4.8,
+        },
+        {
+          name: "Nasi Goreng Seafood",
+          price: "Rp 45.000",
+          image: "/placeholder.svg?height=200&width=200&text=Nasi+Goreng+Seafood",
+          description: "Nasi goreng seafood dengan udang dan cumi segar",
+          category: "Main Course",
+          rating: 4.7,
+        },
+        {
+          name: "Pasta Carbonara",
+          price: "Rp 42.000",
+          image: "/placeholder.svg?height=200&width=200&text=Pasta+Carbonara",
+          description: "Pasta carbonara creamy dengan bacon crispy",
+          category: "Main Course",
+          rating: 4.6,
+        },
+        {
+          name: "Matcha Latte",
+          price: "Rp 35.000",
+          image: "/placeholder.svg?height=200&width=200&text=Matcha+Latte",
+          description: "Matcha latte premium dengan bubuk matcha Jepang",
+          category: "Non-Coffee",
+          rating: 4.8,
+        },
+        {
+          name: "Cheesecake Oreo",
+          price: "Rp 28.000",
+          image: "/placeholder.svg?height=200&width=200&text=Cheesecake+Oreo",
+          description: "Cheesecake lembut dengan topping oreo crumble",
+          category: "Dessert",
+          rating: 4.7,
+        },
+        {
+          name: "Cold Brew Coffee",
+          price: "Rp 30.000",
+          image: "/placeholder.svg?height=200&width=200&text=Cold+Brew",
+          description: "Cold brew coffee dengan ekstraksi 12 jam",
+          category: "Coffee",
+          rating: 4.8,
+        },
+        {
+          name: "Sandwich Club",
+          price: "Rp 38.000",
+          image: "/placeholder.svg?height=200&width=200&text=Sandwich+Club",
+          description: "Club sandwich dengan ayam, bacon, dan sayuran segar",
+          category: "Light Meal",
+          rating: 4.5,
+        },
+      ],
       facilities: ["WiFi Gratis", "AC", "Outdoor Seating", "Private Room", "Live Music"],
-      products: ["Specialty Coffee", "Western Food", "Asian Fusion", "Desserts", "Healthy Drinks"],
       specialOffers: ["Happy Hour 14:00-17:00", "Student Discount 15%", "Free WiFi unlimited"],
     },
     {
@@ -237,6 +510,7 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
       detailedDescription:
         "Resto Taman Koleksi menghadirkan pengalaman dining yang unik dengan konsep garden restaurant. Berlokasi di area taman yang asri, kami menyajikan menu fusion Indonesia-Western dengan bahan-bahan segar dan berkualitas. Dilengkapi dengan fasilitas meeting room dan layanan catering untuk berbagai acara.",
       image: "/placeholder.svg?height=300&width=400",
+      logo: "/logo/TAKOL.png",
       gallery: [
         "/takol.jpg",
         "/placeholder.svg?height=400&width=600",
@@ -255,8 +529,57 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
       rating: 4.5,
       reviewCount: 445,
       priceRange: "Rp 25.000 - Rp 150.000",
+      products: [
+        {
+          name: "Nasi Gudeg Jogja",
+          price: "Rp 35.000",
+          image: "/placeholder.svg?height=200&width=200&text=Nasi+Gudeg",
+          description: "Nasi gudeg autentik Jogja dengan ayam dan telur",
+          category: "Indonesian",
+          rating: 4.8,
+        },
+        {
+          name: "Grilled Salmon",
+          price: "Rp 85.000",
+          image: "/placeholder.svg?height=200&width=200&text=Grilled+Salmon",
+          description: "Salmon bakar dengan saus lemon butter",
+          category: "Western",
+          rating: 4.7,
+        },
+        {
+          name: "Soto Betawi",
+          price: "Rp 32.000",
+          image: "/placeholder.svg?height=200&width=200&text=Soto+Betawi",
+          description: "Soto Betawi dengan daging sapi dan santan",
+          category: "Indonesian",
+          rating: 4.6,
+        },
+        {
+          name: "Chicken Steak",
+          price: "Rp 45.000",
+          image: "/placeholder.svg?height=200&width=200&text=Chicken+Steak",
+          description: "Chicken steak dengan black pepper sauce",
+          category: "Western",
+          rating: 4.5,
+        },
+        {
+          name: "Es Teh Manis",
+          price: "Rp 8.000",
+          image: "/placeholder.svg?height=200&width=200&text=Es+Teh+Manis",
+          description: "Es teh manis segar dengan gula aren",
+          category: "Minuman",
+          rating: 4.4,
+        },
+        {
+          name: "Fruit Salad",
+          price: "Rp 25.000",
+          image: "/placeholder.svg?height=200&width=200&text=Fruit+Salad",
+          description: "Salad buah segar dengan yogurt dressing",
+          category: "Dessert",
+          rating: 4.6,
+        },
+      ],
       facilities: ["Meeting Room", "VIP Room", "Catering Service", "Garden Setting", "Private Parking"],
-      products: ["Indonesian Cuisine", "Western Food", "Meeting Packages", "Catering Service", "Event Hosting"],
       specialOffers: ["Meeting package discount", "Catering bulk order", "Weekend family package"],
     },
     {
@@ -268,6 +591,7 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
       detailedDescription:
         "Botani Kopi Nusantara menghadirkan cita rasa kopi nusantara yang autentik di jantung kampus IPB. Kami bangga menyajikan kopi dari berbagai daerah di Indonesia dengan teknik brewing yang tepat, dilengkapi dengan pastry dan snack lokal yang menggugah selera.",
       image: "/placeholder.svg?height=300&width=400",
+      logo: "/logo/namtiga-lite.png",
       gallery: [
         "/63lite.jpg",
         "/placeholder.svg?height=400&width=600",
@@ -286,8 +610,57 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
       rating: 4.6,
       reviewCount: 523,
       priceRange: "Rp 12.000 - Rp 45.000",
+      products: [
+        {
+          name: "Kopi Aceh Gayo",
+          price: "Rp 18.000",
+          image: "/placeholder.svg?height=200&width=200&text=Kopi+Aceh+Gayo",
+          description: "Kopi Aceh Gayo dengan aroma dan rasa yang khas",
+          category: "Coffee",
+          rating: 4.8,
+        },
+        {
+          name: "Kopi Toraja",
+          price: "Rp 20.000",
+          image: "/placeholder.svg?height=200&width=200&text=Kopi+Toraja",
+          description: "Kopi Toraja dengan body yang full dan earthy",
+          category: "Coffee",
+          rating: 4.7,
+        },
+        {
+          name: "Pisang Goreng Crispy",
+          price: "Rp 12.000",
+          image: "/placeholder.svg?height=200&width=200&text=Pisang+Goreng",
+          description: "Pisang goreng crispy dengan topping coklat",
+          category: "Snack",
+          rating: 4.6,
+        },
+        {
+          name: "Teh Tarik",
+          price: "Rp 15.000",
+          image: "/placeholder.svg?height=200&width=200&text=Teh+Tarik",
+          description: "Teh tarik Malaysia dengan susu kental manis",
+          category: "Non-Coffee",
+          rating: 4.5,
+        },
+        {
+          name: "Klepon Modern",
+          price: "Rp 10.000",
+          image: "/placeholder.svg?height=200&width=200&text=Klepon+Modern",
+          description: "Klepon dengan isian gula merah dan kelapa parut",
+          category: "Traditional",
+          rating: 4.4,
+        },
+        {
+          name: "Es Kopi Susu",
+          price: "Rp 16.000",
+          image: "/placeholder.svg?height=200&width=200&text=Es+Kopi+Susu",
+          description: "Es kopi susu dengan perpaduan rasa yang sempurna",
+          category: "Coffee",
+          rating: 4.7,
+        },
+      ],
       facilities: ["Study Area", "WiFi", "AC", "Takeaway", "Student Discount"],
-      products: ["Nusantara Coffee", "Local Pastries", "Traditional Snacks", "Non-Coffee Drinks", "Coffee Beans"],
       specialOffers: ["Student discount 20%", "Coffee loyalty card", "Traditional snack combo"],
     },
     {
@@ -299,6 +672,7 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
       detailedDescription:
         "Chef 63 adalah kantin modern yang mengutamakan kualitas makanan dengan harga terjangkau untuk komunitas kampus. Kami menyajikan menu Indonesia dan internasional yang diolah dengan higienis dan bergizi, cocok untuk mahasiswa, dosen, dan staff kampus.",
       image: "/placeholder.svg?height=300&width=400",
+      logo: "/logo/kantong.png",
       gallery: [
         "/kantong.jpg",
         "/placeholder.svg?height=400&width=600",
@@ -317,8 +691,57 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
       rating: 4.4,
       reviewCount: 678,
       priceRange: "Rp 8.000 - Rp 25.000",
+      products: [
+        {
+          name: "Nasi Campur Komplit",
+          price: "Rp 15.000",
+          image: "/placeholder.svg?height=200&width=200&text=Nasi+Campur",
+          description: "Nasi campur dengan lauk lengkap dan sayuran",
+          category: "Main Course",
+          rating: 4.6,
+        },
+        {
+          name: "Mie Ayam Bakso",
+          price: "Rp 12.000",
+          image: "/placeholder.svg?height=200&width=200&text=Mie+Ayam+Bakso",
+          description: "Mie ayam dengan bakso dan pangsit goreng",
+          category: "Main Course",
+          rating: 4.5,
+        },
+        {
+          name: "Gado-gado Jakarta",
+          price: "Rp 10.000",
+          image: "/placeholder.svg?height=200&width=200&text=Gado+Gado",
+          description: "Gado-gado dengan bumbu kacang yang gurih",
+          category: "Traditional",
+          rating: 4.7,
+        },
+        {
+          name: "Soto Ayam Lamongan",
+          price: "Rp 13.000",
+          image: "/placeholder.svg?height=200&width=200&text=Soto+Ayam",
+          description: "Soto ayam Lamongan dengan kuah yang segar",
+          category: "Traditional",
+          rating: 4.4,
+        },
+        {
+          name: "Es Jeruk Peras",
+          price: "Rp 5.000",
+          image: "/placeholder.svg?height=200&width=200&text=Es+Jeruk",
+          description: "Es jeruk peras segar tanpa pengawet",
+          category: "Minuman",
+          rating: 4.3,
+        },
+        {
+          name: "Ayam Geprek",
+          price: "Rp 18.000",
+          image: "/placeholder.svg?height=200&width=200&text=Ayam+Geprek",
+          description: "Ayam geprek dengan sambal level sesuai selera",
+          category: "Main Course",
+          rating: 4.8,
+        },
+      ],
       facilities: ["Dine-in", "Takeaway", "Student Discount", "Clean Kitchen", "Halal Certified"],
-      products: ["Nasi Campur", "Mie Ayam", "Gado-gado", "Soto", "Juice & Minuman"],
       specialOffers: ["Paket hemat mahasiswa", "Diskon pembelian di atas 50rb", "Menu spesial hari Jumat"],
     },
     {
@@ -330,6 +753,7 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
       detailedDescription:
         "Wisma Landhuis adalah akomodasi premium untuk tamu kampus, dosen tamu, dan peserta acara resmi IPB. Dengan arsitektur klasik dan fasilitas modern, wisma ini menyediakan kenyamanan tingkat hotel dengan suasana akademis yang khas.",
       image: "/placeholder.svg?height=300&width=400",
+      logo: "/logo/landlord.png",
       gallery: [
         "/landhuis.png",
         "/placeholder.svg?height=400&width=600",
@@ -349,7 +773,40 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
       reviewCount: 287,
       priceRange: "Rp 200.000 - Rp 500.000/malam",
       facilities: ["Meeting Room", "WiFi", "AC", "Restaurant", "Parking", "24/7 Service"],
-      products: ["Standard Room", "Deluxe Room", "Meeting Package", "Event Hosting", "Catering Service"],
+      products: [
+        {
+          name: "Standard Room",
+          description: "Kamar standar dengan fasilitas lengkap",
+          price: "Rp 250.000",
+          image: "/placeholder.svg?height=200&width=200&text=Standard+Room",
+          category: "Room",
+          rating: 4.2,
+        },
+        {
+          name: "Deluxe Room",
+          description: "Kamar deluxe dengan pemandangan taman",
+          price: "Rp 350.000",
+          image: "/placeholder.svg?height=200&width=200&text=Deluxe+Room",
+          category: "Room",
+          rating: 4.5,
+        },
+        {
+          name: "Meeting Package",
+          description: "Paket meeting untuk 10 orang",
+          price: "Rp 1.500.000",
+          image: "/placeholder.svg?height=200&width=200&text=Meeting+Package",
+          category: "Package",
+          rating: 4.3,
+        },
+        {
+          name: "Event Hosting",
+          description: "Layanan hosting event dengan catering",
+          price: "Rp 5.000.000",
+          image: "/placeholder.svg?height=200&width=200&text=Event+Hosting",
+          category: "Service",
+          rating: 4.4,
+        },
+      ],
       specialOffers: ["Academic rate discount", "Long stay package", "Conference package deal"],
     },
     {
@@ -361,6 +818,7 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
       detailedDescription:
         "Asrama Internasional IPB menyediakan akomodasi berkualitas tinggi dengan standar internasional untuk mahasiswa asing, peneliti, dan tamu kampus. Fasilitas lengkap meliputi kamar ber-AC, WiFi kencang, dapur bersama, ruang belajar, dan area rekreasi untuk mendukung kehidupan akademik yang produktif.",
       image: "/AI.jpg",
+      logo: "/logo/dormitory.png",
       gallery: [
         "/AI.jpg",
         "/placeholder.svg?height=400&width=600",
@@ -380,7 +838,40 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
       reviewCount: 423,
       priceRange: "Rp 150.000 - Rp 400.000/malam",
       facilities: ["AC", "WiFi", "Laundry", "Security 24/7", "Common Kitchen", "Study Room"],
-      products: ["Single Room", "Twin Room", "Family Room", "Long-term Stay", "Short-term Stay"],
+      products: [
+        {
+          name: "Single Room",
+          description: "Kamar single dengan kamar mandi dalam",
+          price: "Rp 200.000",
+          image: "/placeholder.svg?height=200&width=200&text=Single+Room",
+          category: "Room",
+          rating: 4.5,
+        },
+        {
+          name: "Twin Room",
+          description: "Kamar twin untuk dua orang",
+          price: "Rp 300.000",
+          image: "/placeholder.svg?height=200&width=200&text=Twin+Room",
+          category: "Room",
+          rating: 4.6,
+        },
+        {
+          name: "Family Room",
+          description: "Kamar keluarga dengan extra bed",
+          price: "Rp 400.000",
+          image: "/placeholder.svg?height=200&width=200&text=Family+Room",
+          category: "Room",
+          rating: 4.4,
+        },
+        {
+          name: "Long-term Stay",
+          description: "Diskon khusus untuk long-term stay",
+          price: "Hubungi Kami",
+          image: "/placeholder.svg?height=200&width=200&text=Long+Term+Stay",
+          category: "Service",
+          rating: 4.7,
+        },
+      ],
       specialOffers: ["Monthly rate discount", "Student special price", "Group booking discount"],
     },
     {
@@ -392,6 +883,7 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
       detailedDescription:
         "Gedung Alumni IPB adalah venue premium untuk berbagai acara besar seperti seminar internasional, konferensi, wisuda, dan gathering alumni. Dengan fasilitas audio visual terkini dan kapasitas hingga 1000 orang, gedung ini menjadi pilihan utama untuk event berkelas di IPB.",
       image: "/placeholder.svg?height=300&width=400",
+      logo: "/logo/himpunanalumni.png",
       gallery: [
         "/gedungalumni.jpg",
         "/placeholder.svg?height=400&width=600",
@@ -411,7 +903,40 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
       reviewCount: 198,
       priceRange: "Rp 5.000.000 - Rp 25.000.000/event",
       facilities: ["Auditorium 1000 pax", "Audio Visual", "AC", "Parking", "Catering", "Security"],
-      products: ["Main Auditorium", "Meeting Rooms", "Exhibition Hall", "Catering Service", "Event Management"],
+      products: [
+        {
+          name: "Main Auditorium",
+          description: "Auditorium utama dengan kapasitas 1000 orang",
+          price: "Rp 15.000.000",
+          image: "/placeholder.svg?height=200&width=200&text=Main+Auditorium",
+          category: "Venue",
+          rating: 4.6,
+        },
+        {
+          name: "Meeting Rooms",
+          description: "Ruang meeting dengan berbagai ukuran",
+          price: "Rp 2.000.000",
+          image: "/placeholder.svg?height=200&width=200&text=Meeting+Rooms",
+          category: "Venue",
+          rating: 4.5,
+        },
+        {
+          name: "Exhibition Hall",
+          description: "Hall untuk pameran dan acara besar",
+          price: "Rp 10.000.000",
+          image: "/placeholder.svg?height=200&width=200&text=Exhibition+Hall",
+          category: "Venue",
+          rating: 4.4,
+        },
+        {
+          name: "Catering Service",
+          description: "Layanan catering untuk berbagai acara",
+          price: "Hubungi Kami",
+          image: "/placeholder.svg?height=200&width=200&text=Catering+Service",
+          category: "Service",
+          rating: 4.7,
+        },
+      ],
       specialOffers: ["Alumni discount 20%", "Academic event package", "Multi-day event discount"],
     },
     {
@@ -423,6 +948,7 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
       detailedDescription:
         "Daily Wash 63 adalah layanan laundry yang dirancang khusus untuk kebutuhan mahasiswa dengan tarif terjangkau dan kualitas pencucian yang baik. Kami menggunakan deterjen berkualitas dan mesin cuci modern untuk hasil yang bersih dan wangi.",
       image: "/placeholder.svg?height=300&width=400",
+      logo: "/logo/dailywash63.png",
       gallery: [
         "/dailywash.jpg",
         "/placeholder.svg?height=400&width=600",
@@ -448,7 +974,40 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
         "Quality Guarantee",
         "Fragrance Options",
       ],
-      products: ["Cuci Kering", "Cuci Setrika", "Dry Cleaning", "Sepatu & Tas", "Express 3 Jam"],
+      products: [
+        {
+          name: "Cuci Kering",
+          description: "Layanan cuci kering standar",
+          price: "Rp 8.000/kg",
+          image: "/placeholder.svg?height=200&width=200&text=Cuci+Kering",
+          category: "Service",
+          rating: 4.3,
+        },
+        {
+          name: "Cuci Setrika",
+          description: "Layanan cuci dan setrika",
+          price: "Rp 12.000/kg",
+          image: "/placeholder.svg?height=200&width=200&text=Cuci+Setrika",
+          category: "Service",
+          rating: 4.4,
+        },
+        {
+          name: "Dry Cleaning",
+          description: "Layanan dry cleaning untuk pakaian khusus",
+          price: "Rp 25.000/item",
+          image: "/placeholder.svg?height=200&width=200&text=Dry+Cleaning",
+          category: "Service",
+          rating: 4.5,
+        },
+        {
+          name: "Sepatu & Tas",
+          description: "Layanan cuci sepatu dan tas",
+          price: "Rp 15.000/item",
+          image: "/placeholder.svg?height=200&width=200&text=Sepatu+Tas",
+          category: "Service",
+          rating: 4.2,
+        },
+      ],
       specialOffers: ["Paket bulanan mahasiswa", "Diskon member 15%", "Gratis pickup untuk order di atas 10kg"],
     },
     {
@@ -460,6 +1019,7 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
       detailedDescription:
         "CARe Wash 63 menghadirkan layanan cuci kendaraan berkualitas tinggi dengan teknologi modern dan produk ramah lingkungan. Kami melayani cuci motor, mobil, dan layanan detailing dengan tenaga ahli berpengalaman untuk menjaga kendaraan Anda tetap bersih dan terawat.",
       image: "/carewash.jpeg",
+      logo: "/logo/carewash.png",
       gallery: [
         "/carewash.jpeg",
         "/placeholder.svg?height=400&width=600",
@@ -479,7 +1039,40 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
       reviewCount: 389,
       priceRange: "Rp 10.000 - Rp 75.000",
       facilities: ["High Pressure Wash", "Vacuum Cleaner", "Wax Service", "Interior Cleaning", "Waiting Area"],
-      products: ["Motor Wash", "Car Wash", "Detailing", "Wax & Polish", "Interior Cleaning"],
+      products: [
+        {
+          name: "Motor Wash",
+          description: "Cuci motor standar",
+          price: "Rp 10.000",
+          image: "/placeholder.svg?height=200&width=200&text=Motor+Wash",
+          category: "Service",
+          rating: 4.4,
+        },
+        {
+          name: "Car Wash",
+          description: "Cuci mobil standar",
+          price: "Rp 35.000",
+          image: "/placeholder.svg?height=200&width=200&text=Car+Wash",
+          category: "Service",
+          rating: 4.5,
+        },
+        {
+          name: "Detailing",
+          description: "Layanan detailing mobil",
+          price: "Rp 75.000",
+          image: "/placeholder.svg?height=200&width=200&text=Detailing",
+          category: "Service",
+          rating: 4.6,
+        },
+        {
+          name: "Wax & Polish",
+          description: "Layanan wax dan polish mobil",
+          price: "Rp 50.000",
+          image: "/placeholder.svg?height=200&width=200&text=Wax+Polish",
+          category: "Service",
+          rating: 4.3,
+        },
+      ],
       specialOffers: ["Student discount 20%", "Package deals", "Membership program"],
     },
     {
@@ -491,6 +1084,7 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
       detailedDescription:
         "Think Fresh adalah unit agribisnis modern yang menggabungkan teknologi pertanian terdepan dengan praktik berkelanjutan. Kami memproduksi sayuran organik dan non-organik berkualitas tinggi menggunakan sistem hidroponik, greenhouse technology, dan smart farming untuk memastikan kesegaran dan nutrisi optimal.",
       image: "/Thinkfresh.png",
+      logo: "/logo/thinkfresh.png",
       gallery: [
         "/thinkfresh.jpg",
         "/Thinkfresh.png",
@@ -510,7 +1104,40 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
       reviewCount: 756,
       priceRange: "Rp 10.000 - Rp 75.000/kg",
       facilities: ["Greenhouse", "Cold Storage", "Packaging Center", "Quality Control", "Delivery Service"],
-      products: ["Organic Vegetables", "Leafy Greens", "Herbs", "Microgreens", "Seasonal Produce"],
+      products: [
+        {
+          name: "Organic Vegetables",
+          description: "Sayuran organik segar langsung dari kebun",
+          price: "Rp 35.000/kg",
+          image: "/placeholder.svg?height=200&width=200&text=Organic+Vegetables",
+          category: "Vegetables",
+          rating: 4.7,
+        },
+        {
+          name: "Leafy Greens",
+          description: "Berbagai jenis sayuran hijau segar",
+          price: "Rp 25.000/kg",
+          image: "/placeholder.svg?height=200&width=200&text=Leafy+Greens",
+          category: "Vegetables",
+          rating: 4.8,
+        },
+        {
+          name: "Herbs",
+          description: "Berbagai jenis herbs segar",
+          price: "Rp 50.000/kg",
+          image: "/placeholder.svg?height=200&width=200&text=Herbs",
+          category: "Vegetables",
+          rating: 4.6,
+        },
+        {
+          name: "Microgreens",
+          description: "Microgreens segar dan bergizi",
+          price: "Rp 75.000/kg",
+          image: "/placeholder.svg?height=200&width=200&text=Microgreens",
+          category: "Vegetables",
+          rating: 4.9,
+        },
+      ],
       specialOffers: ["Subscription box discount", "Bulk order special price", "Seasonal promotions"],
     },
     {
@@ -540,14 +1167,71 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
       rating: 4.3,
       reviewCount: 1523,
       priceRange: "Rp 5.000 - Rp 20.000",
+      products: [
+        {
+          name: "Nasi Gudeg Yogya",
+          description: "Nasi gudeg Yogya dengan ayam dan telur",
+          price: "Rp 12.000",
+          image: "/placeholder.svg?height=200&width=200&text=Nasi+Gudeg",
+          category: "Traditional",
+          rating: 4.5,
+        },
+        {
+          name: "Bakso Malang",
+          description: "Bakso Malang dengan berbagai isian",
+          price: "Rp 10.000",
+          image: "/placeholder.svg?height=200&width=200&text=Bakso+Malang",
+          category: "Traditional",
+          rating: 4.4,
+        },
+        {
+          name: "Gado-gado Betawi",
+          description: "Gado-gado Betawi dengan bumbu kacang spesial",
+          price: "Rp 8.000",
+          image: "/placeholder.svg?height=200&width=200&text=Gado+Gado+Betawi",
+          category: "Traditional",
+          rating: 4.6,
+        },
+        {
+          name: "Es Campur Jakarta",
+          description: "Es campur Jakarta dengan berbagai topping",
+          price: "Rp 7.000",
+          image: "/placeholder.svg?height=200&width=200&text=Es+Campur",
+          category: "Dessert",
+          rating: 4.3,
+        },
+        {
+          name: "Kerupuk Rambak",
+          description: "Kerupuk rambak crispy dengan sambal kecap",
+          price: "Rp 5.000",
+          image: "/placeholder.svg?height=200&width=200&text=Kerupuk+Rambak",
+          category: "Snack",
+          rating: 4.2,
+        },
+        {
+          name: "Tahu Gejrot",
+          description: "Tahu gejrot dengan kuah asam pedas manis",
+          price: "Rp 6.000",
+          image: "/placeholder.svg?height=200&width=200&text=Tahu+Gejrot",
+          category: "Snack",
+          rating: 4.4,
+        },
+      ],
       facilities: ["Multiple Stalls", "Seating Area", "Clean Water", "Waste Management", "Student Friendly"],
-      products: ["Nasi Gudeg", "Bakso", "Gado-gado", "Es Campur", "Jajanan Tradisional"],
       specialOffers: ["Paket hemat siang", "Diskon akhir hari", "Menu spesial Ramadan"],
     },
   ]
 
   // Find the selected business
   const selectedBusiness = businessUnits.find((business) => business.id === selectedBusinessId)
+
+  const getBusinessType = (businessName) => {
+    if (businessName === "BreadCast") return "whatsapp-ordering"
+    if (businessName === "IPB Merchandise Store") return "shopee-ordering"
+    return "product-display" // All units now show products with images and prices
+  }
+
+  const businessType = getBusinessType(selectedBusiness.name)
 
   const nextImage = () => {
     if (selectedBusiness) {
@@ -619,13 +1303,15 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
             {/* Logo and Title Section */}
             <div className="flex flex-col items-center mb-6">
               {/* Business Logo */}
-              <div className="w-24 h-24 bg-white/95 backdrop-blur-sm rounded-3xl p-4 shadow-2xl border border-white/30 mb-6 group hover:scale-105 transition-transform duration-300">
-                <img
-                  src={selectedBusiness.logo || "/placeholder.svg?height=80&width=80&text=Logo"}
-                  alt={`${selectedBusiness.name} Logo`}
-                  className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
-                />
-              </div>
+              {selectedBusiness.name !== "Kantin Area Kampus" && (
+                <div className="w-24 h-24 bg-white/95 backdrop-blur-sm rounded-3xl p-4 shadow-2xl border border-white/30 mb-6 group hover:scale-105 transition-transform duration-300">
+                  <img
+                    src={selectedBusiness.logo || "/placeholder.svg?height=80&width=80&text=Logo"}
+                    alt={`${selectedBusiness.name} Logo`}
+                    className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
+                  />
+                </div>
+              )}
 
               <h1 className="text-5xl lg:text-6xl font-black mb-4 leading-tight tracking-tight">
                 {selectedBusiness.name}
@@ -668,13 +1354,15 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
                   <div className="flex-1">
                     <div className="flex items-center space-x-4 mb-4">
                       {/* Small Logo in Header */}
-                      <div className="w-12 h-12 bg-gray-50 rounded-2xl p-2 shadow-md border border-gray-100">
-                        <img
-                          src={selectedBusiness.logo || "/placeholder.svg?height=40&width=40&text=Logo"}
-                          alt={`${selectedBusiness.name} Logo`}
-                          className="w-full h-full object-contain"
-                        />
-                      </div>
+                      {selectedBusiness.name !== "Kantin Area Kampus" && (
+                        <div className="w-12 h-12 bg-gray-50 rounded-2xl p-2 shadow-md border border-gray-100">
+                          <img
+                            src={selectedBusiness.logo || "/placeholder.svg?height=40&width=40&text=Logo"}
+                            alt={`${selectedBusiness.name} Logo`}
+                            className="w-full h-full object-contain"
+                          />
+                        </div>
+                      )}
                       <div className="flex items-center space-x-3">
                         <span className="bg-gradient-to-r from-orange-400 to-orange-500 text-white px-4 py-2 rounded-full text-sm font-bold">
                           {selectedBusiness.category}
@@ -736,7 +1424,7 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
                 </div>
               </div>
 
-              {/* Products & Services - New Layout */}
+              {/* Products and Services Section - CHANGE: Updated design for culinary units */}
               <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl p-8 border border-white/50">
                 <h2 className="text-2xl font-black text-gray-800 mb-6 flex items-center space-x-3">
                   <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center">
@@ -745,68 +1433,119 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
                   <span>Produk & Layanan</span>
                 </h2>
 
-                {/* Product Grid */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {selectedBusiness.products.map((product, index) => (
-                    <div
-                      key={index}
-                      className="group bg-gradient-to-br from-gray-50 to-white rounded-2xl p-4 border border-gray-200 hover:border-orange-300 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
-                    >
-                      {/* Product Image */}
-                      <div className="relative mb-4 rounded-xl overflow-hidden bg-gray-100">
-                        <img
-                          src={product.image || "/placeholder.svg?height=150&width=150&text=Product"}
-                          alt={product.name}
-                          className="w-full h-32 object-cover group-hover:scale-105 transition-transform duration-300"
-                        />
-                        {/* Category Badge */}
-                        <div className="absolute top-2 left-2">
-                          <span className="bg-white/90 backdrop-blur-sm text-gray-700 px-2 py-1 rounded-lg text-xs font-semibold shadow-sm">
-                            {product.category}
-                          </span>
-                        </div>
-                      </div>
+                {selectedBusiness.category === "Kuliner & Kafe" ||
+                selectedBusiness.category === "Kantin Area Kampus" ? (
+                  <div>
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                      {selectedBusiness.products?.slice(0, 6).map((product, index) => (
+                        <div
+                          key={index}
+                          className="group bg-gradient-to-br from-gray-50 to-white rounded-2xl p-4 border border-gray-200 hover:border-orange-300 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+                        >
+                          {/* Product Image */}
+                          <div className="relative mb-4 rounded-xl overflow-hidden bg-gray-100">
+                            <img
+                              src={
+                                product.image ||
+                                `/placeholder.svg?height=150&width=150&text=${encodeURIComponent(product.name) || "/placeholder.svg"}`
+                              }
+                              alt={product.name}
+                              className="w-full h-32 object-cover group-hover:scale-105 transition-transform duration-300"
+                            />
+                            {/* Category Badge */}
+                            {product.category && (
+                              <div className="absolute top-2 left-2">
+                                <span className="bg-white/90 backdrop-blur-sm text-gray-700 px-2 py-1 rounded-lg text-xs font-semibold shadow-sm">
+                                  {product.category}
+                                </span>
+                              </div>
+                            )}
+                          </div>
 
-                      {/* Product Info */}
-                      <div className="space-y-3">
-                        <div>
-                          <h4 className="font-bold text-gray-800 text-sm group-hover:text-orange-600 transition-colors duration-300">
-                            {product.name}
-                          </h4>
-                          <p className="text-gray-600 text-xs leading-relaxed mt-1">{product.description}</p>
-                        </div>
+                          {/* Product Info */}
+                          <div className="space-y-3">
+                            <div>
+                              <h4 className="font-bold text-gray-800 text-sm group-hover:text-orange-600 transition-colors duration-300">
+                                {product.name}
+                              </h4>
+                              <p className="text-gray-600 text-xs leading-relaxed mt-1">{product.description}</p>
+                            </div>
 
-                        {/* Price */}
-                        <div className="flex items-center justify-between">
-                          <span className="text-lg font-black text-orange-600">{product.price}</span>
-                          <div className="flex items-center space-x-1 text-yellow-500">
-                            <Star className="w-3 h-3 fill-current" />
-                            <span className="text-xs font-semibold text-gray-600">4.8</span>
+                            {/* Price */}
+                            <div className="flex items-center justify-between">
+                              <span className="text-lg font-black text-orange-600">{product.price}</span>
+                              <div className="flex items-center space-x-1 text-yellow-500">
+                                <Star className="w-3 h-3 fill-current" />
+                                <span className="text-xs font-semibold text-gray-600">4.8</span>
+                              </div>
+                            </div>
+
+                            {/* Order Buttons */}
+                            {selectedBusiness.name === "BreadCast" ? (
+                              <a
+                                href={`https://wa.me/6281377043310?text=Halo, saya ingin memesan ${product.name} seharga ${product.price}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold py-2.5 px-4 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg flex items-center justify-center space-x-2 group/btn text-xs"
+                              >
+                                <span>Pesan via WhatsApp</span>
+                                <ExternalLink className="w-3 h-3 group-hover/btn:scale-110 transition-transform duration-300" />
+                              </a>
+                            ) : selectedBusiness.name === "IPB Merchandise Store" ? (
+                              <a
+                                href="https://shopee.co.id/ipbmerchstore"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-bold py-2.5 px-4 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg flex items-center justify-center space-x-2 group/btn text-xs"
+                              >
+                                <span>Pesan di Shopee</span>
+                                <ExternalLink className="w-3 h-3 group-hover/btn:scale-110 transition-transform duration-300" />
+                              </a>
+                            ) : (
+                              <div className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white font-bold py-2.5 px-4 rounded-xl text-xs text-center">
+                                Tersedia di Lokasi
+                              </div>
+                            )}
                           </div>
                         </div>
-
-                        {/* Shop Button */}
-                        <a
-                          href={product.shopLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-bold py-2.5 px-4 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg flex items-center justify-center space-x-2 group/btn text-xs"
-                        >
-                          <span>Beli Sekarang</span>
-                          <ExternalLink className="w-3 h-3 group-hover/btn:scale-110 transition-transform duration-300" />
-                        </a>
-                      </div>
+                      ))}
                     </div>
-                  ))}
-                </div>
 
-                {/* View All Products Button */}
-                <div className="mt-8 text-center">
-                  <button className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold py-3 px-8 rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center space-x-3 mx-auto group">
-                    <span>Lihat Semua Produk</span>
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-                  </button>
-                </div>
+                    <div className="mt-8 text-center">
+                      <button
+                        onClick={() => setShowAllProductsModal(true)}
+                        className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold py-3 px-8 rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center space-x-3 mx-auto group"
+                      >
+                        <span>Lihat Semua Produk</span>
+                        <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                      </button>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="space-y-6">
+                    <div className="text-center mb-8">
+                      <h3 className="text-xl font-bold text-gray-800 mb-4">Produk & Layanan Kami</h3>
+                    </div>
+                    <div className="grid md:grid-cols-2 gap-6">
+                      {selectedBusiness.products?.map((product, index) => (
+                        <div
+                          key={index}
+                          className="bg-gradient-to-br from-gray-50 to-white p-6 rounded-2xl border border-gray-100 hover:border-gray-200 transition-all duration-300 hover:shadow-md"
+                        >
+                          <div className="flex items-start space-x-4">
+                            <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                              <Package className="w-6 h-6 text-white" />
+                            </div>
+                            <div className="flex-1">
+                              <h4 className="font-bold text-lg text-gray-800 mb-2">{product.name}</h4>
+                              <p className="text-gray-600 leading-relaxed">{product.description}</p>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
 
               {/* Facilities */}
@@ -827,29 +1566,6 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
                         <span className="text-white text-xs font-bold">✓</span>
                       </div>
                       <span className="font-semibold text-gray-700">{facility}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Special Offers */}
-              <div className="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-3xl shadow-xl p-8 border border-orange-200">
-                <h2 className="text-2xl font-black text-gray-800 mb-6 flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-gradient-to-br from-yellow-400 to-orange-400 rounded-xl flex items-center justify-center">
-                    <Star className="w-4 h-4 text-white" />
-                  </div>
-                  <span>Penawaran Khusus</span>
-                </h2>
-                <div className="space-y-4">
-                  {selectedBusiness.specialOffers.map((offer, index) => (
-                    <div
-                      key={index}
-                      className="flex items-center space-x-3 p-4 bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300 group"
-                    >
-                      <div className="w-8 h-8 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                        <span className="text-white text-sm font-bold">%</span>
-                      </div>
-                      <span className="font-semibold text-gray-700">{offer}</span>
                     </div>
                   ))}
                 </div>
@@ -1039,6 +1755,131 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
               <ChevronRight className="w-6 h-6" />
             </button>
           </div>
+        </div>
+      )}
+      {showAllProductsModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-3xl max-w-6xl w-full max-h-[90vh] overflow-y-auto">
+            <div className="sticky top-0 bg-white border-b border-gray-200 p-6 rounded-t-3xl">
+              <div className="flex justify-between items-center">
+                <h3 className="text-2xl font-black text-gray-800">Semua Produk {selectedBusiness.name}</h3>
+                <button
+                  onClick={() => setShowAllProductsModal(false)}
+                  className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+                >
+                  <X className="w-6 h-6" />
+                </button>
+              </div>
+            </div>
+
+            <div className="p-6">
+              {selectedBusiness.category === "Kuliner & Kafe" || selectedBusiness.category === "Kantin Area Kampus" ? (
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {selectedBusiness.products?.map((product, index) => (
+                    <div
+                      key={index}
+                      className="group bg-gradient-to-br from-gray-50 to-white rounded-2xl p-4 border border-gray-200 hover:border-orange-300 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+                    >
+                      {/* Product Image */}
+                      <div className="relative mb-4 rounded-xl overflow-hidden bg-gray-100">
+                        <img
+                          src={
+                            product.image ||
+                            `/placeholder.svg?height=150&width=150&text=${encodeURIComponent(product.name) || "/placeholder.svg"}`
+                          }
+                          alt={product.name}
+                          className="w-full h-32 object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                        {/* Category Badge */}
+                        {product.category && (
+                          <div className="absolute top-2 left-2">
+                            <span className="bg-white/90 backdrop-blur-sm text-gray-700 px-2 py-1 rounded-lg text-xs font-semibold shadow-sm">
+                              {product.category}
+                            </span>
+                          </div>
+                        )}
+                      </div>
+
+                      {/* Product Info */}
+                      <div className="space-y-3">
+                        <div>
+                          <h4 className="font-bold text-gray-800 text-sm group-hover:text-orange-600 transition-colors duration-300">
+                            {product.name}
+                          </h4>
+                          <p className="text-gray-600 text-xs leading-relaxed mt-1">{product.description}</p>
+                        </div>
+
+                        {/* Price */}
+                        <div className="flex items-center justify-between">
+                          <span className="text-lg font-black text-orange-600">{product.price}</span>
+                          <div className="flex items-center space-x-1 text-yellow-500">
+                            <Star className="w-3 h-3 fill-current" />
+                            <span className="text-xs font-semibold text-gray-600">4.8</span>
+                          </div>
+                        </div>
+
+                        {/* Order Buttons */}
+                        {selectedBusiness.name === "BreadCast" ? (
+                          <a
+                            href={`https://wa.me/6281377043310?text=Halo, saya ingin memesan ${product.name} seharga ${product.price}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold py-2.5 px-4 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg flex items-center justify-center space-x-2 group/btn text-xs"
+                          >
+                            <span>Pesan via WhatsApp</span>
+                            <ExternalLink className="w-3 h-3 group-hover/btn:scale-110 transition-transform duration-300" />
+                          </a>
+                        ) : selectedBusiness.name === "IPB Merchandise Store" ? (
+                          <a
+                            href="https://shopee.co.id/ipbmerchstore"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-bold py-2.5 px-4 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg flex items-center justify-center space-x-2 group/btn text-xs"
+                          >
+                            <span>Pesan di Shopee</span>
+                            <ExternalLink className="w-3 h-3 group-hover/btn:scale-110 transition-transform duration-300" />
+                          </a>
+                        ) : (
+                          <div className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white font-bold py-2.5 px-4 rounded-xl text-xs text-center">
+                            Tersedia di Lokasi
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="grid md:grid-cols-2 gap-6">
+                  {selectedBusiness.products?.map((product, index) => (
+                    <div
+                      key={index}
+                      className="bg-gradient-to-br from-gray-50 to-white p-6 rounded-2xl border border-gray-100 hover:border-gray-200 transition-all duration-300 hover:shadow-md"
+                    >
+                      <div className="flex items-start space-x-4">
+                        <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                          <Package className="w-6 h-6 text-white" />
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="font-bold text-lg text-gray-800 mb-2">{product.name}</h4>
+                          <p className="text-gray-600 leading-relaxed">{product.description}</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {selectedBusiness.name !== "Kantin Area Kampus" && selectedBusiness.logo && (
+        <div className="text-center mb-8">
+          <img
+            src={selectedBusiness.logo || "/placeholder.svg"}
+            alt={`${selectedBusiness.name} Logo`}
+            className="h-20 mx-auto"
+          />
         </div>
       )}
     </div>

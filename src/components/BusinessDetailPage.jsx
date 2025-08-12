@@ -48,7 +48,7 @@ const BusinessDetailPage = ({ onBusinessSelect }) => {
     },
     {
       id: 3,
-      name: "Botani Merchandise IPB",
+      name: "IPB Merchandise Store",
       category: "Retail & Produk",
       description:
         "Toko resmi penjualan merchandise IPB seperti jaket, topi, dan kaos dengan berbagai desain menarik dan berkualitas tinggi",
