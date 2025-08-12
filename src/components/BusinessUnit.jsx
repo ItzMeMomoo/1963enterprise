@@ -17,6 +17,7 @@ import {
   Award,
   Zap,
   X,
+  ArrowLeft,
 } from "lucide-react"
 import { useState, useEffect } from "react"
 
@@ -119,12 +120,7 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
         "Botani Mart adalah toko pertanian terlengkap di kawasan kampus yang menyediakan segala kebutuhan pertanian modern. Dari bibit unggul, alat berkebun profesional, pupuk organik, hingga sistem irigasi modern, semua tersedia untuk mendukung praktik pertanian berkelanjutan dan penelitian agrikultur.",
       image: "/placeholder-moj9a.png",
       logo: "/botanimart-logo.png",
-      gallery: [
-        "/botanimart.png",
-        "/placeholder-c6o26.png",
-        "/placeholder-u8xhf.png",
-        "/organic-fertilizer-area.png",
-      ],
+      gallery: ["/botanimart.png", "/placeholder-c6o26.png", "/placeholder-u8xhf.png", "/organic-fertilizer-area.png"],
       tags: ["Pertanian", "Alat", "Modern", "Bibit", "Pupuk"],
       buttonColor: "purple",
       location: "Jl. Raya Dramaga",
@@ -203,12 +199,12 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
     },
     {
       id: 5,
-      name: "The 63 Coffee House",
+      name: "Namtiga Coffee",
       category: "Kuliner & Kafe",
       description:
         "Contemporary coffee house dengan suasana premium yang menyajikan menu lengkap dari makanan berat hingga specialty coffee. Tempat ideal untuk belajar, meeting, atau sekedar bersantai dengan atmosfer yang nyaman dan modern.",
       detailedDescription:
-        "The 63 Coffee House menghadirkan pengalaman kafe premium di lingkungan kampus dengan interior modern dan suasana yang cozy. Kami menyajikan specialty coffee dari biji kopi pilihan nusantara, menu makanan western dan asian fusion, serta berbagai dessert house-made yang lezat.",
+        "Namtiga Coffee House menghadirkan pengalaman kafe premium di lingkungan kampus dengan interior modern dan suasana yang cozy. Kami menyajikan specialty coffee dari biji kopi pilihan nusantara, menu makanan western dan asian fusion, serta berbagai dessert house-made yang lezat.",
       image: "/namtiga.jpg",
       logo: "/63coffee-logo.png",
       gallery: [
@@ -265,7 +261,7 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
     },
     {
       id: 7,
-      name: "Botani Kopi Nusantara",
+      name: "Namtiga Lite",
       category: "Kuliner & Kafe",
       description:
         "Kafe yang menyajikan kopi di tempat Student Service Center dengan berbagai menu kopi, minuman non kopi, dan berbagai pastry dengan cita rasa nusantara yang autentik.",
@@ -646,6 +642,23 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
       {/* Main Content with Better Spacing */}
       <div className="relative -mt-16 z-10">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 pb-16">
+          {/* Back Button - Aesthetic Design */}
+          <div className="mb-8">
+            <button
+              onClick={onBack}
+              className="group inline-flex items-center space-x-3 bg-white/90 backdrop-blur-xl hover:bg-white text-gray-700 hover:text-blue-600 font-bold py-4 px-6 rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl border border-white/50 hover:border-blue-200"
+            >
+              <div className="w-10 h-10 bg-gradient-to-br from-gray-100 to-gray-200 group-hover:from-blue-100 group-hover:to-blue-200 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:scale-110">
+                <ArrowLeft className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
+              </div>
+              <div className="flex flex-col items-start">
+                <span className="text-sm font-semibold">Kembali ke</span>
+                <span className="text-lg font-black leading-tight">Katalog Unit Bisnis</span>
+              </div>
+              <div className="w-2 h-2 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </button>
+          </div>
+
           <div className="grid lg:grid-cols-3 gap-8">
             {/* Left Column - Business Details */}
             <div className="lg:col-span-2 space-y-8">

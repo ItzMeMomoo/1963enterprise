@@ -1,7 +1,7 @@
 "use client"
 
-import { Briefcase, Users, Package, Award, Zap, Target, Heart, Sparkles, TrendingUp, Globe, Shield, Rocket, Play, ArrowRight } from 'lucide-react'
-import { useState, useEffect, useRef, useCallback } from 'react'
+import { Briefcase, Users, Package, Zap, Target, Heart, Sparkles, Globe, Play, ArrowRight } from "lucide-react"
+import { useState, useEffect, useRef, useCallback } from "react"
 
 const AboutSection = () => {
   const [isVisible, setIsVisible] = useState(false)
@@ -20,10 +20,10 @@ const AboutSection = () => {
           animateCounters()
         }
       },
-      { 
+      {
         threshold: 0.2,
-        rootMargin: '50px'
-      }
+        rootMargin: "50px",
+      },
     )
 
     if (sectionRef.current) {
@@ -48,7 +48,7 @@ const AboutSection = () => {
       setCounters({
         units: Math.floor(targets.units * easeOut),
         partners: Math.floor(targets.partners * easeOut),
-        products: Math.floor(targets.products * easeOut)
+        products: Math.floor(targets.products * easeOut),
       })
 
       if (step >= steps) {
@@ -65,32 +65,32 @@ const AboutSection = () => {
       icon: Target,
       title: "Visi Inovatif",
       description: "Mengembangkan ekosistem bisnis kampus yang berkelanjutan",
-      gradient: "from-blue-500 to-cyan-500"
+      gradient: "from-blue-500 to-cyan-500",
     },
     {
       icon: Heart,
-      title: "Nilai Kemanusiaan", 
+      title: "Nilai Kemanusiaan",
       description: "Mengutamakan kesejahteraan komunitas kampus",
-      gradient: "from-pink-500 to-rose-500"
+      gradient: "from-pink-500 to-rose-500",
     },
     {
       icon: Zap,
       title: "Teknologi Terdepan",
       description: "Menerapkan inovasi dalam operasional bisnis",
-      gradient: "from-yellow-500 to-orange-500"
+      gradient: "from-yellow-500 to-orange-500",
     },
     {
       icon: Globe,
       title: "Dampak Global",
       description: "Berkontribusi pada pembangunan berkelanjutan",
-      gradient: "from-green-500 to-emerald-500"
-    }
+      gradient: "from-green-500 to-emerald-500",
+    },
   ]
 
   return (
-    <section 
+    <section
       ref={sectionRef}
-      className="relative bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50 py-20 overflow-hidden" 
+      className="relative bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50 py-20 overflow-hidden"
       id="tentang"
     >
       {/* Enhanced Background Elements */}
@@ -98,7 +98,7 @@ const AboutSection = () => {
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-200/30 to-purple-200/30 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute top-1/2 -left-40 w-60 h-60 bg-gradient-to-br from-orange-200/30 to-pink-200/30 rounded-full blur-2xl animate-pulse delay-1000"></div>
         <div className="absolute bottom-20 right-1/4 w-40 h-40 bg-gradient-to-br from-green-200/30 to-emerald-200/30 rounded-full blur-xl animate-pulse delay-500"></div>
-        
+
         {/* Floating Elements */}
         <div className="absolute top-32 left-1/4 w-4 h-4 bg-blue-400/20 rounded-full animate-bounce"></div>
         <div className="absolute top-48 right-1/3 w-3 h-3 bg-orange-400/20 rounded-full animate-bounce delay-300"></div>
@@ -107,7 +107,9 @@ const AboutSection = () => {
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
         {/* Enhanced Header */}
-        <div className={`text-center mb-20 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        <div
+          className={`text-center mb-20 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+        >
           <div className="inline-flex items-center justify-center mb-8">
             <div className="w-20 h-1 bg-gradient-to-r from-orange-400 to-orange-500 rounded-full shadow-lg"></div>
             <span className="mx-6 text-gray-700 font-black text-xl">Tentang Kami</span>
@@ -123,15 +125,17 @@ const AboutSection = () => {
           </h2>
 
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Wujud baru dari unit-unit bisnis yang tumbuh dan berkembang di lingkungan IPB University, 
-            hadir sebagai representasi modern dari semangat inovasi dan kewirausahaan
+            Wujud baru dari unit-unit bisnis yang tumbuh dan berkembang di lingkungan IPB University, hadir sebagai
+            representasi modern dari semangat inovasi dan kewirausahaan
           </p>
         </div>
 
         {/* Main Hero Section with Images */}
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
           {/* Left Side - Enhanced Visual Section */}
-          <div className={`transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}>
+          <div
+            className={`transition-all duration-700 delay-200 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"}`}
+          >
             <div className="relative">
               {/* Main Image Container with Creative Layout */}
               <div className="relative">
@@ -143,7 +147,7 @@ const AboutSection = () => {
                     className="w-full h-96 object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
-                  
+
                   {/* Overlay Content */}
                   <div className="absolute bottom-6 left-6 right-6">
                     <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 shadow-xl">
@@ -155,11 +159,7 @@ const AboutSection = () => {
 
                 {/* Floating Logo */}
                 <div className="absolute -top-8 -right-8 bg-white rounded-3xl p-6 shadow-2xl transform -rotate-6 hover:rotate-0 transition-transform duration-500 border-4 border-blue-100">
-                  <img
-                    src="/1963enterprise.png"
-                    alt="1963 Enterprise Logo"
-                    className="w-24 h-24 object-contain"
-                  />
+                  <img src="/1963enterprise.png" alt="1963 Enterprise Logo" className="w-24 h-24 object-contain" />
                 </div>
 
                 {/* Floating Stats Cards */}
@@ -180,16 +180,14 @@ const AboutSection = () => {
           </div>
 
           {/* Right Side - Enhanced Content */}
-          <div className={`transition-all duration-700 delay-400 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`}>
+          <div
+            className={`transition-all duration-700 delay-400 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"}`}
+          >
             <div className="space-y-8">
               {/* Logo Integration */}
               <div className="flex items-center space-x-4 mb-8">
                 <div className="w-16 h-16 bg-white rounded-2xl shadow-lg flex items-center justify-center">
-                  <img
-                    src="/1963enterprise.png"
-                    alt="1963 Enterprise"
-                    className="w-12 h-12 object-contain"
-                  />
+                  <img src="/1963enterprise.png" alt="1963 Enterprise" className="w-12 h-12 object-contain" />
                 </div>
                 <div>
                   <h3 className="text-3xl font-black bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
@@ -203,7 +201,7 @@ const AboutSection = () => {
               <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/50 relative overflow-hidden group hover:shadow-2xl transition-all duration-500">
                 {/* Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-purple-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                
+
                 <div className="relative space-y-6">
                   <div className="flex items-center space-x-3 mb-6">
                     <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-xl flex items-center justify-center shadow-lg">
@@ -224,13 +222,21 @@ const AboutSection = () => {
                     </div>
                     <p className="text-gray-700 leading-relaxed font-medium">
                       Melalui 1963 Enterprise, kami mempersembahkan beragam unit bisnis yang bergerak di bidang kuliner,
-                      agribisnis, ritel, hospitality, edukasi, hingga layanan publik dengan semangat 
+                      agribisnis, ritel, hospitality, edukasi, hingga layanan publik dengan semangat
                       <span className="font-bold text-orange-600"> techno-socio-entrepreneurship</span>.
                     </p>
                   </div>
 
                   {/* CTA Button */}
-                  <button className="inline-flex items-center space-x-3 bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-bold py-4 px-6 rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl group/btn">
+                  <button
+                    onClick={() => {
+                      const businessSection = document.getElementById("unit-bisnis")
+                      if (businessSection) {
+                        businessSection.scrollIntoView({ behavior: "smooth", block: "start" })
+                      }
+                    }}
+                    className="inline-flex items-center space-x-3 bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-bold py-4 px-6 rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl group/btn"
+                  >
                     <Play className="w-5 h-5 group-hover/btn:scale-110 transition-transform duration-300" />
                     <span>Jelajahi Unit Bisnis</span>
                     <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform duration-300" />
@@ -242,7 +248,9 @@ const AboutSection = () => {
         </div>
 
         {/* Enhanced Statistics Section */}
-        <div className={`transition-all duration-700 delay-800 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        <div
+          className={`transition-all duration-700 delay-800 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+        >
           <div className="relative bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 rounded-3xl overflow-hidden shadow-2xl">
             {/* Enhanced Background Pattern */}
             <div className="absolute inset-0 opacity-10">
@@ -257,9 +265,7 @@ const AboutSection = () => {
 
             <div className="relative p-12 lg:p-16">
               <div className="text-center mb-12">
-                <h3 className="text-4xl font-black text-white mb-6">
-                  Dampak & Pencapaian
-                </h3>
+                <h3 className="text-4xl font-black text-white mb-6">Dampak & Pencapaian</h3>
                 <p className="text-xl text-blue-200 max-w-3xl mx-auto leading-relaxed">
                   Angka-angka yang menunjukkan komitmen kami dalam memberikan nilai terbaik bagi komunitas kampus
                 </p>

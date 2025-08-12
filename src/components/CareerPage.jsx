@@ -23,7 +23,7 @@ const CareerPage = () => {
     {
       id: 1,
       title: "Barista Senior",
-      company: "The 63 Coffee House",
+      company: "Namtiga Coffee",
       category: "Kuliner & Kafe",
       location: "IPB Dramaga",
       type: "Full Time",

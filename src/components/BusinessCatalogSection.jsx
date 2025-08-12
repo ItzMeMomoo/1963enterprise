@@ -56,7 +56,7 @@ const BusinessCatalogSection = ({ onBusinessSelect }) => {
     },
     {
       id: 5,
-      name: "The 63 Coffee House",
+      name: "Namtiga Coffee",
       category: "Kuliner & Kafe",
       description:
         "Kafe tempat yang menyajikan menu lengkap dari makanan berat seperti nasi-nasi, bakmi, pasta hingga kue dan minuman coffee dan non-coffee",

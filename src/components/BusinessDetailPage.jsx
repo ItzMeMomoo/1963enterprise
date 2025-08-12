@@ -74,7 +74,7 @@ const BusinessDetailPage = ({ onBusinessSelect }) => {
     },
     {
       id: 5,
-      name: "The 63 Coffee House",
+      name: "Namtiga Coffee",
       category: "Kuliner & Kafe",
       description:
         "Kafe tempat yang menyajikan menu lengkap dari makanan berat seperti nasi-nasi, bakmi, pasta hingga kue dan minuman coffee dan non-coffee",
@@ -100,7 +100,7 @@ const BusinessDetailPage = ({ onBusinessSelect }) => {
     },
     {
       id: 7,
-      name: "63 Coffee Lite",
+      name: "Namtiga Lite",
       category: "Kuliner & Kafe",
       description:
         "Kafe yang menyajikan kopi di tempat Student Service Center dengan berbagai menu kopi, minuman non kopi, dan berbagai pastry",
