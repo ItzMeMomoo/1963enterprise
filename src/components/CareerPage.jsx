@@ -30,8 +30,8 @@ const CareerPage = () => {
       salary: "Rp 3.500.000 - Rp 4.500.000",
       experience: "2-3 tahun",
       education: "SMA/SMK",
-      posted: "2024-01-15",
-      deadline: "2024-02-15",
+      posted: "2026-01-15",
+      deadline: "2026-02-15",
       description: "Kami mencari barista berpengalaman yang passionate dengan dunia kopi dan memiliki kemampuan latte art yang baik. Kandidat ideal memiliki pengetahuan mendalam tentang berbagai jenis kopi dan teknik brewing.",
       requirements: [
         "Pengalaman minimal 2 tahun sebagai barista",
@@ -72,8 +72,8 @@ const CareerPage = () => {
       salary: "Rp 3.000.000 - Rp 3.800.000",
       experience: "1-2 tahun",
       education: "SMA/SMK",
-      posted: "2024-01-12",
-      deadline: "2024-02-12",
+      posted: "2026-01-12",
+      deadline: "2026-02-12",
       description: "Bergabunglah dengan tim Daily Us sebagai Sales Associate! Kami mencari individu yang energik dan customer-oriented untuk memberikan pengalaman berbelanja terbaik bagi mahasiswa dan komunitas kampus.",
       requirements: [
         "Pengalaman retail minimal 1 tahun",
@@ -114,8 +114,8 @@ const CareerPage = () => {
       salary: "Rp 4.000.000 - Rp 5.500.000",
       experience: "3-5 tahun",
       education: "D3 Culinary/Setara",
-      posted: "2024-01-10",
-      deadline: "2024-02-10",
+      posted: "2026-01-10",
+      deadline: "2026-02-10",
       description: "Kesempatan emas untuk chef berpengalaman bergabung dengan Resto Taman Koleksi! Kami mencari Chef de Partie yang kreatif dan berpengalaman dalam masakan fusion Indonesia-Western.",
       requirements: [
         "Pengalaman minimal 3 tahun di kitchen profesional",
@@ -156,8 +156,8 @@ const CareerPage = () => {
       salary: "Rp 4.500.000 - Rp 6.000.000",
       experience: "2-4 tahun",
       education: "S1 Marketing/Komunikasi",
-      posted: "2024-01-08",
-      deadline: "2024-02-08",
+      posted: "2026-01-08",
+      deadline: "2026-02-08",
       description: "Botani Mart sedang mencari Marketing Specialist yang kreatif dan berpengalaman dalam digital marketing untuk mengembangkan brand awareness dan meningkatkan penjualan produk pertanian modern.",
       requirements: [
         "S1 Marketing, Komunikasi, atau bidang terkait",
@@ -198,8 +198,8 @@ const CareerPage = () => {
       salary: "Rp 3.800.000 - Rp 4.800.000",
       experience: "2-3 tahun",
       education: "SMA/D3 Perhotelan",
-      posted: "2024-01-05",
-      deadline: "2024-02-05",
+      posted: "2026-01-05",
+      deadline: "2026-02-05",
       description: "Wisma Landhuis mencari Housekeeping Supervisor yang berpengalaman untuk memastikan standar kebersihan dan kenyamanan tamu terjaga dengan baik. Kandidat ideal memiliki pengalaman di industri hospitality.",
       requirements: [
         "Pengalaman minimal 2 tahun di housekeeping hotel/wisma",
@@ -240,8 +240,8 @@ const CareerPage = () => {
       salary: "Rp 4.200.000 - Rp 5.200.000",
       experience: "1-3 tahun",
       education: "D3/S1 Pertanian",
-      posted: "2024-01-03",
-      deadline: "2024-02-03",
+      posted: "2026-01-03",
+      deadline: "2026-02-03",
       description: "Think Fresh sedang mencari Agricultural Technician yang passionate dengan teknologi pertanian modern. Bergabunglah dengan kami untuk mengembangkan sistem pertanian berkelanjutan dan inovatif.",
       requirements: [
         "D3/S1 Pertanian, Agronomi, atau bidang terkait",
@@ -282,8 +282,8 @@ const CareerPage = () => {
       salary: "Rp 3.200.000 - Rp 4.200.000",
       experience: "1-2 tahun",
       education: "SMA/SMK/D3 Culinary",
-      posted: "2024-01-01",
-      deadline: "2024-02-01",
+      posted: "2026-01-01",
+      deadline: "2026-02-01",
       description: "BreadCast mencari Baker yang passionate dengan dunia bakery dan memiliki kemampuan membuat roti artisan berkualitas tinggi. Kami mengutamakan kualitas dan inovasi dalam setiap produk.",
       requirements: [
         "Pengalaman minimal 1 tahun di bakery",
@@ -325,7 +325,7 @@ const CareerPage = () => {
       experience: "3-5 tahun",
       education: "S1 Management/Bisnis",
       posted: "2023-12-28",
-      deadline: "2024-01-28",
+      deadline: "2026-01-28",
       description: "IPB Merchandise Store sedang mencari Store Manager yang berpengalaman untuk memimpin operasional toko dan mengembangkan bisnis merchandise IPB. Kandidat ideal memiliki pengalaman retail management.",
       requirements: [
         "S1 Management, Bisnis, atau bidang terkait",
@@ -367,7 +367,7 @@ const CareerPage = () => {
       experience: "0-1 tahun",
       education: "SMA/SMK",
       posted: "2023-12-25",
-      deadline: "2024-01-25",
+      deadline: "2026-01-25",
       description: "Kantong sedang mencari Cashier part-time yang ramah dan teliti untuk melayani mahasiswa dan komunitas kampus. Posisi ini cocok untuk mahasiswa yang ingin bekerja sambil kuliah.",
       requirements: [
         "Minimal SMA/SMK",
@@ -409,7 +409,7 @@ const CareerPage = () => {
       experience: "1-2 tahun",
       education: "SMA/SMK Teknik",
       posted: "2023-12-20",
-      deadline: "2024-01-20",
+      deadline: "2026-01-20",
       description: "CARe Wash membutuhkan Maintenance Staff yang handal untuk merawat dan memperbaiki peralatan cuci kendaraan. Kandidat ideal memiliki background teknik dan pengalaman maintenance equipment.",
       requirements: [
         "SMA/SMK jurusan Teknik",
@@ -451,7 +451,7 @@ const CareerPage = () => {
       experience: "1-2 tahun",
       education: "D3/S1 Perhotelan/Bahasa",
       posted: "2023-12-15",
-      deadline: "2024-01-15",
+      deadline: "2026-01-15",
       description: "Asrama Internasional IPB mencari Front Office Staff yang dapat berkomunikasi dalam bahasa Inggris untuk melayani mahasiswa internasional dan tamu asing. Pengalaman hospitality menjadi nilai plus.",
       requirements: [
         "D3/S1 Perhotelan, Bahasa Inggris, atau bidang terkait",
@@ -493,7 +493,7 @@ const CareerPage = () => {
       experience: "0-1 tahun",
       education: "SMA/SMK",
       posted: "2023-12-10",
-      deadline: "2024-01-10",
+      deadline: "2026-01-10",
       description: "Daily Wash 63 membutuhkan Laundry Operator yang teliti dan bertanggung jawab untuk menangani proses pencucian pakaian mahasiswa. Training akan diberikan untuk kandidat yang tepat.",
       requirements: [
         "Minimal SMA/SMK",
@@ -535,7 +535,7 @@ const CareerPage = () => {
       experience: "0-1 tahun",
       education: "SMA/SMK",
       posted: "2023-12-05",
-      deadline: "2024-01-05",
+      deadline: "2026-01-05",
       description: "Botani Kopi Nusantara mencari Waiter/Waitress part-time yang energik dan ramah untuk melayani mahasiswa dan dosen. Posisi ini cocok untuk mahasiswa yang ingin pengalaman kerja di F&B.",
       requirements: [
         "Minimal SMA/SMK",
@@ -577,7 +577,7 @@ const CareerPage = () => {
       experience: "2-4 tahun",
       education: "S1 Teknologi Pangan/Pertanian",
       posted: "2023-12-01",
-      deadline: "2024-01-01",
+      deadline: "2026-01-01",
       description: "Think Fresh membutuhkan Quality Control Specialist untuk memastikan kualitas produk sayuran organik dan non-organik sesuai standar. Kandidat ideal memiliki background teknologi pangan atau pertanian.",
       requirements: [
         "S1 Teknologi Pangan, Pertanian, atau bidang terkait",
