@@ -1,6 +1,24 @@
 "use client"
 
-import { Phone, Mail, MapPin, Instagram, Search, X, Building2, Utensils, Home, Car, Leaf, Coffee, ExternalLink, MessageCircle, Globe, Clock, Star, ArrowRight } from 'lucide-react'
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Instagram,
+  Search,
+  X,
+  Building2,
+  Utensils,
+  Home,
+  Car,
+  Leaf,
+  Coffee,
+  ExternalLink,
+  MessageCircle,
+  Clock,
+  Star,
+  ArrowRight,
+} from "lucide-react"
 import { useState, useEffect, useRef } from "react"
 
 const ContactPage = () => {
@@ -31,35 +49,38 @@ const ContactPage = () => {
       units: [
         {
           name: "Botani Mart",
+          logo: "/logo/botani mart.png",
           phone: "+6281280505059",
           email: "botanimart@ipb.ac.id",
           location: "Jl. Raya Dramaga, Kampus IPB",
           instagram: "@botanimartipb",
           hours: "08:00 - 17:00",
           rating: 4.6,
-          description: "Toko pertanian modern dengan berbagai kebutuhan pertanian"
+          description: "Toko pertanian modern dengan berbagai kebutuhan pertanian",
         },
         {
           name: "Daily Us",
+          logo: "/logo/Daily Us.png",
           phone: "+6281234567890",
           email: "dailyus@ipb.ac.id",
           location: "IPB Dramaga (Samping Pintu Masuk Bara)",
           instagram: "@dailyusby63",
           hours: "07:00 - 22:00",
           rating: 4.8,
-          description: "Convenience store untuk kebutuhan sehari-hari mahasiswa"
+          description: "Convenience store untuk kebutuhan sehari-hari mahasiswa",
         },
         {
           name: "IPB Merchandise Store",
+          logo: "/logo/IMS.png",
           phone: "+6281388489123",
           email: "merchandise@ipb.ac.id",
           location: "IPB Dramaga (Belakang GWW)",
           instagram: "@ipbmerch.1963",
           hours: "08:00 - 17:00",
           rating: 4.7,
-          description: "Toko resmi merchandise IPB dengan desain eksklusif"
-        }
-      ]
+          description: "Toko resmi merchandise IPB dengan desain eksklusif",
+        },
+      ],
     },
     {
       category: "Kuliner & Kafe",
@@ -71,55 +92,60 @@ const ContactPage = () => {
       units: [
         {
           name: "BreadCast",
+          logo: "/logo/Breadcast.png",
           phone: "+6281377043310",
           email: "breadcast@ipb.ac.id",
           location: "IPB Dramaga (Depan LSI IPB dan Perpus IPB)",
           instagram: "@breadcast.bakery",
           hours: "06:00 - 20:00",
           rating: 4.7,
-          description: "Bakery dengan roti segar dan kue lokal tanpa pengawet"
+          description: "Bakery dengan roti segar dan kue lokal tanpa pengawet",
         },
         {
           name: "The 63 Coffee House",
+          logo: "/logo/namtiga.png",
           phone: "+6281378404742",
           email: "coffee63@ipb.ac.id",
           location: "IPB Dramaga (Jalan Baru)",
           instagram: "@namtigacoffee",
           hours: "08:00 - 21:00",
           rating: 4.9,
-          description: "Coffee house premium dengan menu lengkap dan suasana nyaman"
+          description: "Coffee house premium dengan menu lengkap dan suasana nyaman",
         },
         {
           name: "Resto Taman Koleksi",
+          logo: "/logo/TAKOL.png",
           phone: "+6281361403322",
           email: "tamankoleksi@ipb.ac.id",
           location: "Jln. Padjajaran (IPB Baranangsiang)",
           instagram: "@takolipb",
           hours: "10:00 - 22:00",
           rating: 4.5,
-          description: "Restoran dengan layanan meeting room dan catering"
+          description: "Restoran dengan layanan meeting room dan catering",
         },
         {
-          name: "Botani Kopi Nusantara",
+          name: "Namtiga Coffee Lite",
+          logo: "/logo/namtiga-lite.png",
           phone: "+6281359338754",
           email: "botanikopi@ipb.ac.id",
           location: "IPB Dramaga (Gedung Andi Hakim Nasution)",
           instagram: "@botanikopiinusantara",
           hours: "07:00 - 21:00",
           rating: 4.6,
-          description: "Kopi nusantara dengan berbagai varian dan pastry"
+          description: "Kopi nusantara dengan berbagai varian dan pastry",
         },
         {
-          name: "Chef 63",
+          name: "Kantong",
+          logo: "/logo/kantong.png",
           phone: "+6281234567891",
           email: "chef63@ipb.ac.id",
           location: "IPB Dramaga (Sekitar Asrama Pusat IPB)",
           instagram: "@kantongbychef63",
           hours: "06:00 - 20:00",
           rating: 4.4,
-          description: "Kantin dengan makanan terjangkau dan cita rasa berkesan"
-        }
-      ]
+          description: "Kantin dengan makanan terjangkau dan cita rasa berkesan",
+        },
+      ],
     },
     {
       category: "Layanan Harian & Kebersihan",
@@ -131,25 +157,27 @@ const ContactPage = () => {
       units: [
         {
           name: "CARe Wash",
+          logo: "/logo/carewash.png",
           phone: "+6281234567892",
           email: "carewash@ipb.ac.id",
           location: "IPB Dramaga",
           instagram: "@carewash63",
           hours: "08:00 - 17:00",
           rating: 4.5,
-          description: "Layanan cuci kendaraan dengan sistem modern"
+          description: "Layanan cuci kendaraan dengan sistem modern",
         },
         {
           name: "Daily Wash 63",
+          logo: "/logo/dailywash63.png",
           phone: "+6281234567893",
           email: "dailywash@ipb.ac.id",
           location: "IPB Dramaga",
           instagram: "@dailywash63",
           hours: "07:00 - 21:00",
           rating: 4.2,
-          description: "Laundry harian dengan tarif mahasiswa"
-        }
-      ]
+          description: "Laundry harian dengan tarif mahasiswa",
+        },
+      ],
     },
     {
       category: "Agribisnis & Teaching Factory",
@@ -161,25 +189,16 @@ const ContactPage = () => {
       units: [
         {
           name: "Think Fresh",
+          logo: "/logo/thinkfresh.png",
           phone: "+6281566783767",
           email: "thinkfresh@ipb.ac.id",
           location: "Agribusiness and Technology Park IPB",
           instagram: "@thinkfreshpb",
           hours: "08:00 - 17:00",
           rating: 4.8,
-          description: "Sayuran organik dan non-organik segar dari kebun"
+          description: "Sayuran organik dan non-organik segar dari kebun",
         },
-        {
-          name: "Closed House System IPB",
-          phone: "+6281234567894",
-          email: "closedhouse@ipb.ac.id",
-          location: "IPB Dramaga",
-          instagram: "@closedhouse_ipb",
-          hours: "24 Jam",
-          rating: 4.4,
-          description: "Pemeliharaan ayam modern dengan teknologi otomatis"
-        }
-      ]
+      ],
     },
     {
       category: "Akomodasi & Penginapan",
@@ -191,36 +210,39 @@ const ContactPage = () => {
       units: [
         {
           name: "Gedung Alumni IPB",
+          logo: "/logo/himpunanalumni.png",
           phone: "081164048",
           email: "alumni@ipb.ac.id",
           location: "Jl. Raya Padjajaran",
           instagram: "@alumni_ipb",
           hours: "08:00 - 22:00",
           rating: 4.5,
-          description: "Gedung serbaguna untuk acara dan gathering"
+          description: "Gedung serbaguna untuk acara dan gathering",
         },
         {
           name: "Asrama Internasional",
+          logo: "/logo/dormitory.png",
           phone: "+6281312381377",
           email: "asrama@ipb.ac.id",
           location: "IPB Dramaga (Jalan Tanjung)",
           instagram: "@penginapan_ipb",
           hours: "24 Jam",
           rating: 4.6,
-          description: "Penginapan untuk mahasiswa asing dan tamu kampus"
+          description: "Penginapan untuk mahasiswa asing dan tamu kampus",
         },
         {
           name: "Wisma Landhuis",
+          logo: "/logo/landlord.png",
           phone: "+6281312381377",
           email: "landhuis@ipb.ac.id",
           location: "IPB Dramaga (Jalan Tanjung)",
           instagram: "@penginapan_ipb",
           hours: "24 Jam",
           rating: 4.3,
-          description: "Wisma dengan fasilitas lengkap dan ruang rapat"
-        }
-      ]
-    }
+          description: "Wisma dengan fasilitas lengkap dan ruang rapat",
+        },
+      ],
+    },
   ]
 
   // Search functionality
@@ -228,23 +250,27 @@ const ContactPage = () => {
     if (!query.trim()) return contactData
 
     const searchTerm = query.toLowerCase().trim()
-    return contactData.map(category => ({
-      ...category,
-      units: category.units.filter(unit =>
-        unit.name.toLowerCase().includes(searchTerm) ||
-        unit.location.toLowerCase().includes(searchTerm) ||
-        unit.instagram.toLowerCase().includes(searchTerm) ||
-        unit.description.toLowerCase().includes(searchTerm)
-      )
-    })).filter(category => category.units.length > 0)
+    return contactData
+      .map((category) => ({
+        ...category,
+        units: category.units.filter(
+          (unit) =>
+            unit.name.toLowerCase().includes(searchTerm) ||
+            unit.location.toLowerCase().includes(searchTerm) ||
+            unit.instagram.toLowerCase().includes(searchTerm) ||
+            unit.description.toLowerCase().includes(searchTerm),
+        ),
+      }))
+      .filter((category) => category.units.length > 0)
   }
 
   // Filter by category
-  const filteredData = activeCategory === "Semua" 
-    ? searchUnits(searchQuery)
-    : searchUnits(searchQuery).filter(category => 
-        category.category.toLowerCase().includes(activeCategory.toLowerCase())
-      )
+  const filteredData =
+    activeCategory === "Semua"
+      ? searchUnits(searchQuery)
+      : searchUnits(searchQuery).filter((category) =>
+          category.category.toLowerCase().includes(activeCategory.toLowerCase()),
+        )
 
   const clearSearch = () => {
     setSearchQuery("")
@@ -282,7 +308,7 @@ const ContactPage = () => {
         {/* Animated Background */}
         <div className="absolute inset-0">
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800"></div>
-          
+
           {/* Animated Floating Shapes */}
           <div className="absolute top-20 left-10 w-32 h-32 bg-white/10 rounded-full blur-xl animate-float"></div>
           <div className="absolute top-40 right-20 w-24 h-24 bg-white/10 rounded-full blur-lg animate-bounce"></div>
@@ -321,7 +347,7 @@ const ContactPage = () => {
           {/* Enhanced Title Section */}
           <div className="mb-16">
             <div className="inline-flex items-center justify-center w-20 h-1.5 bg-gradient-to-r from-yellow-300 to-orange-300 rounded-full mb-8 shadow-lg"></div>
-            
+
             <h1 className="text-6xl lg:text-7xl font-black text-white mb-8 leading-tight tracking-tight">
               Kontak{" "}
               <span className="bg-gradient-to-r from-yellow-300 via-orange-300 to-yellow-400 bg-clip-text text-transparent">
@@ -405,11 +431,11 @@ const ContactPage = () => {
                       >
                         <IconComponent className="w-4 h-4" />
                         <span>{category.name}</span>
-                        <span className={`text-xs px-2 py-1 rounded-full ${
-                          activeCategory === category.name 
-                            ? "bg-white/20 text-white" 
-                            : "bg-gray-100 text-gray-500"
-                        }`}>
+                        <span
+                          className={`text-xs px-2 py-1 rounded-full ${
+                            activeCategory === category.name ? "bg-white/20 text-white" : "bg-gray-100 text-gray-500"
+                          }`}
+                        >
                           {category.count}
                         </span>
                       </button>
@@ -425,8 +451,8 @@ const ContactPage = () => {
                 <div className="flex items-center gap-3">
                   <div className="w-3 h-3 bg-gradient-to-r from-blue-400 to-blue-500 rounded-full shadow-sm"></div>
                   <p className="text-gray-600 font-semibold">
-                    Menampilkan <span className="text-blue-600 font-bold">{getTotalUnits()}</span> hasil untuk "{searchQuery}"
-                    {activeCategory !== "Semua" && ` dalam kategori "${activeCategory}"`}
+                    Menampilkan <span className="text-blue-600 font-bold">{getTotalUnits()}</span> hasil untuk "
+                    {searchQuery}"{activeCategory !== "Semua" && ` dalam kategori "${activeCategory}"`}
                   </p>
                 </div>
               </div>
@@ -449,12 +475,12 @@ const ContactPage = () => {
                 {/* Enhanced Category Header */}
                 <div className={`bg-gradient-to-r ${category.gradient} p-8 text-white relative overflow-hidden`}>
                   <div className="absolute inset-0 bg-black/10"></div>
-                  
+
                   {/* Floating Elements */}
                   <div className="absolute top-4 right-4 w-12 h-12 bg-white/10 rounded-full animate-pulse"></div>
                   <div className="absolute bottom-4 right-8 w-6 h-6 bg-white/10 rounded-full animate-bounce"></div>
                   <div className="absolute top-1/2 right-1/4 w-4 h-4 bg-white/10 rounded-full animate-ping"></div>
-                  
+
                   <div className="relative flex items-center justify-between">
                     <div className="flex items-center space-x-6">
                       <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-3xl flex items-center justify-center shadow-2xl border border-white/30">
@@ -475,15 +501,31 @@ const ContactPage = () => {
                       <div
                         key={unit.name}
                         className={`bg-white/95 backdrop-blur-sm rounded-3xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 border border-white/50 group ${category.shadowColor} hover:${category.shadowColor}/50`}
-                        style={{ animationDelay: `${(categoryIndex * 0.1) + (unitIndex * 0.05)}s` }}
+                        style={{ animationDelay: `${categoryIndex * 0.1 + unitIndex * 0.05}s` }}
                         onMouseEnter={() => setHoveredCard(`${category.category}-${unitIndex}`)}
                         onMouseLeave={() => setHoveredCard(null)}
                       >
                         {/* Unit Header */}
                         <div className="text-center mb-6">
-                          <h3 className="text-xl font-black text-gray-800 mb-2 group-hover:text-blue-600 transition-colors duration-300">{unit.name}</h3>
+                          <div className="flex justify-center mb-4">
+                            <div className="w-16 h-16 bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl flex items-center justify-center shadow-lg border-2 border-white group-hover:scale-110 transition-transform duration-300 overflow-hidden">
+                              <img
+                                src={unit.logo || "/placeholder.svg"}
+                                alt={`Logo ${unit.name}`}
+                                className="w-12 h-12 object-contain"
+                                onError={(e) => {
+                                  // Fallback to placeholder if logo not found
+                                  e.target.src = `/placeholder.svg?height=48&width=48&text=${encodeURIComponent(unit.name + " Logo")}`
+                                }}
+                              />
+                            </div>
+                          </div>
+
+                          <h3 className="text-xl font-black text-gray-800 mb-2 group-hover:text-blue-600 transition-colors duration-300">
+                            {unit.name}
+                          </h3>
                           <p className="text-gray-600 text-sm leading-relaxed mb-3">{unit.description}</p>
-                          
+
                           {/* Rating and Hours */}
                           <div className="flex items-center justify-center space-x-4 mb-4">
                             <div className="flex items-center space-x-1">
@@ -497,7 +539,7 @@ const ContactPage = () => {
                             </div>
                           </div>
                         </div>
-                        
+
                         <div className="space-y-4">
                           {/* Enhanced Phone */}
                           <div className="flex items-center space-x-3 p-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl border border-green-100 hover:border-green-200 transition-all duration-300 group/phone">
@@ -506,7 +548,7 @@ const ContactPage = () => {
                             </div>
                             <div className="flex-1 min-w-0">
                               <p className="text-xs font-bold text-green-700 mb-1">Telepon</p>
-                              <a 
+                              <a
                                 href={`tel:${unit.phone}`}
                                 className="text-sm font-bold text-gray-800 hover:text-green-600 transition-colors duration-300 flex items-center space-x-1 group/link"
                               >
@@ -525,7 +567,7 @@ const ContactPage = () => {
                             </div>
                             <div className="flex-1 min-w-0">
                               <p className="text-xs font-bold text-blue-700 mb-1">Email</p>
-                              <a 
+                              <a
                                 href={`mailto:${unit.email}`}
                                 className="text-sm font-bold text-gray-800 hover:text-blue-600 transition-colors duration-300 flex items-center space-x-1 group/link"
                               >
@@ -544,9 +586,7 @@ const ContactPage = () => {
                             </div>
                             <div className="flex-1 min-w-0">
                               <p className="text-xs font-bold text-orange-700 mb-1">Lokasi</p>
-                              <p className="text-sm font-bold text-gray-800 leading-tight">
-                                {unit.location}
-                              </p>
+                              <p className="text-sm font-bold text-gray-800 leading-tight">{unit.location}</p>
                             </div>
                           </div>
 
@@ -557,8 +597,8 @@ const ContactPage = () => {
                             </div>
                             <div className="flex-1 min-w-0">
                               <p className="text-xs font-bold text-pink-700 mb-1">Instagram</p>
-                              <a 
-                                href={`https://instagram.com/${unit.instagram?.replace('@', '')}`}
+                              <a
+                                href={`https://instagram.com/${unit.instagram?.replace("@", "")}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="text-sm font-bold text-gray-800 hover:text-pink-600 transition-colors duration-300 flex items-center space-x-1 group/link"
@@ -574,7 +614,7 @@ const ContactPage = () => {
                           {/* WhatsApp Button */}
                           {unit.phone && unit.phone !== "-" && (
                             <a
-                              href={`https://wa.me/${unit.phone.replace(/[^0-9]/g, '')}`}
+                              href={`https://wa.me/${unit.phone.replace(/[^0-9]/g, "")}`}
                               target="_blank"
                               rel="noopener noreferrer"
                               className="w-full bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white font-bold py-3 px-4 rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center space-x-3 group/whatsapp"
@@ -633,7 +673,8 @@ const ContactPage = () => {
             <h2 className="text-5xl font-black text-white mb-6">Kantor Pusat</h2>
             <h3 className="text-3xl font-bold text-blue-200 mb-8">Badan Investasi dan Bisnis IPB</h3>
             <p className="text-blue-100 text-xl max-w-4xl mx-auto leading-relaxed">
-              Pusat koordinasi dan informasi untuk semua unit bisnis 1963 Enterprise dengan layanan terpadu dan profesional
+              Pusat koordinasi dan informasi untuk semua unit bisnis 1963 Enterprise dengan layanan terpadu dan
+              profesional
             </p>
           </div>
 
@@ -644,7 +685,7 @@ const ContactPage = () => {
                 <Phone className="w-10 h-10 text-white" />
               </div>
               <h4 className="text-2xl font-bold text-white mb-4">Telepon Utama</h4>
-              <a 
+              <a
                 href="tel:+6225186226420"
                 className="text-blue-200 text-xl font-semibold hover:text-white transition-colors duration-300 flex items-center justify-center space-x-2 group/link"
               >
@@ -659,7 +700,7 @@ const ContactPage = () => {
                 <Mail className="w-10 h-10 text-white" />
               </div>
               <h4 className="text-2xl font-bold text-white mb-4">Email Resmi</h4>
-              <a 
+              <a
                 href="mailto:bisnis@apps.ipb.ac.id"
                 className="text-blue-200 text-xl font-semibold hover:text-white transition-colors duration-300 flex items-center justify-center space-x-2 group/link"
               >
@@ -675,8 +716,10 @@ const ContactPage = () => {
               </div>
               <h4 className="text-2xl font-bold text-white mb-4">Alamat Kantor</h4>
               <p className="text-blue-200 text-xl font-semibold leading-relaxed">
-                Jl. Raya Dramaga Kampus IPB<br />
-                Dramaga Bogor 16680<br />
+                Jl. Raya Dramaga Kampus IPB
+                <br />
+                Dramaga Bogor 16680
+                <br />
                 West Java, Indonesia
               </p>
             </div>
