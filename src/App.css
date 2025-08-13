@@ -209,12 +209,27 @@ body {
   }
 }
 
+/* Added slow spin animation for hero logo ring */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .animate-float {
   animation: float 3s ease-in-out infinite;
 }
 
 .animate-glow {
   animation: glow 2s ease-in-out infinite;
+}
+
+/* Added slow spin utility class */
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
 }
 
 /* Custom Scrollbar */
