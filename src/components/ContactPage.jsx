@@ -26,6 +26,7 @@ const ContactPage = () => {
   const [activeCategory, setActiveCategory] = useState("Semua")
   const [showSuggestions, setShowSuggestions] = useState(false)
   const [hoveredCard, setHoveredCard] = useState(null)
+  const [selectedLocations, setSelectedLocations] = useState({})
   const searchRef = useRef(null)
 
   const categories = [
@@ -61,22 +62,48 @@ const ContactPage = () => {
         {
           name: "Daily Us",
           logo: "/logo/Daily Us.png",
-          phone: "+6281234567890",
-          email: "dailyus@ipb.ac.id",
-          location: "IPB Dramaga (Samping Pintu Masuk Bara)",
-          instagram: "@dailyusby63",
-          hours: "07:00 - 22:00",
+          locations: [
+            {
+              name: "Samping Bara",
+              phone: "+6281234567890",
+              email: "dailyus@ipb.ac.id",
+              location: "IPB Dramaga - Samping Pintu Masuk Bara",
+              instagram: "@dailyusby63",
+              hours: "07:00 - 22:00",
+            },
+            {
+              name: "Asrama Putri",
+              phone: "+6281234567891",
+              email: "dailyus@ipb.ac.id",
+              location: "Dekat Asrama Putri IPB",
+              instagram: "@dailyusby63",
+              hours: "08:00 - 21:00",
+            },
+          ],
           rating: 4.8,
           description: "Convenience store untuk kebutuhan sehari-hari mahasiswa",
         },
         {
           name: "IPB Merchandise Store",
           logo: "/logo/IMS.png",
-          phone: "+6281388489123",
-          email: "merchandise@ipb.ac.id",
-          location: "IPB Dramaga (Belakang GWW)",
-          instagram: "@ipbmerch.1963",
-          hours: "08:00 - 17:00",
+          locations: [
+            {
+              name: "Pintu ke Bara",
+              phone: "+6281388489123",
+              email: "merchandise@ipb.ac.id",
+              location: "Samping Pintu Masuk Bara",
+              instagram: "@ipbmerch.1963",
+              hours: "08:00 - 17:00",
+            },
+            {
+              name: "Perpustakaan IPB",
+              phone: "+6281388489124",
+              email: "merchandise@ipb.ac.id",
+              location: "LSI IPB - Perpustakaan",
+              instagram: "@ipbmerch.1963",
+              hours: "08:00 - 16:00",
+            },
+          ],
           rating: 4.7,
           description: "Toko resmi merchandise IPB dengan desain eksklusif",
         },
@@ -92,17 +119,30 @@ const ContactPage = () => {
       units: [
         {
           name: "BreadCast",
-          logo: "/logo/Breadcast.png",
-          phone: "+6281377043310",
-          email: "breadcast@ipb.ac.id",
-          location: "IPB Dramaga (Depan LSI IPB dan Perpus IPB)",
-          instagram: "@breadcast.bakery",
-          hours: "06:00 - 20:00",
+          logo: "/logo/breadcast.png",
+          locations: [
+            {
+              name: "Seberang LSI",
+              phone: "+6281377043310",
+              email: "breadcast@ipb.ac.id",
+              location: "Depan Perpustakaan IPB",
+              instagram: "@breadcast.bakery",
+              hours: "06:00 - 20:00",
+            },
+            {
+              name: "Cibinong",
+              phone: "+6281377043310",
+              email: "breadcast@ipb.ac.id",
+              location: "LSI IPB",
+              instagram: "@breadcast.bakery",
+              hours: "06:00 - 20:00",
+            },
+          ],
           rating: 4.7,
           description: "Bakery dengan roti segar dan kue lokal tanpa pengawet",
         },
         {
-          name: "The 63 Coffee House",
+          name: "Namtiga Coffee",
           logo: "/logo/namtiga.png",
           phone: "+6281378404742",
           email: "coffee63@ipb.ac.id",
@@ -135,7 +175,7 @@ const ContactPage = () => {
           description: "Kopi nusantara dengan berbagai varian dan pastry",
         },
         {
-          name: "Kantong",
+          name: "Kantong by Chef 63",
           logo: "/logo/kantong.png",
           phone: "+6281234567891",
           email: "chef63@ipb.ac.id",
@@ -245,6 +285,21 @@ const ContactPage = () => {
     },
   ]
 
+  const handleLocationSelect = (unitName, locationName) => {
+    setSelectedLocations((prev) => ({
+      ...prev,
+      [unitName]: locationName,
+    }))
+  }
+
+  const getCurrentLocationData = (unit) => {
+    if (unit.locations) {
+      const selectedLocation = selectedLocations[unit.name] || unit.locations[0].name
+      return unit.locations.find((loc) => loc.name === selectedLocation) || unit.locations[0]
+    }
+    return unit
+  }
+
   // Search functionality
   const searchUnits = (query) => {
     if (!query.trim()) return contactData
@@ -256,9 +311,14 @@ const ContactPage = () => {
         units: category.units.filter(
           (unit) =>
             unit.name.toLowerCase().includes(searchTerm) ||
-            unit.location.toLowerCase().includes(searchTerm) ||
-            unit.instagram.toLowerCase().includes(searchTerm) ||
-            unit.description.toLowerCase().includes(searchTerm),
+            (unit.location && unit.location.toLowerCase().includes(searchTerm)) ||
+            (unit.instagram && unit.instagram.toLowerCase().includes(searchTerm)) ||
+            unit.description.toLowerCase().includes(searchTerm) ||
+            (unit.locations &&
+              unit.locations.some(
+                (loc) =>
+                  loc.location.toLowerCase().includes(searchTerm) || loc.instagram.toLowerCase().includes(searchTerm),
+              )),
         ),
       }))
       .filter((category) => category.units.length > 0)
@@ -497,136 +557,171 @@ const ContactPage = () => {
                 {/* Enhanced Units Grid */}
                 <div className={`bg-gradient-to-br ${category.bgGradient} p-8`}>
                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {category.units.map((unit, unitIndex) => (
-                      <div
-                        key={unit.name}
-                        className={`bg-white/95 backdrop-blur-sm rounded-3xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 border border-white/50 group ${category.shadowColor} hover:${category.shadowColor}/50`}
-                        style={{ animationDelay: `${categoryIndex * 0.1 + unitIndex * 0.05}s` }}
-                        onMouseEnter={() => setHoveredCard(`${category.category}-${unitIndex}`)}
-                        onMouseLeave={() => setHoveredCard(null)}
-                      >
-                        {/* Unit Header */}
-                        <div className="text-center mb-6">
-                          <div className="flex justify-center mb-4">
-                            <div className="w-16 h-16 bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl flex items-center justify-center shadow-lg border-2 border-white group-hover:scale-110 transition-transform duration-300 overflow-hidden">
-                              <img
-                                src={unit.logo || "/placeholder.svg"}
-                                alt={`Logo ${unit.name}`}
-                                className="w-12 h-12 object-contain"
-                                onError={(e) => {
-                                  // Fallback to placeholder if logo not found
-                                  e.target.src = `/placeholder.svg?height=48&width=48&text=${encodeURIComponent(unit.name + " Logo")}`
-                                }}
-                              />
+                    {category.units.map((unit, unitIndex) => {
+                      const currentLocationData = getCurrentLocationData(unit)
+                      const hasMultipleLocations = unit.locations && unit.locations.length > 1
+
+                      return (
+                        <div
+                          key={unit.name}
+                          className={`bg-white/95 backdrop-blur-sm rounded-3xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 border border-white/50 group ${category.shadowColor} hover:${category.shadowColor}/50`}
+                          style={{ animationDelay: `${categoryIndex * 0.1 + unitIndex * 0.05}s` }}
+                          onMouseEnter={() => setHoveredCard(`${category.category}-${unitIndex}`)}
+                          onMouseLeave={() => setHoveredCard(null)}
+                        >
+                          {/* Unit Header */}
+                          <div className="text-center mb-6">
+                            <div className="flex justify-center mb-4">
+                              <div className="w-16 h-16 bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl flex items-center justify-center shadow-lg border-2 border-white group-hover:scale-110 transition-transform duration-300 overflow-hidden">
+                                <img
+                                  src={unit.logo || "/placeholder.svg"}
+                                  alt={`Logo ${unit.name}`}
+                                  className="w-12 h-12 object-contain"
+                                  onError={(e) => {
+                                    // Fallback to placeholder if logo not found
+                                    e.target.src = `/placeholder.svg?height=48&width=48&text=${encodeURIComponent(unit.name + " Logo")}`
+                                  }}
+                                />
+                              </div>
+                            </div>
+
+                            <h3 className="text-xl font-black text-gray-800 mb-2 group-hover:text-blue-600 transition-colors duration-300">
+                              {unit.name}
+                            </h3>
+                            <p className="text-gray-600 text-sm leading-relaxed mb-3">{unit.description}</p>
+
+                            {hasMultipleLocations && (
+                              <div className="mb-4">
+                                <div className="flex items-center justify-center space-x-2 mb-3">
+                                  <MapPin className="w-4 h-4 text-blue-500" />
+                                  <span className="text-sm font-bold text-blue-600">
+                                    {unit.locations.length} Lokasi Tersedia
+                                  </span>
+                                </div>
+
+                                {/* Location Selector Tabs */}
+                                <div className="flex flex-wrap justify-center gap-2">
+                                  {unit.locations.map((location, locIndex) => (
+                                    <button
+                                      key={location.name}
+                                      onClick={() => handleLocationSelect(unit.name, location.name)}
+                                      className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-all duration-300 transform hover:scale-105 ${
+                                        (selectedLocations[unit.name] || unit.locations[0].name) === location.name
+                                          ? `bg-gradient-to-r ${category.gradient} text-white shadow-lg`
+                                          : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                                      }`}
+                                    >
+                                      {location.name}
+                                    </button>
+                                  ))}
+                                </div>
+                              </div>
+                            )}
+
+                            {/* Rating and Hours */}
+                            <div className="flex items-center justify-center space-x-4 mb-4">
+                              <div className="flex items-center space-x-1">
+                                <Star className="w-4 h-4 text-yellow-500 fill-current" />
+                                <span className="text-sm font-bold text-gray-700">{unit.rating}</span>
+                              </div>
+                              <div className="w-px h-4 bg-gray-300"></div>
+                              <div className="flex items-center space-x-1">
+                                <Clock className="w-4 h-4 text-gray-500" />
+                                <span className="text-xs font-semibold text-gray-600">{currentLocationData.hours}</span>
+                              </div>
                             </div>
                           </div>
 
-                          <h3 className="text-xl font-black text-gray-800 mb-2 group-hover:text-blue-600 transition-colors duration-300">
-                            {unit.name}
-                          </h3>
-                          <p className="text-gray-600 text-sm leading-relaxed mb-3">{unit.description}</p>
+                          <div className="space-y-4">
+                            {/* Enhanced Phone */}
+                            <div className="flex items-center space-x-3 p-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl border border-green-100 hover:border-green-200 transition-all duration-300 group/phone">
+                              <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover/phone:scale-110 transition-transform duration-300">
+                                <Phone className="w-5 h-5 text-white" />
+                              </div>
+                              <div className="flex-1 min-w-0">
+                                <p className="text-xs font-bold text-green-700 mb-1">Telepon</p>
+                                <a
+                                  href={`tel:${currentLocationData.phone}`}
+                                  className="text-sm font-bold text-gray-800 hover:text-green-600 transition-colors duration-300 flex items-center space-x-1 group/link"
+                                >
+                                  <span className="truncate">{currentLocationData.phone || "-"}</span>
+                                  {currentLocationData.phone && currentLocationData.phone !== "-" && (
+                                    <ExternalLink className="w-3 h-3 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300" />
+                                  )}
+                                </a>
+                              </div>
+                            </div>
 
-                          {/* Rating and Hours */}
-                          <div className="flex items-center justify-center space-x-4 mb-4">
-                            <div className="flex items-center space-x-1">
-                              <Star className="w-4 h-4 text-yellow-500 fill-current" />
-                              <span className="text-sm font-bold text-gray-700">{unit.rating}</span>
+                            {/* Enhanced Email */}
+                            <div className="flex items-center space-x-3 p-4 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-2xl border border-blue-100 hover:border-blue-200 transition-all duration-300 group/email">
+                              <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover/email:scale-110 transition-transform duration-300">
+                                <Mail className="w-5 h-5 text-white" />
+                              </div>
+                              <div className="flex-1 min-w-0">
+                                <p className="text-xs font-bold text-blue-700 mb-1">Email</p>
+                                <a
+                                  href={`mailto:${currentLocationData.email}`}
+                                  className="text-sm font-bold text-gray-800 hover:text-blue-600 transition-colors duration-300 flex items-center space-x-1 group/link"
+                                >
+                                  <span className="truncate">{currentLocationData.email || "-"}</span>
+                                  {currentLocationData.email && currentLocationData.email !== "-" && (
+                                    <ExternalLink className="w-3 h-3 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300" />
+                                  )}
+                                </a>
+                              </div>
                             </div>
-                            <div className="w-px h-4 bg-gray-300"></div>
-                            <div className="flex items-center space-x-1">
-                              <Clock className="w-4 h-4 text-gray-500" />
-                              <span className="text-xs font-semibold text-gray-600">{unit.hours}</span>
-                            </div>
-                          </div>
-                        </div>
 
-                        <div className="space-y-4">
-                          {/* Enhanced Phone */}
-                          <div className="flex items-center space-x-3 p-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl border border-green-100 hover:border-green-200 transition-all duration-300 group/phone">
-                            <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover/phone:scale-110 transition-transform duration-300">
-                              <Phone className="w-5 h-5 text-white" />
+                            {/* Enhanced Location */}
+                            <div className="flex items-start space-x-3 p-4 bg-gradient-to-r from-orange-50 to-red-50 rounded-2xl border border-orange-100 hover:border-orange-200 transition-all duration-300 group/location">
+                              <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover/location:scale-110 transition-transform duration-300 mt-0">
+                                <MapPin className="w-5 h-5 text-white" />
+                              </div>
+                              <div className="flex-1 min-w-0">
+                                <p className="text-xs font-bold text-orange-700 mb-1">Lokasi</p>
+                                <p className="text-sm font-bold text-gray-800 leading-tight">
+                                  {currentLocationData.location}
+                                </p>
+                              </div>
                             </div>
-                            <div className="flex-1 min-w-0">
-                              <p className="text-xs font-bold text-green-700 mb-1">Telepon</p>
+
+                            {/* Enhanced Instagram */}
+                            <div className="flex items-center space-x-3 p-4 bg-gradient-to-r from-pink-50 to-purple-50 rounded-2xl border border-pink-100 hover:border-pink-200 transition-all duration-300 group/instagram">
+                              <div className="w-10 h-10 bg-gradient-to-br from-pink-500 to-purple-500 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover/instagram:scale-110 transition-transform duration-300">
+                                <Instagram className="w-5 h-5 text-white" />
+                              </div>
+                              <div className="flex-1 min-w-0">
+                                <p className="text-xs font-bold text-pink-700 mb-1">Instagram</p>
+                                <a
+                                  href={`https://instagram.com/${currentLocationData.instagram?.replace("@", "")}`}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="text-sm font-bold text-gray-800 hover:text-pink-600 transition-colors duration-300 flex items-center space-x-1 group/link"
+                                >
+                                  <span className="truncate">{currentLocationData.instagram || "-"}</span>
+                                  {currentLocationData.instagram && currentLocationData.instagram !== "-" && (
+                                    <ExternalLink className="w-3 h-3 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300" />
+                                  )}
+                                </a>
+                              </div>
+                            </div>
+
+                            {/* WhatsApp Button */}
+                            {currentLocationData.phone && currentLocationData.phone !== "-" && (
                               <a
-                                href={`tel:${unit.phone}`}
-                                className="text-sm font-bold text-gray-800 hover:text-green-600 transition-colors duration-300 flex items-center space-x-1 group/link"
-                              >
-                                <span className="truncate">{unit.phone || "-"}</span>
-                                {unit.phone && unit.phone !== "-" && (
-                                  <ExternalLink className="w-3 h-3 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300" />
-                                )}
-                              </a>
-                            </div>
-                          </div>
-
-                          {/* Enhanced Email */}
-                          <div className="flex items-center space-x-3 p-4 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-2xl border border-blue-100 hover:border-blue-200 transition-all duration-300 group/email">
-                            <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover/email:scale-110 transition-transform duration-300">
-                              <Mail className="w-5 h-5 text-white" />
-                            </div>
-                            <div className="flex-1 min-w-0">
-                              <p className="text-xs font-bold text-blue-700 mb-1">Email</p>
-                              <a
-                                href={`mailto:${unit.email}`}
-                                className="text-sm font-bold text-gray-800 hover:text-blue-600 transition-colors duration-300 flex items-center space-x-1 group/link"
-                              >
-                                <span className="truncate">{unit.email || "-"}</span>
-                                {unit.email && unit.email !== "-" && (
-                                  <ExternalLink className="w-3 h-3 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300" />
-                                )}
-                              </a>
-                            </div>
-                          </div>
-
-                          {/* Enhanced Location */}
-                          <div className="flex items-start space-x-3 p-4 bg-gradient-to-r from-orange-50 to-red-50 rounded-2xl border border-orange-100 hover:border-orange-200 transition-all duration-300 group/location">
-                            <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover/location:scale-110 transition-transform duration-300 mt-0">
-                              <MapPin className="w-5 h-5 text-white" />
-                            </div>
-                            <div className="flex-1 min-w-0">
-                              <p className="text-xs font-bold text-orange-700 mb-1">Lokasi</p>
-                              <p className="text-sm font-bold text-gray-800 leading-tight">{unit.location}</p>
-                            </div>
-                          </div>
-
-                          {/* Enhanced Instagram */}
-                          <div className="flex items-center space-x-3 p-4 bg-gradient-to-r from-pink-50 to-purple-50 rounded-2xl border border-pink-100 hover:border-pink-200 transition-all duration-300 group/instagram">
-                            <div className="w-10 h-10 bg-gradient-to-br from-pink-500 to-purple-500 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover/instagram:scale-110 transition-transform duration-300">
-                              <Instagram className="w-5 h-5 text-white" />
-                            </div>
-                            <div className="flex-1 min-w-0">
-                              <p className="text-xs font-bold text-pink-700 mb-1">Instagram</p>
-                              <a
-                                href={`https://instagram.com/${unit.instagram?.replace("@", "")}`}
+                                href={`https://wa.me/${currentLocationData.phone.replace(/[^0-9]/g, "")}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-sm font-bold text-gray-800 hover:text-pink-600 transition-colors duration-300 flex items-center space-x-1 group/link"
+                                className="w-full bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white font-bold py-3 px-4 rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center space-x-3 group/whatsapp"
                               >
-                                <span className="truncate">{unit.instagram || "-"}</span>
-                                {unit.instagram && unit.instagram !== "-" && (
-                                  <ExternalLink className="w-3 h-3 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300" />
-                                )}
+                                <MessageCircle className="w-5 h-5 group-hover/whatsapp:scale-110 transition-transform duration-300" />
+                                <span>Chat WhatsApp</span>
+                                <ArrowRight className="w-4 h-4 group-hover/whatsapp:translate-x-1 transition-transform duration-300" />
                               </a>
-                            </div>
+                            )}
                           </div>
-
-                          {/* WhatsApp Button */}
-                          {unit.phone && unit.phone !== "-" && (
-                            <a
-                              href={`https://wa.me/${unit.phone.replace(/[^0-9]/g, "")}`}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="w-full bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white font-bold py-3 px-4 rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center space-x-3 group/whatsapp"
-                            >
-                              <MessageCircle className="w-5 h-5 group-hover/whatsapp:scale-110 transition-transform duration-300" />
-                              <span>Chat WhatsApp</span>
-                              <ArrowRight className="w-4 h-4 group-hover/whatsapp:translate-x-1 transition-transform duration-300" />
-                            </a>
-                          )}
                         </div>
-                      </div>
-                    ))}
+                      )
+                    })}
                   </div>
                 </div>
               </div>
