@@ -43,8 +43,8 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
       buttonColor: "purple",
       locations: [
         {
-          name: "Dramaga",
-          address: "IPB Dramaga (Samping Pintu Masuk Bara)",
+          name: "Daily Us Bara",
+          address: "Samping Pintu Masuk Bara",
           detailedAddress: "Jl. Raya Dramaga, Kampus IPB Dramaga, Bogor 16680",
           hours: "07:00-22:00",
           phone: "+6281234567890",
@@ -53,8 +53,8 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
           facilities: ["Parkir Motor", "WiFi Gratis", "AC", "Toilet"],
         },
         {
-          name: "Cibinong",
-          address: "IPB Cibinong (Gedung Rektorat)",
+          name: "Daily Us Asri",
+          address: "Dekat Asrama Putri",
           detailedAddress: "Jl. Raya Pajajaran, Kampus IPB Cibinong, Bogor 16151",
           hours: "08:00-21:00",
           phone: "+6281234567891",
@@ -62,20 +62,8 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
           instagram: "@dailyusby63_cibinong",
           facilities: ["Parkir Mobil", "WiFi Gratis", "AC"],
         },
-        {
-          name: "Bogor Tengah",
-          address: "Plaza IPB (Lantai 1)",
-          detailedAddress: "Jl. Pajajaran No. 1, Bogor Tengah, Bogor 16143",
-          hours: "09:00-20:00",
-          phone: "+6281234567892",
-          email: "dailyus.bogor@ipb.ac.id",
-          instagram: "@dailyusby63_bogor",
-          facilities: ["Food Court", "ATM", "Parkir Basement"],
-        },
       ],
-      location: "IPB Dramaga (Samping Pintu Masuk Bara)",
-      detailedLocation: "Jl. Raya Dramaga, Kampus IPB Dramaga, Bogor 16680",
-      hours: "07:00-22:00",
+      hours: "06:00-22:00",
       phone: "+6281234567890",
       email: "dailyus@ipb.ac.id",
       instagram: "@dailyusby63",
@@ -85,75 +73,35 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
       products: [
         {
           name: "Kopi Arabica Premium",
-          price: "Rp 25.000",
-          image: "/placeholder.svg?height=200&width=200&text=Kopi+Arabica",
           description: "Kopi arabica pilihan dengan cita rasa yang khas",
-          shopLink: "https://shopee.co.id/dailyus-kopi-arabica",
-          category: "Minuman",
-          rating: 4.8,
         },
         {
           name: "Roti Tawar Gandum",
-          price: "Rp 12.000",
-          image: "/placeholder.svg?height=200&width=200&text=Roti+Gandum",
           description: "Roti tawar gandum segar tanpa pengawet",
-          shopLink: "https://tokopedia.com/dailyus/roti-gandum",
-          category: "Makanan",
-          rating: 4.6,
         },
         {
           name: "Alat Tulis Set",
-          price: "Rp 35.000",
-          image: "/placeholder.svg?height=200&width=200&text=Alat+Tulis",
           description: "Set lengkap alat tulis untuk mahasiswa",
-          shopLink: "https://shopee.co.id/dailyus-alat-tulis",
-          category: "Alat Tulis",
-          rating: 4.7,
         },
         {
           name: "Masker KF94",
-          price: "Rp 8.000",
-          image: "/placeholder.svg?height=200&width=200&text=Masker+KF94",
           description: "Masker kesehatan standar KF94",
-          shopLink: "https://tokopedia.com/dailyus/masker-kf94",
-          category: "Kesehatan",
-          rating: 4.9,
         },
         {
           name: "Merchandise IPB",
-          price: "Rp 45.000",
-          image: "/placeholder.svg?height=200&width=200&text=Merchandise",
           description: "Kaos dan merchandise resmi IPB",
-          shopLink: "https://shopee.co.id/dailyus-merchandise",
-          category: "Merchandise",
-          rating: 4.5,
         },
         {
           name: "Snack Sehat",
-          price: "Rp 15.000",
-          image: "/placeholder.svg?height=200&width=200&text=Snack+Sehat",
           description: "Berbagai pilihan snack sehat dan bergizi",
-          shopLink: "https://tokopedia.com/dailyus/snack-sehat",
-          category: "Makanan",
-          rating: 4.4,
         },
         {
           name: "Minuman Energi",
-          price: "Rp 18.000",
-          image: "/placeholder.svg?height=200&width=200&text=Minuman+Energi",
           description: "Minuman energi untuk aktivitas belajar",
-          shopLink: "https://shopee.co.id/dailyus-energi",
-          category: "Minuman",
-          rating: 4.3,
         },
         {
           name: "Tissue & Sanitizer",
-          price: "Rp 22.000",
-          image: "/placeholder.svg?height=200&width=200&text=Tissue+Sanitizer",
           description: "Paket tissue dan hand sanitizer",
-          shopLink: "https://tokopedia.com/dailyus/tissue-sanitizer",
-          category: "Kesehatan",
-          rating: 4.6,
         },
       ],
       facilities: ["Parkir Motor", "WiFi Gratis", "AC", "CCTV", "Pembayaran Digital"],
@@ -188,51 +136,27 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
       products: [
         {
           name: "Bibit Tomat Unggul",
-          price: "Rp 15.000",
-          image: "/placeholder.svg?height=200&width=200&text=Bibit+Tomat",
           description: "Bibit tomat varietas unggul tahan penyakit",
-          category: "Bibit",
-          rating: 4.8,
         },
         {
           name: "Pupuk Organik Kompos",
-          price: "Rp 25.000",
-          image: "/placeholder.svg?height=200&width=200&text=Pupuk+Kompos",
           description: "Pupuk organik kompos berkualitas tinggi",
-          category: "Pupuk",
-          rating: 4.7,
         },
         {
           name: "Alat Semprot Tanaman",
-          price: "Rp 85.000",
-          image: "/placeholder.svg?height=200&width=200&text=Alat+Semprot",
           description: "Sprayer manual untuk perawatan tanaman",
-          category: "Alat",
-          rating: 4.5,
         },
         {
           name: "Benih Sayuran Organik",
-          price: "Rp 12.000",
-          image: "/placeholder.svg?height=200&width=200&text=Benih+Sayuran",
           description: "Paket benih sayuran organik bersertifikat",
-          category: "Bibit",
-          rating: 4.9,
         },
         {
           name: "Pot Tanaman Plastik",
-          price: "Rp 8.000",
-          image: "/placeholder.svg?height=200&width=200&text=Pot+Plastik",
           description: "Pot tanaman plastik berbagai ukuran",
-          category: "Alat",
-          rating: 4.3,
         },
         {
           name: "Sistem Irigasi Tetes",
-          price: "Rp 150.000",
-          image: "/placeholder.svg?height=200&width=200&text=Irigasi+Tetes",
           description: "Sistem irigasi tetes otomatis untuk greenhouse",
-          category: "Sistem",
-          rating: 4.6,
         },
       ],
       facilities: ["Konsultasi Gratis", "Delivery Service", "Parkir Luas", "Demo Area", "After Sales Service"],
@@ -267,75 +191,35 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
       products: [
         {
           name: "Kaos IPB Official",
-          price: "Rp 85.000",
-          image: "/placeholder.svg?height=200&width=200&text=Kaos+IPB",
           description: "Kaos resmi IPB dengan logo dan desain eksklusif",
-          shopLink: "https://shopee.co.id/ipbmerch-kaos",
-          category: "Apparel",
-          rating: 4.8,
         },
         {
           name: "Jaket Hoodie IPB",
-          price: "Rp 185.000",
-          image: "/placeholder.svg?height=200&width=200&text=Jaket+Hoodie",
           description: "Jaket hoodie premium dengan bordir logo IPB",
-          shopLink: "https://shopee.co.id/ipbmerch-hoodie",
-          category: "Apparel",
-          rating: 4.9,
         },
         {
           name: "Topi Baseball IPB",
-          price: "Rp 65.000",
-          image: "/placeholder.svg?height=200&width=200&text=Topi+Baseball",
           description: "Topi baseball dengan logo IPB yang stylish",
-          shopLink: "https://shopee.co.id/ipbmerch-topi",
-          category: "Aksesoris",
-          rating: 4.6,
         },
         {
           name: "Tas Ransel IPB",
-          price: "Rp 225.000",
-          image: "/placeholder.svg?height=200&width=200&text=Tas+Ransel",
           description: "Tas ransel berkualitas tinggi dengan logo IPB",
-          shopLink: "https://shopee.co.id/ipbmerch-tas",
-          category: "Tas",
-          rating: 4.7,
         },
         {
           name: "Mug Keramik IPB",
-          price: "Rp 45.000",
-          image: "/placeholder.svg?height=200&width=200&text=Mug+Keramik",
           description: "Mug keramik dengan desain logo IPB yang elegan",
-          shopLink: "https://shopee.co.id/ipbmerch-mug",
-          category: "Souvenir",
-          rating: 4.5,
         },
         {
           name: "Pin & Badge Set",
-          price: "Rp 35.000",
-          image: "/placeholder.svg?height=200&width=200&text=Pin+Badge",
           description: "Set pin dan badge koleksi dengan berbagai desain",
-          shopLink: "https://shopee.co.id/ipbmerch-pin",
-          category: "Aksesoris",
-          rating: 4.4,
         },
         {
           name: "Tumbler Stainless IPB",
-          price: "Rp 95.000",
-          image: "/placeholder.svg?height=200&width=200&text=Tumbler+Steel",
           description: "Tumbler stainless steel dengan logo IPB yang tahan lama",
-          shopLink: "https://shopee.co.id/ipbmerch-tumbler",
-          category: "Souvenir",
-          rating: 4.8,
         },
         {
           name: "Polo Shirt IPB",
-          price: "Rp 125.000",
-          image: "/placeholder.svg?height=200&width=200&text=Polo+Shirt",
           description: "Polo shirt formal dengan bordir logo IPB",
-          shopLink: "https://shopee.co.id/ipbmerch-polo",
-          category: "Apparel",
-          rating: 4.7,
         },
       ],
       facilities: ["Custom Design", "Bulk Order", "Gift Wrapping", "Size Exchange", "Quality Guarantee"],
@@ -809,34 +693,18 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
         {
           name: "Standard Room",
           description: "Kamar standar dengan fasilitas lengkap",
-          price: "Rp 250.000",
-          image: "/placeholder.svg?height=200&width=200&text=Standard+Room",
-          category: "Room",
-          rating: 4.2,
         },
         {
           name: "Deluxe Room",
           description: "Kamar deluxe dengan pemandangan taman",
-          price: "Rp 350.000",
-          image: "/placeholder.svg?height=200&width=200&text=Deluxe+Room",
-          category: "Room",
-          rating: 4.5,
         },
         {
           name: "Meeting Package",
           description: "Paket meeting untuk 10 orang",
-          price: "Rp 1.500.000",
-          image: "/placeholder.svg?height=200&width=200&text=Meeting+Package",
-          category: "Package",
-          rating: 4.3,
         },
         {
           name: "Event Hosting",
           description: "Layanan hosting event dengan catering",
-          price: "Rp 5.000.000",
-          image: "/placeholder.svg?height=200&width=200&text=Event+Hosting",
-          category: "Service",
-          rating: 4.4,
         },
       ],
       specialOffers: ["Academic rate discount", "Long stay package", "Conference package deal"],
@@ -874,34 +742,18 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
         {
           name: "Single Room",
           description: "Kamar single dengan kamar mandi dalam",
-          price: "Rp 200.000",
-          image: "/placeholder.svg?height=200&width=200&text=Single+Room",
-          category: "Room",
-          rating: 4.5,
         },
         {
           name: "Twin Room",
           description: "Kamar twin untuk dua orang",
-          price: "Rp 300.000",
-          image: "/placeholder.svg?height=200&width=200&text=Twin+Room",
-          category: "Room",
-          rating: 4.6,
         },
         {
           name: "Family Room",
           description: "Kamar keluarga dengan extra bed",
-          price: "Rp 400.000",
-          image: "/placeholder.svg?height=200&width=200&text=Family+Room",
-          category: "Room",
-          rating: 4.4,
         },
         {
           name: "Long-term Stay",
           description: "Diskon khusus untuk long-term stay",
-          price: "Hubungi Kami",
-          image: "/placeholder.svg?height=200&width=200&text=Long+Term+Stay",
-          category: "Service",
-          rating: 4.7,
         },
       ],
       specialOffers: ["Monthly rate discount", "Student special price", "Group booking discount"],
@@ -939,34 +791,18 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
         {
           name: "Main Auditorium",
           description: "Auditorium utama dengan kapasitas 1000 orang",
-          price: "Rp 15.000.000",
-          image: "/placeholder.svg?height=200&width=200&text=Main+Auditorium",
-          category: "Venue",
-          rating: 4.6,
         },
         {
           name: "Meeting Rooms",
           description: "Ruang meeting dengan berbagai ukuran",
-          price: "Rp 2.000.000",
-          image: "/placeholder.svg?height=200&width=200&text=Meeting+Rooms",
-          category: "Venue",
-          rating: 4.5,
         },
         {
           name: "Exhibition Hall",
           description: "Hall untuk pameran dan acara besar",
-          price: "Rp 10.000.000",
-          image: "/placeholder.svg?height=200&width=200&text=Exhibition+Hall",
-          category: "Venue",
-          rating: 4.4,
         },
         {
           name: "Catering Service",
           description: "Layanan catering untuk berbagai acara",
-          price: "Hubungi Kami",
-          image: "/placeholder.svg?height=200&width=200&text=Catering+Service",
-          category: "Service",
-          rating: 4.7,
         },
       ],
       specialOffers: ["Alumni discount 20%", "Academic event package", "Multi-day event discount"],
@@ -1010,34 +846,18 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
         {
           name: "Cuci Kering",
           description: "Layanan cuci kering standar",
-          price: "Rp 8.000/kg",
-          image: "/placeholder.svg?height=200&width=200&text=Cuci+Kering",
-          category: "Service",
-          rating: 4.3,
         },
         {
           name: "Cuci Setrika",
           description: "Layanan cuci dan setrika",
-          price: "Rp 12.000/kg",
-          image: "/placeholder.svg?height=200&width=200&text=Cuci+Setrika",
-          category: "Service",
-          rating: 4.4,
         },
         {
           name: "Dry Cleaning",
           description: "Layanan dry cleaning untuk pakaian khusus",
-          price: "Rp 25.000/item",
-          image: "/placeholder.svg?height=200&width=200&text=Dry+Cleaning",
-          category: "Service",
-          rating: 4.5,
         },
         {
           name: "Sepatu & Tas",
           description: "Layanan cuci sepatu dan tas",
-          price: "Rp 15.000/item",
-          image: "/placeholder.svg?height=200&width=200&text=Sepatu+Tas",
-          category: "Service",
-          rating: 4.2,
         },
       ],
       specialOffers: ["Paket bulanan mahasiswa", "Diskon member 15%", "Gratis pickup untuk order di atas 10kg"],
@@ -1075,34 +895,18 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
         {
           name: "Motor Wash",
           description: "Cuci motor standar",
-          price: "Rp 10.000",
-          image: "/placeholder.svg?height=200&width=200&text=Motor+Wash",
-          category: "Service",
-          rating: 4.4,
         },
         {
           name: "Car Wash",
           description: "Cuci mobil standar",
-          price: "Rp 35.000",
-          image: "/placeholder.svg?height=200&width=200&text=Car+Wash",
-          category: "Service",
-          rating: 4.5,
         },
         {
           name: "Detailing",
           description: "Layanan detailing mobil",
-          price: "Rp 75.000",
-          image: "/placeholder.svg?height=200&width=200&text=Detailing",
-          category: "Service",
-          rating: 4.6,
         },
         {
           name: "Wax & Polish",
           description: "Layanan wax dan polish mobil",
-          price: "Rp 50.000",
-          image: "/placeholder.svg?height=200&width=200&text=Wax+Polish",
-          category: "Service",
-          rating: 4.3,
         },
       ],
       specialOffers: ["Student discount 20%", "Package deals", "Membership program"],
@@ -1140,34 +944,18 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
         {
           name: "Organic Vegetables",
           description: "Sayuran organik segar langsung dari kebun",
-          price: "Rp 35.000/kg",
-          image: "/placeholder.svg?height=200&width=200&text=Organic+Vegetables",
-          category: "Vegetables",
-          rating: 4.7,
         },
         {
           name: "Leafy Greens",
           description: "Berbagai jenis sayuran hijau segar",
-          price: "Rp 25.000/kg",
-          image: "/placeholder.svg?height=200&width=200&text=Leafy+Greens",
-          category: "Vegetables",
-          rating: 4.8,
         },
         {
           name: "Herbs",
           description: "Berbagai jenis herbs segar",
-          price: "Rp 50.000/kg",
-          image: "/placeholder.svg?height=200&width=200&text=Herbs",
-          category: "Vegetables",
-          rating: 4.6,
         },
         {
           name: "Microgreens",
           description: "Microgreens segar dan bergizi",
-          price: "Rp 75.000/kg",
-          image: "/placeholder.svg?height=200&width=200&text=Microgreens",
-          category: "Vegetables",
-          rating: 4.9,
         },
       ],
       specialOffers: ["Subscription box discount", "Bulk order special price", "Seasonal promotions"],
@@ -1203,50 +991,26 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
         {
           name: "Nasi Gudeg Yogya",
           description: "Nasi gudeg Yogya dengan ayam dan telur",
-          price: "Rp 12.000",
-          image: "/placeholder.svg?height=200&width=200&text=Nasi+Gudeg",
-          category: "Traditional",
-          rating: 4.5,
         },
         {
           name: "Bakso Malang",
           description: "Bakso Malang dengan berbagai isian",
-          price: "Rp 10.000",
-          image: "/placeholder.svg?height=200&width=200&text=Bakso+Malang",
-          category: "Traditional",
-          rating: 4.4,
         },
         {
           name: "Gado-gado Betawi",
           description: "Gado-gado Betawi dengan bumbu kacang spesial",
-          price: "Rp 8.000",
-          image: "/placeholder.svg?height=200&width=200&text=Gado+Gado+Betawi",
-          category: "Traditional",
-          rating: 4.6,
         },
         {
           name: "Es Campur Jakarta",
           description: "Es campur Jakarta dengan berbagai topping",
-          price: "Rp 7.000",
-          image: "/placeholder.svg?height=200&width=200&text=Es+Campur",
-          category: "Dessert",
-          rating: 4.3,
         },
         {
           name: "Kerupuk Rambak",
           description: "Kerupuk rambak crispy dengan sambal kecap",
-          price: "Rp 5.000",
-          image: "/placeholder.svg?height=200&width=200&text=Kerupuk+Rambak",
-          category: "Snack",
-          rating: 4.2,
         },
         {
           name: "Tahu Gejrot",
           description: "Tahu gejrot dengan kuah asam pedas manis",
-          price: "Rp 6.000",
-          image: "/placeholder.svg?height=200&width=200&text=Tahu+Gejrot",
-          category: "Snack",
-          rating: 4.4,
         },
       ],
       facilities: ["Multiple Stalls", "Seating Area", "Clean Water", "Waste Management", "Student Friendly"],
@@ -1321,7 +1085,7 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
         <div className="relative max-w-6xl mx-auto px-6">
           <div className="text-center text-white">
             {selectedBusiness.name !== "Kantin Area Kampus" && (
-              <div className="w-16 h-16 bg-white/95 rounded-2xl p-3 shadow-xl mx-auto mb-4">
+              <div className="w-16 h-16 bg-white/95 rounded-2xl p-3 shadow-xl mx-auto mt-6 mb-2">
                 <img
                   src={selectedBusiness.logo || "/placeholder.svg?height=64&width=64&text=Logo"}
                   alt={`${selectedBusiness.name} Logo`}
@@ -1387,67 +1151,95 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
                   Informasi Lokasi & Operasional
                 </h3>
 
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="space-y-6">
                   {/* Location Section */}
                   <div>
                     {(selectedBusiness.locations || []).length > 1 ? (
-                      <div>
-                        <div className="flex items-center justify-between mb-4">
-                          <div className="flex items-center space-x-2">
-                            <Building2 className="w-5 h-5 text-blue-600" />
-                            <h4 className="font-semibold text-gray-800">Lokasi Cabang</h4>
+                      <div className="bg-gradient-to-br from-orange-50 via-pink-50 to-purple-50 rounded-2xl p-6 border border-orange-200 shadow-lg">
+                        {/* Header dengan gradient colorful */}
+                        <div className="flex items-center justify-between mb-6">
+                          <div className="flex items-center space-x-3">
+                            <div className="w-10 h-10 bg-gradient-to-br from-orange-500 via-pink-500 to-purple-600 rounded-xl flex items-center justify-center shadow-md">
+                              <Building2 className="w-5 h-5 text-white" />
+                            </div>
+                            <div>
+                              <h4 className="font-bold text-gray-800 text-xl">Pilih Lokasi</h4>
+                              <p className="text-sm text-gray-600">Tersedia di beberapa cabang</p>
+                            </div>
                           </div>
-                          <span className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-sm">
+
+                          <div className="bg-gradient-to-r from-orange-500 to-pink-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-md">
                             {(selectedBusiness.locations || []).length} Cabang
-                          </span>
+                          </div>
                         </div>
 
-                        <div className="flex flex-wrap gap-2 mb-5">
+                        {/* Location selector dengan design card yang lebih menarik */}
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-6">
                           {(selectedBusiness.locations || []).map((location, index) => (
                             <button
                               key={index}
                               onClick={() => setSelectedLocationIndex(index)}
-                              className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 transform hover:scale-105 ${
+                              className={`group relative p-5 rounded-xl text-left transition-all duration-300 transform hover:scale-105 min-h-[80px] flex items-center w-full ${
                                 selectedLocationIndex === index
-                                  ? "bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-lg shadow-blue-200"
-                                  : "bg-white text-gray-700 hover:bg-blue-50 border border-gray-200 hover:border-blue-200"
+                                  ? "bg-gradient-to-br from-orange-100 to-pink-100 border-2 border-orange-400 shadow-lg"
+                                  : "bg-white border-2 border-gray-200 hover:border-orange-300 hover:shadow-md"
                               }`}
                             >
-                              {location.name}
+                                <div className="flex items-center space-x-3 flex-1 min-w-0">
+                                  <div
+                                    className={`w-4 h-4 rounded-full transition-all duration-300 flex-shrink-0 ${
+                                      selectedLocationIndex === index
+                                        ? "bg-gradient-to-r from-orange-500 to-pink-500 shadow-md"
+                                        : "bg-gray-300 group-hover:bg-orange-400"
+                                    }`}
+                                  ></div>
+                                  <span
+                                    className={`font-semibold transition-colors duration-300 text-sm sm:text-base lg:text-lg leading-tight ${
+                                      selectedLocationIndex === index
+                                        ? "text-orange-800"
+                                        : "text-gray-700 group-hover:text-orange-700"
+                                    }`}
+                                  >
+                                    {location.name}
+                                  </span>
+                              </div>
                             </button>
                           ))}
                         </div>
 
-                        <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-5 border border-blue-100 shadow-sm">
-                          <div className="flex items-start space-x-4">
-                            <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center shadow-md">
-                              <Building2 className="w-5 h-5 text-white" />
+                        {/* Detail card dengan design yang lebih colorful */}
+                        <div className="bg-gradient-to-br from-white via-orange-50 to-pink-50 rounded-xl p-6 border-2 border-orange-200 shadow-xl">
+                          <div className="flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-4">
+                            <div className="w-14 h-14 bg-gradient-to-br from-orange-500 via-pink-500 to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                              <Building2 className="w-7 h-7 text-white" />
                             </div>
-                            <div className="flex-1">
-                              <h5 className="font-semibold text-gray-900 mb-1 text-lg">{currentLocation.name}</h5>
-                              <p className="text-gray-600 mb-3 leading-relaxed">{currentLocation.address}</p>
-                              <div className="flex items-center justify-between">
-                                <div className="flex items-center space-x-2">
-                                  <div className="w-2.5 h-2.5 bg-green-500 rounded-full animate-pulse"></div>
-                                  <span className="text-sm text-green-700 font-medium">Buka Sekarang</span>
-                                </div>
-                                <div className="text-xs text-gray-500 bg-white px-2 py-1 rounded-full">
-                                  Cabang {selectedLocationIndex + 1}
-                                </div>
-                              </div>
+                            <div className="flex-1 min-w-0 w-full">
+                              <h5 className="font-bold text-gray-900 mb-3 text-xl sm:text-2xl">
+                                {currentLocation.name}
+                              </h5>
+                              <p className="text-gray-600 mb-4 leading-relaxed text-sm sm:text-base break-words">
+                                {currentLocation.address}
+                              </p>
                             </div>
                           </div>
                         </div>
                       </div>
                     ) : (
-                      <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-5 border border-gray-200">
-                        <div className="flex items-center space-x-4">
-                          <div className="w-10 h-10 bg-gray-600 rounded-xl flex items-center justify-center">
-                            <Building2 className="w-5 h-5 text-white" />
+                      <div className="bg-gradient-to-br from-teal-50 via-cyan-50 to-blue-50 rounded-xl p-6 border-2 border-teal-200 shadow-lg">
+                        <div className="flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-4">
+                          <div className="w-14 h-14 bg-gradient-to-br from-teal-500 via-cyan-500 to-blue-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                            <Building2 className="w-7 h-7 text-white" />
                           </div>
-                          <div>
-                            <p className="font-semibold text-gray-900 text-lg">{selectedBusiness.location}</p>
-                            <p className="text-gray-600 leading-relaxed">{selectedBusiness.detailedLocation}</p>
+                          <div className="flex-1 min-w-0 w-full">
+                            <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-3 mb-3">
+                              <h5 className="font-bold text-gray-900 text-xl sm:text-2xl">
+                                {selectedBusiness.location}
+                              </h5>
+                              <div className="w-3 h-3 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full animate-pulse"></div>
+                            </div>
+                            <p className="text-gray-600 leading-relaxed mb-4 text-sm sm:text-base break-words">
+                              {selectedBusiness.detailedLocation}
+                            </p>
                           </div>
                         </div>
                       </div>
@@ -1455,22 +1247,24 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
                   </div>
 
                   {/* Operating Hours & Price */}
-                  <div className="space-y-4">
-                    <div className="flex items-center space-x-3 p-3 bg-purple-50 rounded-xl">
-                      <Clock className="w-5 h-5 text-purple-600" />
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="flex items-center space-x-4 p-4 bg-gradient-to-r from-purple-50 to-indigo-50 rounded-xl border border-purple-200 shadow-md">
+                      <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg">
+                        <Clock className="w-6 h-6 text-white" />
+                      </div>
                       <div>
-                        <p className="text-xs text-purple-700 font-semibold">Jam Operasional</p>
-                        <p className="font-semibold text-gray-800">{selectedBusiness.hours}</p>
+                        <p className="text-sm text-purple-700 font-semibold mb-1">Jam Operasional</p>
+                        <p className="font-bold text-gray-800 text-lg">{selectedBusiness.hours}</p>
                       </div>
                     </div>
 
-                    <div className="flex items-center space-x-3 p-3 bg-green-50 rounded-xl">
-                      <span className="w-5 h-5 bg-green-600 rounded flex items-center justify-center text-white text-xs font-bold">
-                        Rp
-                      </span>
+                    <div className="flex items-center space-x-4 p-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl border border-green-200 shadow-md">
+                      <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center shadow-lg">
+                        <span className="text-white text-sm font-bold">Rp</span>
+                      </div>
                       <div>
-                        <p className="text-xs text-green-700 font-semibold">Kisaran Harga</p>
-                        <p className="font-semibold text-gray-800">{selectedBusiness.priceRange}</p>
+                        <p className="text-sm text-green-700 font-semibold mb-1">Kisaran Harga</p>
+                        <p className="font-bold text-gray-800 text-lg">{selectedBusiness.priceRange}</p>
                       </div>
                     </div>
                   </div>
