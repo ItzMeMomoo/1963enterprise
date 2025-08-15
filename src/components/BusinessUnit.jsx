@@ -18,6 +18,7 @@ import {
   Package,
   Zap,
   Building2,
+  MessageCircle,
 } from "lucide-react"
 import { useState, useEffect } from "react"
 
@@ -26,6 +27,7 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
   const [showImageModal, setShowImageModal] = useState(false)
   const [showAllProductsModal, setShowAllProductsModal] = useState(false)
   const [selectedLocationIndex, setSelectedLocationIndex] = useState(0)
+  const [showLocationModal, setShowLocationModal] = useState(false)
 
   const businessUnits = [
     {
@@ -45,22 +47,17 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
         {
           name: "Daily Us Bara",
           address: "Samping Pintu Masuk Bara",
-          detailedAddress: "Jl. Raya Dramaga, Kampus IPB Dramaga, Bogor 16680",
-          hours: "07:00-22:00",
-          phone: "+6281234567890",
-          email: "dailyus.dramaga@ipb.ac.id",
-          instagram: "@dailyusby63",
-          facilities: ["Parkir Motor", "WiFi Gratis", "AC", "Toilet"],
+          mapsLink: "https://maps.app.goo.gl/4TN6MSrdQVvKjLE8A",
         },
         {
-          name: "Daily Us Asri",
+          name: "Daily Us Astri",
           address: "Dekat Asrama Putri",
-          detailedAddress: "Jl. Raya Pajajaran, Kampus IPB Cibinong, Bogor 16151",
-          hours: "08:00-21:00",
-          phone: "+6281234567891",
-          email: "dailyus.cibinong@ipb.ac.id",
-          instagram: "@dailyusby63_cibinong",
-          facilities: ["Parkir Mobil", "WiFi Gratis", "AC"],
+          mapsLink: "https://maps.app.goo.gl/tFBDG9rEjnKMZokj9",
+        },
+        {
+          name: "Daily Us Astra",
+          address: "Dekat Asrama Putra",
+          mapsLink: "https://maps.app.goo.gl/vySKnCi5e1vzms5P6",
         },
       ],
       hours: "06:00-22:00",
@@ -125,7 +122,7 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
       tags: ["Pertanian", "Alat", "Modern", "Bibit", "Pupuk"],
       buttonColor: "purple",
       location: "Jl. Raya Dramaga",
-      detailedLocation: "Jl. Raya Dramaga KM 6, Kampus IPB Dramaga, Bogor 16680",
+      detailedLocation: "Jl. Raya Dramaga, Babakan, Kec. Dramaga, Kabupaten Bogor, Jawa Barat 16680",
       hours: "08:00-17:00",
       phone: "+6281280505059",
       email: "botanimart@ipb.ac.id",
@@ -159,6 +156,7 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
           description: "Sistem irigasi tetes otomatis untuk greenhouse",
         },
       ],
+      locations: [{mapsLink: "https://maps.app.goo.gl/72668aw7CAJPm3mx5"}],
       facilities: ["Konsultasi Gratis", "Delivery Service", "Parkir Luas", "Demo Area", "After Sales Service"],
       specialOffers: [
         "Konsultasi gratis untuk mahasiswa",
@@ -179,8 +177,8 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
       gallery: ["/ipbmerch.jpg", "/ipb-apparel.png", "/ipb-accessories.png", "/ipb-souvenirs.png"],
       tags: ["Merchandise", "IPB", "Resmi", "Apparel", "Souvenir"],
       buttonColor: "purple",
-      location: "IPB Dramaga (Belakang GWW)",
-      detailedLocation: "Belakang Gedung Grha Widya Wisuda, Kampus IPB Dramaga, Bogor 16680",
+      location: "IPB Dramaga - Belakang GWW",
+      detailedLocation: "Samping Pintu Masuk Bara, Kampus IPB Dramaga",
       hours: "08:00-17:00",
       phone: "+6281388489123",
       email: "merchandise@ipb.ac.id",
@@ -220,6 +218,18 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
         {
           name: "Polo Shirt IPB",
           description: "Polo shirt formal dengan bordir logo IPB",
+        },
+      ],
+      locations: [
+        {
+          name: "IPB Merchandise Belakang GWW",
+          address: "Samping Pintu Masuk Bara",
+          mapsLink: "https://maps.app.goo.gl/1BbGRp8M14nkyhXw5",
+        },
+        {
+          name: "IPB Merchandise LSI",
+          address: "LSI IPB",
+          mapsLink: "", // belum ada link pasti
         },
       ],
       facilities: ["Custom Design", "Bulk Order", "Gift Wrapping", "Size Exchange", "Quality Guarantee"],
@@ -318,6 +328,18 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
           rating: 4.6,
         },
       ],
+      locations: [
+        {
+          name: "BreadCast Center",
+          address: "Depan Perpustakaan IPB",
+          mapsLink: "https://maps.app.goo.gl/QkGtRHWUGA7AJwAz6",
+        },
+        {
+          name: "BreadCast LSI",
+          address: "LSI IPB",
+          mapsLink: "", // belum ada di Google Maps
+        },
+      ],
       facilities: ["Takeaway", "Pre-order", "Custom Cake", "Catering", "Delivery"],
       specialOffers: ["Pre-order discount 10%", "Bulk order special price", "Birthday cake package"],
     },
@@ -339,8 +361,8 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
       ],
       tags: ["Kafe", "Premium", "Coffee", "Meeting", "Study Space"],
       buttonColor: "orange",
-      location: "IPB Dramaga (Jalan Baru)",
-      detailedLocation: "Jl. Taman Kencana No. 3, Kampus IPB Dramaga, Bogor 16680",
+      location: "IPB Dramaga - Jalan Baru",
+      detailedLocation: "Samping Pintu Masuk Bara, Kampus IPB Dramaga",
       hours: "08:00-21:00",
       phone: "+6281378404742",
       email: "coffee63@ipb.ac.id",
@@ -414,6 +436,13 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
           rating: 4.5,
         },
       ],
+      locations: [
+        {
+          name: "Namtiga Coffee",
+          address: "Samping Pintu Masuk Bara, Kampus IPB Dramaga",
+          mapsLink: "https://maps.app.goo.gl/x36AQiaahfC61kBc6",
+        },
+      ],
       facilities: ["WiFi Gratis", "AC", "Outdoor Seating", "Private Room", "Live Music"],
       specialOffers: ["Happy Hour 14:00-17:00", "Student Discount 15%", "Free WiFi unlimited"],
     },
@@ -435,13 +464,13 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
       ],
       tags: ["Resto", "Meeting", "Catering", "Garden", "Fusion"],
       buttonColor: "orange",
-      location: "Jln. Padjajaran (IPB Baranangsiang)",
-      detailedLocation: "Jl. Padjajaran, IPB Baranangsiang, Bogor 16143",
+      location: "Jln. Padjajaran - IPB Baranangsiang",
+      detailedLocation:
+        "Kampus IPB, Jl. Raya Pajajaran No.1, RT.02/RW.05, Tegallega, Kecamatan Bogor Tengah, Kota Bogor, Jawa Barat 16127",
       hours: "10:00-22:00",
       phone: "+6281361403322",
       email: "tamankoleksi@ipb.ac.id",
       instagram: "@takolipb",
-      website: "https://tamankoleksi.ipb.ac.id",
       rating: 4.5,
       reviewCount: 445,
       priceRange: "Rp 25.000 - Rp 150.000",
@@ -495,6 +524,13 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
           rating: 4.6,
         },
       ],
+      locations: [
+        {
+          name: "Resto Taman Koleksi",
+          address: "Gedung Andi Hakim Nasution Jalan Institut Pertanian",
+          mapsLink: "https://maps.app.goo.gl/surtRtNaqYg6nP6N6",
+        },
+      ],
       facilities: ["Meeting Room", "VIP Room", "Catering Service", "Garden Setting", "Private Parking"],
       specialOffers: ["Meeting package discount", "Catering bulk order", "Weekend family package"],
     },
@@ -516,13 +552,13 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
       ],
       tags: ["Kopi", "Nusantara", "Pastry", "Student Center", "Autentik"],
       buttonColor: "orange",
-      location: "IPB Dramaga (Gedung Andi Hakim Nasution)",
-      detailedLocation: "Gedung Andi Hakim Nasution, Student Service Center, Kampus IPB Dramaga, Bogor 16680",
+      location: "Gedung Rektorat Andi Hakim Nasution",
+      locations: [{mapsLink: "https://maps.app.goo.gl/eQfgtMWC3FHYkWdW9"}],
+      detailedLocation: "Gedung Andi Hakim Nasution Jalan Institut Pertanian",
       hours: "07:00-21:00",
       phone: "+6281359338754",
-      email: "botanikopi@ipb.ac.id",
-      instagram: "@botanikopiinusantara",
-      website: "https://botanikopi.ipb.ac.id",
+      email: "coffee63@ipb.ac.id",
+      instagram: "@namtigacoffee",
       rating: 4.6,
       reviewCount: 523,
       priceRange: "Rp 12.000 - Rp 45.000",
@@ -597,13 +633,12 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
       ],
       tags: ["Kantin", "Terjangkau", "Makanan", "Bergizi", "Mahasiswa"],
       buttonColor: "orange",
-      location: "IPB Dramaga (Sekitar Asrama Pusat IPB)",
-      detailedLocation: "Area Asrama Pusat, Kampus IPB Dramaga, Bogor 16680",
+      location: "Dekat Asrama Putri IPB",
+      detailedLocation: "Area Asrama Pusat, Kampus IPB Dramaga",
       hours: "06:00-20:00",
       phone: "+6281234567891",
       email: "chef63@ipb.ac.id",
       instagram: "@kantongbychef63",
-      website: "https://chef63.ipb.ac.id",
       rating: 4.4,
       reviewCount: 678,
       priceRange: "Rp 8.000 - Rp 25.000",
@@ -657,6 +692,7 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
           rating: 4.8,
         },
       ],
+      locations: [{mapsLink: "https://maps.app.goo.gl/JaT4ejQcB7kWeGDc7"}],
       facilities: ["Dine-in", "Takeaway", "Student Discount", "Clean Kitchen", "Halal Certified"],
       specialOffers: ["Paket hemat mahasiswa", "Diskon pembelian di atas 50rb", "Menu spesial hari Jumat"],
     },
@@ -678,13 +714,12 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
       ],
       tags: ["Wisma", "Penginapan", "Meeting", "Premium", "Tamu Kampus"],
       buttonColor: "blue",
-      location: "IPB Dramaga (Jalan Tanjung)",
-      detailedLocation: "Jl. Tanjung, Kampus IPB Dramaga, Bogor 16680",
+      location: "IPB Dramaga - Seberang Asrama Internasional",
+      detailedLocation: "Jl. Tanjung, Kampus IPB Dramaga",
       hours: "24 Jam",
       phone: "+6281312381377",
       email: "landhuis@ipb.ac.id",
       instagram: "@penginapan_ipb",
-      website: "https://landhuis.ipb.ac.id",
       rating: 4.3,
       reviewCount: 287,
       priceRange: "Rp 200.000 - Rp 500.000/malam",
@@ -707,6 +742,7 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
           description: "Layanan hosting event dengan catering",
         },
       ],
+      locations: [{mapsLink: "https://maps.app.goo.gl/4AN31yuYW8yr67vQA"}],
       specialOffers: ["Academic rate discount", "Long stay package", "Conference package deal"],
     },
     {
@@ -727,13 +763,12 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
       ],
       tags: ["Asrama", "Internasional", "Penginapan", "Modern", "Fasilitas Lengkap"],
       buttonColor: "blue",
-      location: "IPB Dramaga (Jalan Tanjung)",
-      detailedLocation: "Jl. Tanjung Raya, Kampus IPB Dramaga, Bogor 16680",
+      location: "IPB Dramaga - Jalan Tanjung",
+      detailedLocation: "Jl. Tanjung, Kampus IPB Dramaga",
       hours: "24 Jam",
       phone: "+6281312381377",
       email: "asrama@ipb.ac.id",
       instagram: "@penginapan_ipb",
-      website: "https://asrama.ipb.ac.id",
       rating: 4.6,
       reviewCount: 423,
       priceRange: "Rp 150.000 - Rp 400.000/malam",
@@ -756,6 +791,7 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
           description: "Diskon khusus untuk long-term stay",
         },
       ],
+      locations: [{mapsLink: "https://maps.app.goo.gl/UMt8apRRMh3bkww19"}],
       specialOffers: ["Monthly rate discount", "Student special price", "Group booking discount"],
     },
     {
@@ -776,13 +812,12 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
       ],
       tags: ["Gedung", "Seminar", "Gathering", "Event", "Alumni"],
       buttonColor: "blue",
-      location: "Jl. Raya Padjajaran",
-      detailedLocation: "Jl. Raya Padjajaran, Bogor 16143",
+      location: "Jl. Raya Padjajaran - Samping Botani Square",
+      detailedLocation: "Kampus IPB, Jl. Raya Pajajaran No.1",
       hours: "08:00-22:00",
       phone: "+62251-8622642",
       email: "alumni@ipb.ac.id",
       instagram: "@alumni_ipb",
-      website: "https://alumni.ipb.ac.id",
       rating: 4.5,
       reviewCount: 198,
       priceRange: "Rp 5.000.000 - Rp 25.000.000/event",
@@ -805,6 +840,7 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
           description: "Layanan catering untuk berbagai acara",
         },
       ],
+      locations: [{mapsLink: "https://maps.app.goo.gl/g2UTrLcfqJCcU8QZ7"}],
       specialOffers: ["Alumni discount 20%", "Academic event package", "Multi-day event discount"],
     },
     {
@@ -831,7 +867,6 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
       phone: "+6281234567893",
       email: "dailywash@ipb.ac.id",
       instagram: "@dailywash63",
-      website: "https://dailywash63.ipb.ac.id",
       rating: 4.2,
       reviewCount: 234,
       priceRange: "Rp 3.000 - Rp 15.000/kg",
@@ -860,6 +895,7 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
           description: "Layanan cuci sepatu dan tas",
         },
       ],
+      locations: [{mapsLink: ""}], // belum ada di Google Maps
       specialOffers: ["Paket bulanan mahasiswa", "Diskon member 15%", "Gratis pickup untuk order di atas 10kg"],
     },
     {
@@ -886,7 +922,6 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
       phone: "+6281234567892",
       email: "carewash@ipb.ac.id",
       instagram: "@carewash63",
-      website: "https://carewash63.ipb.ac.id",
       rating: 4.5,
       reviewCount: 389,
       priceRange: "Rp 10.000 - Rp 75.000",
@@ -909,6 +944,7 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
           description: "Layanan wax dan polish mobil",
         },
       ],
+      locations: [{mapsLink: ""}], // belum ada di Google Maps
       specialOffers: ["Student discount 20%", "Package deals", "Membership program"],
     },
     {
@@ -930,12 +966,11 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
       tags: ["Organik", "Sayuran", "Fresh", "Hidroponik", "Smart Farming"],
       buttonColor: "green",
       location: "Agribusiness and Technology Park IPB",
-      detailedLocation: "Agribusiness and Technology Park, Kampus IPB Dramaga, Bogor 16680",
+      detailedLocation: "Jl. Carang Pulang No.1",
       hours: "08:00-17:00",
       phone: "+6281566783767",
       email: "thinkfresh@ipb.ac.id",
       instagram: "@thinkfreshpb",
-      website: "https://thinkfresh.ipb.ac.id",
       rating: 4.8,
       reviewCount: 756,
       priceRange: "Rp 10.000 - Rp 75.000/kg",
@@ -958,6 +993,7 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
           description: "Microgreens segar dan bergizi",
         },
       ],
+      locations: [{mapsLink: "https://maps.app.goo.gl/6ZMzqnFzt3T68yjJ8"}],
       specialOffers: ["Subscription box discount", "Bulk order special price", "Seasonal promotions"],
     },
     {
@@ -983,7 +1019,6 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
       phone: "+6281234567895",
       email: "kantin@ipb.ac.id",
       instagram: "@kantin_ipb",
-      website: "https://kantin.ipb.ac.id",
       rating: 4.3,
       reviewCount: 1523,
       priceRange: "Rp 5.000 - Rp 20.000",
@@ -1011,6 +1046,28 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
         {
           name: "Tahu Gejrot",
           description: "Tahu gejrot dengan kuah asam pedas manis",
+        },
+      ],
+      locations: [
+        {
+          name: "Kantin Blue Corner",
+          address: "Kampus IPB Dramaga, Bogor",
+          mapsLink: "", // Add your Google Maps link here
+        },
+        {
+          name: "Kantin Yellow Corner",
+          address: "Kampus IPB Dramaga, Bogor",
+          mapsLink: "", // Add your Google Maps link here
+        },
+        {
+          name: "Kantin Purple Corner",
+          address: "Kampus IPB Dramaga, Bogor",
+          mapsLink: "", // Add your Google Maps link here
+        },
+        {
+          name: "Kantin Green Corner",
+          address: "Kampus IPB Dramaga, Bogor",
+          mapsLink: "", // Add your Google Maps link here
         },
       ],
       facilities: ["Multiple Stalls", "Seating Area", "Clean Water", "Waste Management", "Student Friendly"],
@@ -1052,6 +1109,37 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
   }, [selectedBusinessId])
 
   const currentLocation = (selectedBusiness.locations || [])[selectedLocationIndex] || {}
+
+  const handleWhatsAppContact = () => {
+    const phoneNumber = selectedBusiness.phone?.replace(/\D/g, "") || ""
+    const message = `Halo, saya tertarik dengan ${selectedBusiness.name}. Bisakah Anda memberikan informasi lebih lanjut?`
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
+    window.open(whatsappUrl, "_blank")
+  }
+
+  const handleViewLocation = () => {
+    if (selectedBusiness.locations && selectedBusiness.locations.length > 1) {
+      setShowLocationModal(true)
+    } else {
+      const location = selectedBusiness.locations?.[0]
+      if (location?.mapsLink) {
+        window.open(location.mapsLink, "_blank")
+      } else {
+        const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location?.address || selectedBusiness.detailedLocation)}`
+        window.open(mapsUrl, "_blank")
+      }
+    }
+  }
+
+  const openLocationInMaps = (location) => {
+    if (location.mapsLink) {
+      window.open(location.mapsLink, "_blank")
+    } else {
+      const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location.address)}`
+      window.open(mapsUrl, "_blank")
+    }
+    setShowLocationModal(false)
+  }
 
   if (!selectedBusiness) {
     return (
@@ -1174,7 +1262,7 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
                         </div>
 
                         {/* Location selector dengan design card yang lebih menarik */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-6">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-20 gap-4 mb-6">
                           {(selectedBusiness.locations || []).map((location, index) => (
                             <button
                               key={index}
@@ -1185,23 +1273,23 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
                                   : "bg-white border-2 border-gray-200 hover:border-orange-300 hover:shadow-md"
                               }`}
                             >
-                                <div className="flex items-center space-x-3 flex-1 min-w-0">
-                                  <div
-                                    className={`w-4 h-4 rounded-full transition-all duration-300 flex-shrink-0 ${
-                                      selectedLocationIndex === index
-                                        ? "bg-gradient-to-r from-orange-500 to-pink-500 shadow-md"
-                                        : "bg-gray-300 group-hover:bg-orange-400"
-                                    }`}
-                                  ></div>
-                                  <span
-                                    className={`font-semibold transition-colors duration-300 text-sm sm:text-base lg:text-lg leading-tight ${
-                                      selectedLocationIndex === index
-                                        ? "text-orange-800"
-                                        : "text-gray-700 group-hover:text-orange-700"
-                                    }`}
-                                  >
-                                    {location.name}
-                                  </span>
+                              <div className="flex items-center space-x-3 flex-1 min-w-0">
+                                <div
+                                  className={`w-4 h-4 rounded-full transition-all duration-300 flex-shrink-0 ${
+                                    selectedLocationIndex === index
+                                      ? "bg-gradient-to-r from-orange-500 to-pink-500 shadow-md"
+                                      : "bg-gray-300 group-hover:bg-orange-400"
+                                  }`}
+                                ></div>
+                                <span
+                                  className={`font-semibold transition-colors duration-300 text-sm sm:text-base md:text-md leading-tight ${
+                                    selectedLocationIndex === index
+                                      ? "text-orange-800"
+                                      : "text-gray-700 group-hover:text-orange-700"
+                                  }`}
+                                >
+                                  {location.name}
+                                </span>
                               </div>
                             </button>
                           ))}
@@ -1519,10 +1607,18 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
 
                 {/* Action Buttons */}
                 <div className="space-y-2 mt-4">
-                  <button className="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-xl transition-colors">
+                  <button
+                    onClick={handleWhatsAppContact}
+                    className="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-xl transition-colors flex items-center justify-center gap-2"
+                  >
+                    <MessageCircle size={20} />
                     Hubungi Sekarang
                   </button>
-                  <button className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-4 rounded-xl transition-colors">
+                  <button
+                    onClick={handleViewLocation}
+                    className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-4 rounded-xl transition-colors flex items-center justify-center gap-2"
+                  >
+                    <MapPin size={20} />
                     Lihat Lokasi
                   </button>
                 </div>
@@ -1673,6 +1769,45 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
                   ))}
                 </div>
               )}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {showLocationModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-2xl max-w-md w-full max-h-[80vh] overflow-y-auto">
+            <div className="p-6">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-xl font-bold text-gray-900">Pilih Lokasi</h3>
+                <button
+                  onClick={() => setShowLocationModal(false)}
+                  className="text-gray-400 hover:text-gray-600 transition-colors"
+                >
+                  <X size={24} />
+                </button>
+              </div>
+
+              <div className="space-y-3">
+                {selectedBusiness.locations?.map((location, index) => (
+                  <button
+                    key={index}
+                    onClick={() => openLocationInMaps(location)}
+                    className="w-full p-4 bg-gradient-to-r from-blue-50 to-indigo-50 hover:from-blue-100 hover:to-indigo-100 rounded-xl border border-blue-200 transition-all duration-200 text-left group"
+                  >
+                    <div className="flex items-start gap-3">
+                      <div className="bg-blue-500 p-2 rounded-lg group-hover:bg-blue-600 transition-colors">
+                        <MapPin size={16} className="text-white" />
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="font-semibold text-gray-900 mb-1">{location.name}</h4>
+                        <p className="text-sm text-gray-600">{location.address}</p>
+                      </div>
+                      <ExternalLink size={16} className="text-blue-500 group-hover:text-blue-600 transition-colors" />
+                    </div>
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
         </div>

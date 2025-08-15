@@ -27,7 +27,42 @@ const ContactPage = () => {
   const [showSuggestions, setShowSuggestions] = useState(false)
   const [hoveredCard, setHoveredCard] = useState(null)
   const [selectedLocations, setSelectedLocations] = useState({})
+  const [showLocationModal, setShowLocationModal] = useState(false)
+  const [selectedUnitForLocation, setSelectedUnitForLocation] = useState(null)
   const searchRef = useRef(null)
+
+  const handleLocationClick = (unit) => {
+    if (unit.locations && unit.locations.length > 1) {
+      setSelectedUnitForLocation(unit)
+      setShowLocationModal(true)
+    } else {
+      // Single location - open Google Maps directly
+      const location = unit.locations ? unit.locations[0].location : unit.location
+      const encodedLocation = encodeURIComponent(location)
+      window.open(`https://www.google.com/maps/search/?api=1&query=${encodedLocation}`, "_blank")
+    }
+  }
+
+  const handleLocationSelect = (unitName, locationName) => {
+    setSelectedLocations((prev) => ({
+      ...prev,
+      [unitName]: locationName,
+    }))
+  }
+
+  const openLocationInMaps = (location) => {
+    const encodedLocation = encodeURIComponent(location)
+    window.open(`https://www.google.com/maps/search/?api=1&query=${encodedLocation}`, "_blank")
+    setShowLocationModal(false)
+  }
+
+  const getCurrentLocationData = (unit) => {
+    if (unit.locations) {
+      const selectedLocation = selectedLocations[unit.name] || unit.locations[0].name
+      return unit.locations.find((loc) => loc.name === selectedLocation) || unit.locations[0]
+    }
+    return unit
+  }
 
   const categories = [
     { name: "Semua", icon: Building2, color: "blue", count: 16 },
@@ -51,9 +86,9 @@ const ContactPage = () => {
         {
           name: "Botani Mart",
           logo: "/logo/botani mart.png",
-          phone: "+6281280505059",
+          phone: "+628128050505059",
           email: "botanimart@ipb.ac.id",
-          location: "Jl. Raya Dramaga, Kampus IPB",
+          location: "Jl. Raya Dramaga, Babakan, Kec. Dramaga, Kabupaten Bogor, Jawa Barat 16680",
           instagram: "@botanimartipb",
           hours: "08:00 - 17:00",
           rating: 4.6,
@@ -64,22 +99,31 @@ const ContactPage = () => {
           logo: "/logo/Daily Us.png",
           locations: [
             {
-              name: "Samping Bara",
+              name: "DailyUs Bara",
               phone: "+6281234567890",
               email: "dailyus@ipb.ac.id",
-              location: "IPB Dramaga - Samping Pintu Masuk Bara",
+              location: "Samping Pintu Masuk Bara",
               instagram: "@dailyusby63",
               hours: "07:00 - 22:00",
             },
             {
-              name: "Asrama Putri",
-              phone: "+6281234567891",
+              name: "DailyUs Astri",
+              phone: "+6281234567890",
               email: "dailyus@ipb.ac.id",
               location: "Dekat Asrama Putri IPB",
               instagram: "@dailyusby63",
               hours: "08:00 - 21:00",
             },
+            {
+              name: "DailyUs Astra",
+              phone: "+6281234567890",
+              email: "dailyus@ipb.ac.id",
+              location: "Dekat Asrama Putra IPB",
+              instagram: "@dailyusby63",
+              hours: "08:00 - 21:00",
+            },
           ],
+
           rating: 4.8,
           description: "Convenience store untuk kebutuhan sehari-hari mahasiswa",
         },
@@ -88,7 +132,7 @@ const ContactPage = () => {
           logo: "/logo/IMS.png",
           locations: [
             {
-              name: "Pintu ke Bara",
+              name: "IPB Merchandise Bara",
               phone: "+6281388489123",
               email: "merchandise@ipb.ac.id",
               location: "Samping Pintu Masuk Bara",
@@ -96,7 +140,7 @@ const ContactPage = () => {
               hours: "08:00 - 17:00",
             },
             {
-              name: "Perpustakaan IPB",
+              name: "IPB Merchandise LSI",
               phone: "+6281388489124",
               email: "merchandise@ipb.ac.id",
               location: "LSI IPB - Perpustakaan",
@@ -122,7 +166,7 @@ const ContactPage = () => {
           logo: "/logo/breadcast.png",
           locations: [
             {
-              name: "Seberang LSI",
+              name: "BreadCast Center",
               phone: "+6281377043310",
               email: "breadcast@ipb.ac.id",
               location: "Depan Perpustakaan IPB",
@@ -130,7 +174,7 @@ const ContactPage = () => {
               hours: "06:00 - 20:00",
             },
             {
-              name: "Cibinong",
+              name: "BreadCast LSI",
               phone: "+6281377043310",
               email: "breadcast@ipb.ac.id",
               location: "LSI IPB",
@@ -146,7 +190,7 @@ const ContactPage = () => {
           logo: "/logo/namtiga.png",
           phone: "+6281378404742",
           email: "coffee63@ipb.ac.id",
-          location: "IPB Dramaga (Jalan Baru)",
+          location: "Samping Pintu Masuk Bara",
           instagram: "@namtigacoffee",
           hours: "08:00 - 21:00",
           rating: 4.9,
@@ -157,7 +201,7 @@ const ContactPage = () => {
           logo: "/logo/TAKOL.png",
           phone: "+6281361403322",
           email: "tamankoleksi@ipb.ac.id",
-          location: "Jln. Padjajaran (IPB Baranangsiang)",
+          location: "Jln. Padjajaran - IPB Baranangsiang",
           instagram: "@takolipb",
           hours: "10:00 - 22:00",
           rating: 4.5,
@@ -167,9 +211,9 @@ const ContactPage = () => {
           name: "Namtiga Coffee Lite",
           logo: "/logo/namtiga-lite.png",
           phone: "+6281359338754",
-          email: "botanikopi@ipb.ac.id",
-          location: "IPB Dramaga (Gedung Andi Hakim Nasution)",
-          instagram: "@botanikopiinusantara",
+          email: "namtiga@ipb.ac.id",
+          location: "Gedung Rektorat Andi Hakim Nasution",
+          instagram: "@namtigacoffee",
           hours: "07:00 - 21:00",
           rating: 4.6,
           description: "Kopi nusantara dengan berbagai varian dan pastry",
@@ -179,7 +223,7 @@ const ContactPage = () => {
           logo: "/logo/kantong.png",
           phone: "+6281234567891",
           email: "chef63@ipb.ac.id",
-          location: "IPB Dramaga (Sekitar Asrama Pusat IPB)",
+          location: "Dekat Asrama Putri IPB",
           instagram: "@kantongbychef63",
           hours: "06:00 - 20:00",
           rating: 4.4,
@@ -253,7 +297,7 @@ const ContactPage = () => {
           logo: "/logo/himpunanalumni.png",
           phone: "081164048",
           email: "alumni@ipb.ac.id",
-          location: "Jl. Raya Padjajaran",
+          location: "Jl. Raya Padjajaran - Samping Botani Square",
           instagram: "@alumni_ipb",
           hours: "08:00 - 22:00",
           rating: 4.5,
@@ -264,7 +308,7 @@ const ContactPage = () => {
           logo: "/logo/dormitory.png",
           phone: "+6281312381377",
           email: "asrama@ipb.ac.id",
-          location: "IPB Dramaga (Jalan Tanjung)",
+          location: "IPB Dramaga - Jalan Tanjung",
           instagram: "@penginapan_ipb",
           hours: "24 Jam",
           rating: 4.6,
@@ -275,7 +319,7 @@ const ContactPage = () => {
           logo: "/logo/landlord.png",
           phone: "+6281312381377",
           email: "landhuis@ipb.ac.id",
-          location: "IPB Dramaga (Jalan Tanjung)",
+          location: "IPB Dramaga - Seberang Asrama Internasional",
           instagram: "@penginapan_ipb",
           hours: "24 Jam",
           rating: 4.3,
@@ -284,21 +328,6 @@ const ContactPage = () => {
       ],
     },
   ]
-
-  const handleLocationSelect = (unitName, locationName) => {
-    setSelectedLocations((prev) => ({
-      ...prev,
-      [unitName]: locationName,
-    }))
-  }
-
-  const getCurrentLocationData = (unit) => {
-    if (unit.locations) {
-      const selectedLocation = selectedLocations[unit.name] || unit.locations[0].name
-      return unit.locations.find((loc) => loc.name === selectedLocation) || unit.locations[0]
-    }
-    return unit
-  }
 
   // Search functionality
   const searchUnits = (query) => {
@@ -705,19 +734,31 @@ const ContactPage = () => {
                               </div>
                             </div>
 
-                            {/* WhatsApp Button */}
-                            {currentLocationData.phone && currentLocationData.phone !== "-" && (
-                              <a
-                                href={`https://wa.me/${currentLocationData.phone.replace(/[^0-9]/g, "")}`}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="w-full bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white font-bold py-3 px-4 rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center space-x-3 group/whatsapp"
+                            {/* Action Buttons */}
+                            <div className="flex flex-col gap-3">
+                              {/* WhatsApp Button */}
+                              {currentLocationData.phone && currentLocationData.phone !== "-" && (
+                                <a
+                                  href={`https://wa.me/${currentLocationData.phone.replace(/[^0-9]/g, "")}`}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="w-full bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white font-bold py-3 px-4 rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center space-x-3 group/whatsapp"
+                                >
+                                  <MessageCircle className="w-5 h-5 group-hover/whatsapp:scale-110 transition-transform duration-300" />
+                                  <span>Chat WhatsApp</span>
+                                  <ArrowRight className="w-4 h-4 group-hover/whatsapp:translate-x-1 transition-transform duration-300" />
+                                </a>
+                              )}
+
+                              <button
+                                onClick={() => handleLocationClick(unit)}
+                                className={`w-full bg-gradient-to-r ${category.gradient} hover:opacity-90 text-white font-bold py-3 px-4 rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center space-x-3 group/location`}
                               >
-                                <MessageCircle className="w-5 h-5 group-hover/whatsapp:scale-110 transition-transform duration-300" />
-                                <span>Chat WhatsApp</span>
-                                <ArrowRight className="w-4 h-4 group-hover/whatsapp:translate-x-1 transition-transform duration-300" />
-                              </a>
-                            )}
+                                <MapPin className="w-5 h-5 group-hover/location:scale-110 transition-transform duration-300" />
+                                <span>Lihat Lokasi</span>
+                                <ArrowRight className="w-4 h-4 group-hover/location:translate-x-1 transition-transform duration-300" />
+                              </button>
+                            </div>
                           </div>
                         </div>
                       )
@@ -752,6 +793,69 @@ const ContactPage = () => {
           </div>
         )}
       </div>
+
+      {showLocationModal && selectedUnitForLocation && (
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-3xl shadow-2xl max-w-2xl w-full max-h-[80vh] overflow-hidden">
+            {/* Modal Header */}
+            <div
+              className={`bg-gradient-to-r ${selectedUnitForLocation.locations ? contactData.find((cat) => cat.units.some((u) => u.name === selectedUnitForLocation.name))?.gradient || "from-blue-500 to-blue-600" : "from-blue-500 to-blue-600"} p-6 text-white relative`}
+            >
+              <button
+                onClick={() => setShowLocationModal(false)}
+                className="absolute top-4 right-4 w-8 h-8 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-colors duration-200"
+              >
+                <X className="w-5 h-5" />
+              </button>
+              <div className="flex items-center space-x-4">
+                <div className="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center">
+                  <MapPin className="w-6 h-6" />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold">{selectedUnitForLocation.name}</h3>
+                  <p className="text-white/90">Pilih lokasi yang ingin dikunjungi</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Modal Content */}
+            <div className="p-6 max-h-96 overflow-y-auto">
+              <div className="grid gap-4">
+                {selectedUnitForLocation.locations?.map((location, index) => (
+                  <button
+                    key={location.name}
+                    onClick={() => openLocationInMaps(location.location)}
+                    className="text-left p-4 bg-gradient-to-r from-gray-50 to-gray-100 hover:from-blue-50 hover:to-blue-100 rounded-2xl border border-gray-200 hover:border-blue-300 transition-all duration-300 transform hover:scale-105 group"
+                  >
+                    <div className="flex items-start space-x-4">
+                      <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                        <MapPin className="w-6 h-6 text-white" />
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="text-lg font-bold text-gray-800 mb-1 group-hover:text-blue-600 transition-colors duration-300">
+                          {location.name}
+                        </h4>
+                        <p className="text-gray-600 text-sm mb-2">{location.location}</p>
+                        <div className="flex items-center space-x-4 text-xs text-gray-500">
+                          <div className="flex items-center space-x-1">
+                            <Clock className="w-3 h-3" />
+                            <span>{location.hours}</span>
+                          </div>
+                          <div className="flex items-center space-x-1">
+                            <Phone className="w-3 h-3" />
+                            <span>{location.phone}</span>
+                          </div>
+                        </div>
+                      </div>
+                      <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-blue-500 group-hover:translate-x-1 transition-all duration-300" />
+                    </div>
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Enhanced Footer Contact Section */}
       <div className="bg-gradient-to-br from-blue-800 via-blue-700 to-blue-900 text-white py-20 relative overflow-hidden">
