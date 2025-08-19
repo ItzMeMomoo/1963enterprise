@@ -2,8 +2,11 @@
 
 import { Home, FileText, Building2, Mail, Newspaper, Menu, X, Users } from "lucide-react"
 import { useState, useEffect } from "react"
+import { useTranslation } from "../translations/translations"
+import LanguageSwitcher from "./LanguageSwitcher"
 
 const Header = ({ currentPage, setCurrentPage, setSelectedBusinessId, setSelectedNewsId }) => {
+  const { t } = useTranslation()
   const [isScrolled, setIsScrolled] = useState(false)
   const [scrollY, setScrollY] = useState(0)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -54,27 +57,27 @@ const Header = ({ currentPage, setCurrentPage, setSelectedBusinessId, setSelecte
 
   const navigationItems = [
     {
-      name: "Home",
+      name: t("nav.home"),
       icon: Home,
       onClick: () => scrollToSection("hero"),
     },
     {
-      name: "Tentang Kami",
+      name: t("nav.about"),
       icon: FileText,
       onClick: () => scrollToSection("tentang"),
     },
     {
-      name: "Unit Bisnis",
+      name: t("nav.business"),
       icon: Building2,
       onClick: handleUnitBisnisClick,
     },
     {
-      name: "Berita",
+      name: t("nav.news"),
       icon: Newspaper,
       onClick: () => scrollToSection("berita-kegiatan"),
     },
     {
-      name: "Karir",
+      name: t("nav.career"),
       icon: Users,
       onClick: () => {
         setCurrentPage("career")
@@ -85,7 +88,6 @@ const Header = ({ currentPage, setCurrentPage, setSelectedBusinessId, setSelecte
     },
   ]
 
-  // Different header styles based on page and scroll
   const getHeaderStyles = () => {
     if (currentPage === "home") {
       return isScrolled ? "header-scrolled" : ""
@@ -135,18 +137,18 @@ const Header = ({ currentPage, setCurrentPage, setSelectedBusinessId, setSelecte
                 </div>
               </div>
 
-              {/* Right Side - Navigation + Contact Button */}
+              {/* Right Side - Navigation + Language Switcher + Contact Button */}
               <div className="flex items-center space-x-3">
                 {/* Desktop Navigation */}
                 <nav className="hidden lg:flex items-center space-x-1">
                   {navigationItems.map((item) => {
                     const IconComponent = item.icon
                     const isActive =
-                      (currentPage === "home" && item.name === "Home") ||
-                      (currentPage === "business-detail" && item.name === "Unit Bisnis") ||
-                      (currentPage === "business-unit" && item.name === "Unit Bisnis") ||
-                      (currentPage === "news-detail" && item.name === "Berita") ||
-                      (currentPage === "career" && item.name === "Karir")
+                      (currentPage === "home" && item.name === t("nav.home")) ||
+                      (currentPage === "business-detail" && item.name === t("nav.business")) ||
+                      (currentPage === "business-unit" && item.name === t("nav.business")) ||
+                      (currentPage === "news-detail" && item.name === t("nav.news")) ||
+                      (currentPage === "career" && item.name === t("nav.career"))
 
                     return (
                       <button
@@ -165,13 +167,18 @@ const Header = ({ currentPage, setCurrentPage, setSelectedBusinessId, setSelecte
                   })}
                 </nav>
 
+                {/* Language Switcher */}
+                <div className="hidden lg:block">
+                  <LanguageSwitcher />
+                </div>
+
                 {/* Contact Button */}
                 <button
                   onClick={handleContactClick}
                   className="contact-btn bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-6 py-3 rounded-2xl font-bold flex items-center space-x-2 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 group ml-2"
                 >
                   <Mail className="w-4 h-4 group-hover:scale-110 transition-transform duration-300" />
-                  <span className="text-sm">Kontak</span>
+                  <span className="text-sm">{t("nav.contact")}</span>
                   <svg
                     className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300"
                     fill="none"
@@ -207,14 +214,19 @@ const Header = ({ currentPage, setCurrentPage, setSelectedBusinessId, setSelecte
           {/* Mobile Menu */}
           <div className="absolute top-24 left-4 right-4 bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/20 overflow-hidden">
             <div className="p-6 space-y-2">
+              {/* Language Switcher */}
+              <div className="mb-4 pb-4 border-b border-gray-200">
+                <LanguageSwitcher />
+              </div>
+
               {navigationItems.map((item) => {
                 const IconComponent = item.icon
                 const isActive =
-                  (currentPage === "home" && item.name === "Home") ||
-                  (currentPage === "business-detail" && item.name === "Unit Bisnis") ||
-                  (currentPage === "business-unit" && item.name === "Unit Bisnis") ||
-                  (currentPage === "news-detail" && item.name === "Berita") ||
-                  (currentPage === "career" && item.name === "Karir")
+                  (currentPage === "home" && item.name === t("nav.home")) ||
+                  (currentPage === "business-detail" && item.name === t("nav.business")) ||
+                  (currentPage === "business-unit" && item.name === t("nav.business")) ||
+                  (currentPage === "news-detail" && item.name === t("nav.news")) ||
+                  (currentPage === "career" && item.name === t("nav.career"))
 
                 return (
                   <button

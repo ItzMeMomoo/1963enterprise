@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { LanguageProvider } from "./contexts/LanguageContext"
 import Header from "./components/Header"
 import HeroSection from "./components/HeroSection"
 import AboutSection from "./components/AboutSection"
@@ -12,6 +13,7 @@ import BusinessUnit from "./components/BusinessUnit"
 import ContactPage from "./components/ContactPage"
 import CareerPage from "./components/CareerPage"
 import Footer from "./components/Footer"
+import WebsiteStatsSection from "./components/WebsiteStatsSection"
 import "./App.css"
 
 function App() {
@@ -119,21 +121,24 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <Header
-        currentPage={currentPage}
-        setCurrentPage={setCurrentPage}
-        setSelectedBusinessId={setSelectedBusinessId}
-        setSelectedNewsId={setSelectedNewsId}
-      />
-      {renderPage()}
-      {(currentPage === "home" ||
-        currentPage === "contact" ||
-        currentPage === "business-detail" ||
-        currentPage === "business-unit" ||
-        currentPage === "news-detail" ||
-        currentPage === "career") && <Footer />}
-    </div>
+    <LanguageProvider>
+      <div className="App">
+        <Header
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+          setSelectedBusinessId={setSelectedBusinessId}
+          setSelectedNewsId={setSelectedNewsId}
+        />
+        {renderPage()}
+        {currentPage === "home" && <WebsiteStatsSection />}
+        {(currentPage === "home" ||
+          currentPage === "contact" ||
+          currentPage === "business-detail" ||
+          currentPage === "business-unit" ||
+          currentPage === "news-detail" ||
+          currentPage === "career") && <Footer />}
+      </div>
+    </LanguageProvider>
   )
 }
 

@@ -31,15 +31,32 @@ const ContactPage = () => {
   const [selectedUnitForLocation, setSelectedUnitForLocation] = useState(null)
   const searchRef = useRef(null)
 
+  const openLocationInMaps = (location) => {
+    if (location.mapsLink && location.mapsLink.trim() !== "") {
+      window.open(location.mapsLink, "_blank")
+    } else {
+      // Fallback to address search if no mapsLink
+      const encodedLocation = encodeURIComponent(location.location || location)
+      window.open(`https://www.google.com/maps/search/?api=1&query=${encodedLocation}`, "_blank")
+    }
+    setShowLocationModal(false)
+  }
+
   const handleLocationClick = (unit) => {
     if (unit.locations && unit.locations.length > 1) {
       setSelectedUnitForLocation(unit)
       setShowLocationModal(true)
     } else {
-      // Single location - open Google Maps directly
-      const location = unit.locations ? unit.locations[0].location : unit.location
-      const encodedLocation = encodeURIComponent(location)
-      window.open(`https://www.google.com/maps/search/?api=1&query=${encodedLocation}`, "_blank")
+      // Single location - check for mapsLink first
+      const locationData = unit.locations ? unit.locations[0] : unit
+      if (locationData.mapsLink && locationData.mapsLink.trim() !== "") {
+        window.open(locationData.mapsLink, "_blank")
+      } else {
+        // Fallback to address search
+        const location = locationData.location || unit.location
+        const encodedLocation = encodeURIComponent(location)
+        window.open(`https://www.google.com/maps/search/?api=1&query=${encodedLocation}`, "_blank")
+      }
     }
   }
 
@@ -48,12 +65,6 @@ const ContactPage = () => {
       ...prev,
       [unitName]: locationName,
     }))
-  }
-
-  const openLocationInMaps = (location) => {
-    const encodedLocation = encodeURIComponent(location)
-    window.open(`https://www.google.com/maps/search/?api=1&query=${encodedLocation}`, "_blank")
-    setShowLocationModal(false)
   }
 
   const getCurrentLocationData = (unit) => {
@@ -89,6 +100,7 @@ const ContactPage = () => {
           phone: "+628128050505059",
           email: "botanimart@ipb.ac.id",
           location: "Jl. Raya Dramaga, Babakan, Kec. Dramaga, Kabupaten Bogor, Jawa Barat 16680",
+          mapsLink: "https://maps.app.goo.gl/72668aw7CAJPm3mx5",
           instagram: "@botanimartipb",
           hours: "08:00 - 17:00",
           rating: 4.6,
@@ -103,6 +115,7 @@ const ContactPage = () => {
               phone: "+6281234567890",
               email: "dailyus@ipb.ac.id",
               location: "Samping Pintu Masuk Bara",
+              mapsLink: "https://maps.app.goo.gl/4TN6MSrdQVvKjLE8A",
               instagram: "@dailyusby63",
               hours: "07:00 - 22:00",
             },
@@ -111,6 +124,7 @@ const ContactPage = () => {
               phone: "+6281234567890",
               email: "dailyus@ipb.ac.id",
               location: "Dekat Asrama Putri IPB",
+              mapsLink: "https://maps.app.goo.gl/tFBDG9rEjnKMZokj9",
               instagram: "@dailyusby63",
               hours: "08:00 - 21:00",
             },
@@ -119,11 +133,11 @@ const ContactPage = () => {
               phone: "+6281234567890",
               email: "dailyus@ipb.ac.id",
               location: "Dekat Asrama Putra IPB",
+              mapsLink: "https://maps.app.goo.gl/vySKnCi5e1vzms5P6",
               instagram: "@dailyusby63",
               hours: "08:00 - 21:00",
             },
           ],
-
           rating: 4.8,
           description: "Convenience store untuk kebutuhan sehari-hari mahasiswa",
         },
@@ -136,6 +150,7 @@ const ContactPage = () => {
               phone: "+6281388489123",
               email: "merchandise@ipb.ac.id",
               location: "Samping Pintu Masuk Bara",
+              mapsLink: "https://maps.app.goo.gl/1BbGRp8M14nkyhXw5",
               instagram: "@ipbmerch.1963",
               hours: "08:00 - 17:00",
             },
@@ -144,6 +159,7 @@ const ContactPage = () => {
               phone: "+6281388489124",
               email: "merchandise@ipb.ac.id",
               location: "LSI IPB - Perpustakaan",
+              mapsLink: "",
               instagram: "@ipbmerch.1963",
               hours: "08:00 - 16:00",
             },
@@ -170,6 +186,7 @@ const ContactPage = () => {
               phone: "+6281377043310",
               email: "breadcast@ipb.ac.id",
               location: "Depan Perpustakaan IPB",
+              mapsLink: "https://maps.app.goo.gl/QkGtRHWUGA7AJwAz6",
               instagram: "@breadcast.bakery",
               hours: "06:00 - 20:00",
             },
@@ -178,6 +195,7 @@ const ContactPage = () => {
               phone: "+6281377043310",
               email: "breadcast@ipb.ac.id",
               location: "LSI IPB",
+              mapsLink: "",
               instagram: "@breadcast.bakery",
               hours: "06:00 - 20:00",
             },
@@ -191,6 +209,7 @@ const ContactPage = () => {
           phone: "+6281378404742",
           email: "coffee63@ipb.ac.id",
           location: "Samping Pintu Masuk Bara",
+          mapsLink: "https://maps.app.goo.gl/x36AQiaahfC61kBc6",
           instagram: "@namtigacoffee",
           hours: "08:00 - 21:00",
           rating: 4.9,
@@ -202,6 +221,7 @@ const ContactPage = () => {
           phone: "+6281361403322",
           email: "tamankoleksi@ipb.ac.id",
           location: "Jln. Padjajaran - IPB Baranangsiang",
+          mapsLink: "https://maps.app.goo.gl/surtRtNaqYg6nP6N6",
           instagram: "@takolipb",
           hours: "10:00 - 22:00",
           rating: 4.5,
@@ -213,6 +233,7 @@ const ContactPage = () => {
           phone: "+6281359338754",
           email: "namtiga@ipb.ac.id",
           location: "Gedung Rektorat Andi Hakim Nasution",
+          mapsLink: "https://maps.app.goo.gl/eQfgtMWC3FHYkWdW9",
           instagram: "@namtigacoffee",
           hours: "07:00 - 21:00",
           rating: 4.6,
@@ -224,6 +245,7 @@ const ContactPage = () => {
           phone: "+6281234567891",
           email: "chef63@ipb.ac.id",
           location: "Dekat Asrama Putri IPB",
+          mapsLink: "https://maps.app.goo.gl/JaT4ejQcB7kWeGDc7",
           instagram: "@kantongbychef63",
           hours: "06:00 - 20:00",
           rating: 4.4,
@@ -245,6 +267,7 @@ const ContactPage = () => {
           phone: "+6281234567892",
           email: "carewash@ipb.ac.id",
           location: "IPB Dramaga",
+          mapsLink: "",
           instagram: "@carewash63",
           hours: "08:00 - 17:00",
           rating: 4.5,
@@ -256,6 +279,7 @@ const ContactPage = () => {
           phone: "+6281234567893",
           email: "dailywash@ipb.ac.id",
           location: "IPB Dramaga",
+          mapsLink: "",
           instagram: "@dailywash63",
           hours: "07:00 - 21:00",
           rating: 4.2,
@@ -277,6 +301,7 @@ const ContactPage = () => {
           phone: "+6281566783767",
           email: "thinkfresh@ipb.ac.id",
           location: "Agribusiness and Technology Park IPB",
+          mapsLink: "https://maps.app.goo.gl/6ZMzqnFzt3T68yjJ8",
           instagram: "@thinkfreshpb",
           hours: "08:00 - 17:00",
           rating: 4.8,
@@ -298,6 +323,7 @@ const ContactPage = () => {
           phone: "081164048",
           email: "alumni@ipb.ac.id",
           location: "Jl. Raya Padjajaran - Samping Botani Square",
+          mapsLink: "https://maps.app.goo.gl/g2UTrLcfqJCcU8QZ7",
           instagram: "@alumni_ipb",
           hours: "08:00 - 22:00",
           rating: 4.5,
@@ -309,6 +335,7 @@ const ContactPage = () => {
           phone: "+6281312381377",
           email: "asrama@ipb.ac.id",
           location: "IPB Dramaga - Jalan Tanjung",
+          mapsLink: "https://maps.app.goo.gl/UMt8apRRMh3bkww19",
           instagram: "@penginapan_ipb",
           hours: "24 Jam",
           rating: 4.6,
@@ -320,6 +347,7 @@ const ContactPage = () => {
           phone: "+6281312381377",
           email: "landhuis@ipb.ac.id",
           location: "IPB Dramaga - Seberang Asrama Internasional",
+          mapsLink: "https://maps.app.goo.gl/4AN31yuYW8yr67vQA",
           instagram: "@penginapan_ipb",
           hours: "24 Jam",
           rating: 4.3,
@@ -824,7 +852,7 @@ const ContactPage = () => {
                 {selectedUnitForLocation.locations?.map((location, index) => (
                   <button
                     key={location.name}
-                    onClick={() => openLocationInMaps(location.location)}
+                    onClick={() => openLocationInMaps(location)}
                     className="text-left p-4 bg-gradient-to-r from-gray-50 to-gray-100 hover:from-blue-50 hover:to-blue-100 rounded-2xl border border-gray-200 hover:border-blue-300 transition-all duration-300 transform hover:scale-105 group"
                   >
                     <div className="flex items-start space-x-4">

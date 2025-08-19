@@ -524,13 +524,7 @@ const BusinessUnit = ({ selectedBusinessId, onBack }) => {
           rating: 4.6,
         },
       ],
-      locations: [
-        {
-          name: "Resto Taman Koleksi",
-          address: "Gedung Andi Hakim Nasution Jalan Institut Pertanian",
-          mapsLink: "https://maps.app.goo.gl/surtRtNaqYg6nP6N6",
-        },
-      ],
+      locations: [{mapsLink: "https://maps.app.goo.gl/surtRtNaqYg6nP6N6"}],
       facilities: ["Meeting Room", "VIP Room", "Catering Service", "Garden Setting", "Private Parking"],
       specialOffers: ["Meeting package discount", "Catering bulk order", "Weekend family package"],
     },
